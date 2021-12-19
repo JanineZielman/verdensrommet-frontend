@@ -1,0 +1,102 @@
+a {
+  text-decoration: none;
+}
+
+#title {
+  letter-spacing: 0.4px;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.13636;
+}
+
+#banner {
+  margin: 20px;
+  height: 800px;
+}
+
+#editor {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+canvas {
+  width: 100vw;
+  height: calc(100vh - 75px);
+}
+
+.navbar{
+  background-color: #fff;
+  border: 2px solid #0000FF;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    height: 75px;
+    &:last-child{
+      border-left: 2px solid #0000FF;
+    }
+    li{
+      font-size: 48px;
+      text-transform: uppercase;
+      color: #0000FF;
+      padding: 0 14px;
+      border-right: 2px solid #0000FF;
+      height: 75px;
+      a{
+        color: #0000FF;
+      }
+    }
+  }
+}
+
+
+// .homenav {
+//   font-size: 40px;
+//   a{
+//     color: #fff;
+//     text-transform: uppercase;
+//   }
+//   .link{
+//     position: absolute;
+//   }
+//   #contact{
+//     top: 5vh;
+//     left: 15vw;
+//   }
+//   #podcast{
+//     top: 35vh;
+//     left: 4vw;
+//   }
+//   #alternative-economies{
+//     top: 60vh;
+//     left: 4vw;
+//     max-width: 10vw;
+//   }
+//   #visa-help{
+//     top: 5vh;
+//     right: 14vw;
+//   }
+//   #log-in{
+//     top: 35vh;
+//     right: 4vw;
+//   }
+//   #faq{
+//     top: 65vh;
+//     right: 15vw;
+//   }
+//   #about{
+//     top: 75vh;
+//     right: 40vw;
+//   }
+// }
