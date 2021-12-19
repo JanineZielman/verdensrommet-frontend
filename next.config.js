@@ -4,7 +4,7 @@
 const nextConfig = {
   images: {
     loader: "default",
-    domains: ["localhost", "https://guarded-dusk-98952.herokuapp.com/"],
+    domains: ["localhost"],
   },
   eslint: {
     // Warning: This allows production builds to successfully complete even if
