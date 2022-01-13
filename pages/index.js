@@ -4,39 +4,31 @@ import Seo from "../components/seo"
 import { fetchAPI } from "../lib/api"
 import HomeNav from "../components/homeNav"
 
-const Home = ({ pages, homepage }) => {
-  console.log(homepage)
+const Home = ({ homepage, pages }) => {
   return (
-    <Layout>
-      hello
+    <Layout pages={pages}>
+      <div className="hero-bg">
+        <video loop="true" autoplay="autoplay" controls muted>
+          <source src={"http://85.214.72.113:1337" + homepage.Hero.background.url} type="video/mp4"/>
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <HomeNav pages={pages}/>
     </Layout>
-    // <Layout pages={pages}>
-    //   <Seo seo={homepage.attributes.seo} />
-    //   {/* <video controls loop>
-    //     <source src={homepage.attributes.hero.background.data.attributes.url} type="video/mp4"/>
-    //     Your browser does not support the video tag.
-    //   </video> */}
-    //   <HomeNav pages={pages}/>
-    // </Layout>
   )
 }
 
 export async function getStaticProps() {
   // Run API calls in parallel
-  const [homepageRes] = await Promise.all([
-    // fetchAPI("/pages", { populate: "*" }),
-    fetchAPI("/homepage", {
-      // populate: {
-      //   hero: { populate: "*" },
-      //   seo: { populate: "*" },
-      // },
-    }),
+  const [homepageRes, pagesRes] = await Promise.all([
+    fetchAPI("/homepage"),
+    fetchAPI("/pages"),
   ])
 
   return {
     props: {
-      // pages: pagesRes.data,
       homepage: homepageRes,
+      pages: pagesRes,
     },
     revalidate: 1,
   }
