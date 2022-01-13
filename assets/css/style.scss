@@ -1,5 +1,21 @@
+@font-face {
+  font-family: "Karelia-Outtakes";
+  src: url('../Karelia-Outtakes.otf');
+}
+
+body, html{
+  font-family: "Karelia-Outtakes";
+  margin: 0;
+  padding: 0;
+}
+
 a {
   text-decoration: none;
+}
+
+h1{
+  font-size: 53px;
+  margin: 0;
 }
 
 #title {
@@ -56,6 +72,23 @@ canvas {
       a{
         color: #0000FF;
       }
+    }
+  }
+}
+
+.hero-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  video{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    &::-webkit-media-controls-panel {
+      background-image: linear-gradient(transparent, transparent) !important;
     }
   }
 }
