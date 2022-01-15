@@ -11,7 +11,7 @@ const Page = ({pages, page}) => {
       <Layout pages={pages.data}>
         {page.Hero &&
           <div className="hero-bg">
-            <video loop="true" autoplay="autoplay" controls muted>
+            <video loop="true" autoplay="autoplay" controls muted playsinline style="pointer-events: none;">
               <source src={"http://85.214.72.113:1337" + page.Hero.background.url} type="video/mp4"/>
               Your browser does not support the video tag.
             </video>

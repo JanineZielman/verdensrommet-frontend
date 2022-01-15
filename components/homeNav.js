@@ -4,6 +4,7 @@ import Link from "next/link"
 const HomeNav = ({ pages }) => {
   return (
     <section className="homenav">
+			<img src="logo.png"/>
 			{pages.map((page, i) => {
 				return (
 					<div id={page.slug} key={'link-'+ i} className="link">
@@ -17,6 +18,12 @@ const HomeNav = ({ pages }) => {
         .homenav {
           font-size: 40px;
         }
+				img{
+					position: absolute;
+					top: 42%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
 				a{
 					color: #fff;
 					text-transform: uppercase;
