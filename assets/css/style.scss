@@ -7,10 +7,18 @@ body, html{
   font-family: "Karelia-Outtakes";
   margin: 0;
   padding: 0;
+  color: #fff;
+  font-size: 30px;
+  padding-bottom: 40px;
+  overflow-x: hidden;
 }
 
 a {
   text-decoration: none;
+}
+
+.container{
+  padding: 24px 48px;
 }
 
 h1{
@@ -96,43 +104,11 @@ canvas {
   }
 }
 
-
-// .homenav {
-//   font-size: 40px;
-//   a{
-//     color: #fff;
-//     text-transform: uppercase;
-//   }
-//   .link{
-//     position: absolute;
-//   }
-//   #contact{
-//     top: 5vh;
-//     left: 15vw;
-//   }
-//   #podcast{
-//     top: 35vh;
-//     left: 4vw;
-//   }
-//   #alternative-economies{
-//     top: 60vh;
-//     left: 4vw;
-//     max-width: 10vw;
-//   }
-//   #visa-help{
-//     top: 5vh;
-//     right: 14vw;
-//   }
-//   #log-in{
-//     top: 35vh;
-//     right: 4vw;
-//   }
-//   #faq{
-//     top: 65vh;
-//     right: 15vw;
-//   }
-//   #about{
-//     top: 75vh;
-//     right: 40vw;
-//   }
-// }
+.columns{
+  display: flex;
+  padding-bottom: 24px;
+  div{
+    margin-right: 24px;
+    width: 50%;
+  }
+}
