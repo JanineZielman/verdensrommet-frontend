@@ -1,40 +1,17 @@
 import { fetchAPI } from "../lib/api"
 import Layout from "../components/layout"
-import TopBar from "../components/topBar"
+import Hero from "../components/hero"
+import BasicSection from "../components/basicSection"
 import Seo from "../components/seo"
 
 const Page = ({pages, page}) => {
-  console.log(page);
   return (
     <>
-      <TopBar page={page}/>
+      <Hero page={page}/>
       <Layout pages={pages.data}>
-        {page.Hero &&
-          <div className="hero-bg">
-            <video loop="true" autoplay="autoplay" controls muted playsinline style="pointer-events: none;">
-              <source src={"http://85.214.72.113:1337" + page.Hero.background.url} type="video/mp4"/>
-              Your browser does not support the video tag.
-            </video>
-          </div>
+        {page.basic_section &&
+          <BasicSection page={page}/>
         }
-        {page.intro_title &&
-          <h2 className="intro-title">{page.intro_title}</h2>
-        }
-        {page.intro_text &&
-          <div className="intro-text">{page.intro_text}</div>
-        }
-        <style jsx>{`
-          .intro-title{
-            font-size: 53px;
-            color: #fff;
-          }
-          .intro-text{
-            max-width: 800px;
-            color: #fff;
-            font-size: 30px;
-            margin-top: 24px;
-          }
-        `}</style>
       </Layout>
     </>
   )
