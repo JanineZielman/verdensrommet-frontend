@@ -9,7 +9,7 @@ const Hero = ({ page }) => {
 			<div className="hero-wrapper container">
 				{page.Hero &&
 					<div className="hero-bg">
-						<video loop={true} autoPlay="autoPlay" controls muted playsInline>
+						<video loop={true} autoPlay="autoPlay" controls muted>
 							<source src={"http://85.214.72.113:1337" + page.Hero.background.url} type="video/mp4"/>
 							Your browser does not support the video tag.
 						</video>
