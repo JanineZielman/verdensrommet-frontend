@@ -9,7 +9,7 @@ const Home = ({ homepage, pages }) => {
     <Layout pages={pages}>
       <div className="hero-bg">
         <video loop={true} autoPlay="autoPlay" controls muted>
-          <source src={"http://85.214.72.113:1337" + homepage.Hero.background.url} type="video/mp4"/>
+          <source src={"https://cms.verdensrommet.network/app/public/" + homepage.Hero.background.url} type="video/mp4"/>
           Your browser does not support the video tag.
         </video>
       </div>
