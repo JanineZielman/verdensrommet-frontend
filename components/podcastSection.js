@@ -3,16 +3,31 @@ import ReactMarkdown from "react-markdown";
 import { getStrapiMedia } from "../lib/media";
 import Image from "../components/image"
 
-const PodcastSection = () => {
+const PodcastSection = ({page}) => {
 	return (
-		<section className="container">
-			<iframe src="https://anchor.fm/verdensrommet/embed" height="175px" width="900px" frameborder="0" scrolling="no"></iframe>
-			
-		
+		<section className="podcast-section">	
+			{page.podcast.map((item, i) => {
+				return (
+					<iframe key={'podcast-'+i} src={item.podcast_embed} height="auto" width="900px" frameBorder="0" scrolling="no"></iframe>
+				)
+			})}
+			{page.link.map((item, i) => {
+				return (
+					<a key={'link-'+i} href={item.link_url} target="_blank">{item.link_text}</a>
+				)
+			})}
 			<style jsx>{`
 				iframe{
 					display: block;
-					margin: auto;
+					max-width: 80vw;
+					margin: 24px auto;
+				}
+				a{
+					color: #fff;
+					width: 100%;
+					text-align: center;
+					display: block;
+					text-decoration: underline;
 				}
 			`}</style>
 		</section>
