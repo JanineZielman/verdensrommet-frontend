@@ -23,13 +23,13 @@ const Hero = ({ page }) => {
 					<div className="intro-text">{page.intro_text}</div>
 				}
 				{page.slug == 'podcast' &&
-        	<PodcastSection/>
+        	<PodcastSection page={page}/>
       	}
 			</div>
 			<style jsx>{`
 				section{
 					position: relative;
-					height: 100vh;
+					height: calc(100vh - 79px);
 				}
 				.intro-title{
 					font-size: 53px;
