@@ -1,7 +1,4 @@
 import React from "react"
-import ReactMarkdown from "react-markdown";
-import { getStrapiMedia } from "../lib/media";
-import Image from "../components/image"
 
 const PodcastSection = ({page}) => {
 	return (
