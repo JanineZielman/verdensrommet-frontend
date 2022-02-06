@@ -40,7 +40,7 @@ const HomeNav = ({ pages }) => {
 					left: 4vw;
 				}
 				#alternative-economies{
-					top: 60vh;
+					top: 65vh;
 					left: 4vw;
 					max-width: 10vw;
 				}
@@ -48,18 +48,18 @@ const HomeNav = ({ pages }) => {
 					top: 5vh;
 					right: 14vw;
 				}
-				#log-in{
+				#faq{
 					top: 35vh;
 					right: 4vw;
 				}
-				#faq{
-					top: 65vh;
+				#about{
+					top: 68vh;
 					right: 15vw;
 				}
-				#about{
+				/* #about{
 					top: 75vh;
 					right: 40vw;
-				}
+				} */
       `}</style>
     </section>
   )

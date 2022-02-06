@@ -13,6 +13,10 @@ body, html{
   overflow-x: hidden;
 }
 
+body *{
+  font-family: "Karelia-Outtakes";
+}
+
 a {
   text-decoration: none;
 }
@@ -24,6 +28,14 @@ a {
 h1{
   font-size: 53px;
   margin: 0;
+}
+
+button{
+  color: #0000FF;
+  background: transparent;
+  border: none;
+  font-size: 53px;
+  cursor: pointer;
 }
 
 #title {
@@ -110,5 +122,60 @@ canvas {
   div{
     margin-right: 24px;
     width: 50%;
+  }
+}
+
+.login-button{
+  cursor: pointer;
+}
+.login-link{
+  cursor: pointer;
+  padding: 0 10px;
+  text-decoration: underline;
+}
+.login{
+  background-color: #fff;
+  width: 800px;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 4px solid #0000FF;
+  color: #0000FF;
+  input{
+    border: none;
+    border-bottom: 4px solid #0000FF;
+    color: #0000FF;
+    width: calc(100% - 20px);
+    font-size: 53px;
+    line-height: 1.4;
+    padding: 0 10px 10px 10px;
+    &::placeholder {
+      color: #0000FF;
+      font-size: 53px;
+      line-height: 1.4;
+    }
+  }
+  button{
+    color: #0000FF;
+    background-color: transparent;
+    border: none;
+    font-size: 53px;
+  }
+  .register{
+    font-size: 53px;
+    padding: 24px 10px;
+    button{
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  .close{
+    position: absolute;
+    right: 0;
+    top: 14px;
+    z-index: 999;
+    cursor: pointer;
+    line-height: 0;
   }
 }
