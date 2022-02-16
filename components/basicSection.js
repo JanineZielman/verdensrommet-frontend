@@ -28,8 +28,8 @@ const BasicSection = ({ page }) => {
 						{section.columns.map((column, i) => {
 							return (
 								<div className="columns">
-									<div>{column.column_1}</div>
-									<div>{column.column_2}</div>
+									<div className="medium">{column.column_1}</div>
+									<div className="medium">{column.column_2}</div>
 								</div>
 							)
 						})}

@@ -12,6 +12,7 @@ const Page = ({pages, page}) => {
         {page.basic_section &&
           <BasicSection page={page}/>
         }
+        <div style={{height:'300px'}}></div>
       </Layout>
     </>
   )
