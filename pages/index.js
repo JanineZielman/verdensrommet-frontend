@@ -3,8 +3,10 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { fetchAPI } from "../lib/api"
 import HomeNav from "../components/homeNav"
+import { getStrapiMedia } from "../lib/media";
 
 const Home = ({ homepage, pages }) => {
+  console.log(homepage)
   return (
     <Layout pages={pages}>
       <div className="hero-bg">
@@ -14,6 +16,88 @@ const Home = ({ homepage, pages }) => {
         </video>
       </div>
       <HomeNav homepage={homepage} pages={pages}/>
+      <div className="spacer"> </div>
+      {homepage.about &&
+        <section className="about-section">
+          <h2>
+            <span>{homepage.about.title}</span>
+            <span>{homepage.about.title}</span>
+            <span>{homepage.about.title}</span>
+            <span>{homepage.about.title}</span>
+            <span>{homepage.about.title}</span>
+            <span>{homepage.about.title}</span>
+            <span>{homepage.about.title}</span>
+            <span>{homepage.about.title}</span>
+            <span>{homepage.about.title}</span>
+            <span>{homepage.about.title}</span>
+            <span>{homepage.about.title}</span>
+            <span>{homepage.about.title}</span>
+          </h2>
+          <p className="intro-text">{homepage.about.text}</p>
+        </section>
+      }
+      {homepage.news &&
+        <section className="news-section" style={{backgroundImage: homepage.news.background ? "url(" + getStrapiMedia(homepage.news.background) + ")" : "transparent",}} >
+          <h2>
+            <span>{homepage.news.title}</span>
+            <span>{homepage.news.title}</span>
+            <span>{homepage.news.title}</span>
+            <span>{homepage.news.title}</span>
+            <span>{homepage.news.title}</span>
+            <span>{homepage.news.title}</span>
+            <span>{homepage.news.title}</span>
+            <span>{homepage.news.title}</span>
+            <span>{homepage.news.title}</span>
+            <span>{homepage.news.title}</span>
+            <span>{homepage.news.title}</span>
+            <span>{homepage.news.title}</span>
+            <span>{homepage.news.title}</span>
+            <span>{homepage.news.title}</span>
+            <span>{homepage.news.title}</span>
+            <span>{homepage.news.title}</span>
+          </h2>
+        </section>
+      }
+      <style jsx>{`
+				.about-section{
+          background-color: #0000FF;
+          color: #00FF3B;
+          padding: 5px 0px;
+          min-height: 60vh;
+          font-size: 40px;
+          width: 100%;
+          overflow: hidden;
+        }
+        .news-section{
+          background-color: #fff;
+          color: #0000FF;
+          padding: 5px 0px;
+          min-height: 100vh;
+          font-size: 40px;
+          width: 100%;
+          overflow: hidden;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        h2{
+          font-size: 40px;
+          text-transform: uppercase;
+          padding-bottom: 14px;
+        }
+        .about-section h2{
+          border-bottom: 4px solid #00FF3B;
+        }
+        .news-section h2{
+          border-bottom: 4px solid #0000FF;
+        }
+        span{
+          margin: 0 14px;
+        }
+        .intro-text{
+          padding: 0 14px;
+        }
+			`}</style>
     </Layout>
   )
 }
