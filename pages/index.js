@@ -13,7 +13,7 @@ const Home = ({ homepage, pages }) => {
           Your browser does not support the video tag.
         </video>
       </div>
-      <HomeNav pages={pages}/>
+      <HomeNav homepage={homepage} pages={pages}/>
     </Layout>
   )
 }
@@ -22,7 +22,7 @@ export async function getStaticProps() {
   // Run API calls in parallel
   const [homepageRes, pagesRes] = await Promise.all([
     fetchAPI("/homepage"),
-    fetchAPI("/pages"),
+    fetchAPI("/menus"),
   ])
 
   return {

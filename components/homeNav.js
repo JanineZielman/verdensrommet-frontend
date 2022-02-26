@@ -1,10 +1,16 @@
 import React from "react"
 import Link from "next/link"
+import Image from "./image"
 
-const HomeNav = ({ pages }) => {
+const HomeNav = ({ homepage, pages }) => {
   return (
     <section className="homenav">
-			<img src="logo.png"/>
+			<div className="icon">
+				<Image image={homepage.Hero.icon}/>
+			</div>
+			<div className="logo">
+				<Image image={homepage.image}/>
+			</div>
 			{pages.map((page, i) => {
 				return (
 					<div id={page.slug} key={'link-'+ i} className="link">
@@ -18,11 +24,14 @@ const HomeNav = ({ pages }) => {
         .homenav {
           font-size: 40px;
         }
-				img{
+				.logo{
 					position: absolute;
 					top: 42%;
 					left: 50%;
 					transform: translate(-50%, -50%);
+					width: 50vw;
+					height: auto;
+					align-items: center;
 				}
 				a{
 					color: #fff;
@@ -30,36 +39,42 @@ const HomeNav = ({ pages }) => {
 				}
 				.link{
 					position: absolute;
+					max-width: 15vw;
+					text-align: center;
+					line-height: 1;
+				}
+				#about{
+					top: 10vh;
+					left: 5vw;
 				}
 				#contact{
 					top: 5vh;
-					left: 15vw;
+					left: 25vw;
 				}
-				#podcast{
-					top: 35vh;
-					left: 4vw;
-				}
-				#alternative-economies{
-					top: 65vh;
-					left: 4vw;
-					max-width: 10vw;
+				#log-in{
+					top: 5vh;
+					right: 25vw;
 				}
 				#visa-help{
-					top: 5vh;
-					right: 14vw;
+					top: 30vh;
+					right: 5vw;
 				}
 				#faq{
+					top: 60vh;
+					right: 12vw;
+				}
+				#podcast{
+					top: 80vh;
+					right: 30vw;
+				}
+				#value-exchange{
 					top: 35vh;
-					right: 4vw;
+					left: 5vw;
 				}
-				#about{
-					top: 68vh;
-					right: 15vw;
+				#alternative-economies{
+					top: 70vh;
+					left: 10vw;
 				}
-				/* #about{
-					top: 75vh;
-					right: 40vw;
-				} */
       `}</style>
     </section>
   )

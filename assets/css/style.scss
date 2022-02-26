@@ -1,9 +1,10 @@
 @font-face {
   font-family: "Karelia-Outtakes";
-  src: url('../Karelia-Outtakes.otf');
+  src: url("../Karelia-Outtakes.otf");
 }
 
-body, html{
+body,
+html {
   font-family: "Karelia-Outtakes";
   margin: 0;
   padding: 0;
@@ -12,25 +13,41 @@ body, html{
   overflow-x: hidden;
 }
 
-body *{
+body * {
   font-family: "Karelia-Outtakes";
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
-.container{
+p a {
+  display: block;
+  text-decoration: underline;
+}
+
+.links a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  &:before {
+    content: "➝";
+    margin-right: 10px;
+  }
+}
+
+.container {
   padding: 24px 48px;
 }
 
-h1{
+h1 {
   font-size: 53px;
   margin: 0;
 }
 
-button{
-  color: #0000FF;
+button {
+  color: #0000ff;
   background: transparent;
   border: none;
   font-size: 53px;
@@ -60,9 +77,18 @@ canvas {
   height: calc(100vh - 75px);
 }
 
-.navbar{
+.icon {
+  position: fixed;
+  top: 0px;
+  right: 24px;
+  width: 200px;
+  height: auto;
+  z-index: 999;
+}
+
+.navbar {
   background-color: #fff;
-  border: 2px solid #0000FF;
+  border: 2px solid #0000ff;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -71,38 +97,38 @@ canvas {
   height: 75px;
   display: flex;
   justify-content: space-between;
-  ul{
+  ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
     height: 75px;
-    &:last-child{
-      border-left: 2px solid #0000FF;
+    &:last-child {
+      border-left: 2px solid #0000ff;
     }
-    li{
+    li {
       font-size: 48px;
       text-transform: uppercase;
-      color: #0000FF;
+      color: #0000ff;
       padding: 0 14px;
-      border-right: 2px solid #0000FF;
+      border-right: 2px solid #0000ff;
       height: 75px;
-      a{
-        color: #0000FF;
+      a {
+        color: #0000ff;
       }
     }
   }
 }
 
-.hero-bg{
+.hero-bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: calc(100vh - 79px);
   z-index: -1;
-  video{
+  video {
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -110,75 +136,77 @@ canvas {
       background-image: linear-gradient(transparent, transparent) !important;
     }
     &::-webkit-media-controls {
-      display:none !important;
+      display: none !important;
     }
   }
 }
 
-.columns{
+.columns {
   display: flex;
   padding-bottom: 24px;
-  .medium{
+  .medium {
     margin-right: 24px;
     width: 50%;
   }
-  .small{
+  .small {
     width: 25%;
   }
-  .large{
+  .large {
     width: 75%;
   }
-  .text{
+  .text {
     margin-left: 48px;
   }
 }
 
-.login-button{
+// LOGIN
+
+.login-button {
   cursor: pointer;
 }
-.login-link{
+.login-link {
   cursor: pointer;
   padding: 0 10px;
   text-decoration: underline;
 }
-.login{
+.login {
   background-color: #fff;
   width: 800px;
   position: fixed;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 4px solid #0000FF;
-  color: #0000FF;
-  input{
+  border: 4px solid #0000ff;
+  color: #0000ff;
+  input {
     border: none;
-    border-bottom: 4px solid #0000FF;
-    color: #0000FF;
+    border-bottom: 4px solid #0000ff;
+    color: #0000ff;
     width: calc(100% - 20px);
     font-size: 53px;
     line-height: 1.4;
     padding: 0 10px 10px 10px;
     &::placeholder {
-      color: #0000FF;
+      color: #0000ff;
       font-size: 53px;
       line-height: 1.4;
     }
   }
-  button{
-    color: #0000FF;
+  button {
+    color: #0000ff;
     background-color: transparent;
     border: none;
     font-size: 53px;
   }
-  .register{
+  .register {
     font-size: 53px;
     padding: 24px 10px;
-    button{
+    button {
       text-decoration: underline;
       cursor: pointer;
     }
   }
-  .close{
+  .close {
     position: absolute;
     right: 0;
     top: 14px;

@@ -19,11 +19,6 @@
       "static/chunks/main.js",
       "static/chunks/pages/index.js"
     ],
-    "/[slug]": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/[slug].js"
-    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -33,6 +28,36 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
+    ],
+    "/about": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/about.js"
+    ],
+    "/alternative-economies": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/alternative-economies.js"
+    ],
+    "/contact": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/contact.js"
+    ],
+    "/next/dist/pages/_error": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/next/dist/pages/_error.js"
+    ],
+    "/value-exchange": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/value-exchange.js"
+    ],
+    "/visa-help": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/visa-help.js"
     ]
   },
   "ampFirstPages": []
