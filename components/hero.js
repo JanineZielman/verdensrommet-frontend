@@ -63,10 +63,8 @@ const Hero = ({ page, homepage }) => {
 					font-size: 18px;
 				}
 				.intro-text{
-					max-width: 800px;
 					color: #fff;
 					font-size: 30px;
-					margin-top: 24px;
 				}
 				.links{
 					position: fixed;
