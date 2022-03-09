@@ -3,10 +3,11 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { fetchAPI } from "../lib/api"
 import HomeNav from "../components/homeNav"
-import { getStrapiMedia } from "../lib/media";
+import { getStrapiMedia } from "../lib/media"
+import Image from "../components/image"
 
-const Home = ({ homepage, pages }) => {
-  console.log(homepage)
+const Home = ({ homepage, pages, news }) => {
+  console.log(news)
   return (
     <Layout pages={pages}>
       <div className="hero-bg">
@@ -56,6 +57,16 @@ const Home = ({ homepage, pages }) => {
             <span>{homepage.news.title}</span>
             <span>{homepage.news.title}</span>
           </h2>
+          <div className="news-container">
+            {news.map((item, i) => {
+              return(
+                <div className="news-item">
+                  <Image image={item.cover_image}/>
+                  <p>{item.intro_text}</p>
+                </div>
+              )
+            })}
+          </div>
         </section>
       }
       <style jsx>{`
@@ -104,14 +115,16 @@ const Home = ({ homepage, pages }) => {
 
 export async function getStaticProps() {
   // Run API calls in parallel
-  const [homepageRes, pagesRes] = await Promise.all([
+  const [homepageRes, newsRes, pagesRes] = await Promise.all([
     fetchAPI("/homepage"),
+    fetchAPI("/news-items"),
     fetchAPI("/menus"),
   ])
 
   return {
     props: {
       homepage: homepageRes,
+      news: newsRes,
       pages: pagesRes,
     },
     revalidate: 1,
