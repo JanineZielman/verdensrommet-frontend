@@ -201,24 +201,22 @@ canvas {
 }
 .login {
   background-color: #fff;
-  width: 800px;
   position: fixed;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 4px solid #0000ff;
+  bottom: 74px;
+  right: -3px;
+  border: 3px solid #0000ff;
   color: #0000ff;
   input {
     border: none;
-    border-bottom: 4px solid #0000ff;
+    border-bottom: 3px solid #0000ff;
     color: #0000ff;
     width: calc(100% - 20px);
-    font-size: 53px;
+    font-size: 30px;
     line-height: 1.4;
-    padding: 0 10px 10px 10px;
+    padding: 10px;
     &::placeholder {
       color: #0000ff;
-      font-size: 53px;
+      font-size: 30px;
       line-height: 1.4;
     }
   }
@@ -226,22 +224,35 @@ canvas {
     color: #0000ff;
     background-color: transparent;
     border: none;
-    font-size: 53px;
+    font-size: 30px;
   }
   .register {
-    font-size: 53px;
+    font-size: 30px;
     padding: 24px 10px;
+    display: flex;
+    justify-content: space-between;
     button {
       text-decoration: underline;
       cursor: pointer;
     }
   }
-  .close {
-    position: absolute;
-    right: 0;
-    top: 14px;
-    z-index: 999;
-    cursor: pointer;
-    line-height: 0;
+}
+
+//MENU
+.menu-toggle {
+  cursor: pointer;
+}
+.menu-modal {
+  position: fixed;
+  bottom: 74px;
+  background-color: #fff;
+  border: 3px solid #0000ff;
+  a {
+    display: block;
+    color: #0000ff;
+    font-size: 30px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #0000ff;
+    padding: 10px;
   }
 }

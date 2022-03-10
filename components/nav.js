@@ -6,11 +6,31 @@ import axios from 'axios';
 import nookies from 'nookies';
 import LoginComponent from './loginComponent';
 
-const Nav = (username) => {
+const Nav = ( {pages}, username) => {
+  console.log(pages)
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
+  const handleShow = () => {
+    if (show == false){
+      setShow(true);
+    } else{
+      setShow(false);
+    }
+  }
+
+  const [menuShow, setMenuShow] = useState(false);
+
+  const handleMenuClose = () => setMenuShow(false);
+
+  const handleMenuShow = () => {
+    if (menuShow == false){
+      setMenuShow(true);
+    } else{
+      setMenuShow(false);
+    }
+  }
 
   const router = useRouter();
   const goToRegister = () => {
@@ -31,9 +51,18 @@ const Nav = (username) => {
       <nav className="navbar">
         <ul>
           <li>
-            <Link href="/">
+            <div onClick={handleMenuShow} className="menu-toggle">
               <a>Menu</a>
-            </Link>
+            </div>
+            <Modal show={menuShow} onHide={handleMenuClose} className="menu-modal">
+              {pages.map((menu, i) => {
+                return(
+                  <Link href={menu.slug}>
+                    <a>{menu.title}</a>
+                  </Link>
+                )
+              })}
+            </Modal>
           </li>
           <li>
             <Link href="/">
@@ -51,12 +80,9 @@ const Nav = (username) => {
                 <Modal show={show} onHide={handleClose} className="login">
                   <LoginComponent />
                   <div className="register">
-                    Not a member yet?
+                    <a>Not a member yet?</a>
                     <button onClick={goToRegister}>Start here</button>
                   </div>
-                  <button variant="secondary" onClick={handleClose} className="close">
-                    x
-                  </button>
                 </Modal>
               </>
             : 
