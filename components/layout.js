@@ -1,8 +1,8 @@
 import Nav from "./nav"
 
-const Layout = ({ children, seo}) => (
+const Layout = ({ pages, children, seo}) => (
   <section>
-    <Nav/>
+    <Nav pages={pages}/>
     {children}
     <style jsx>{`
       section{
