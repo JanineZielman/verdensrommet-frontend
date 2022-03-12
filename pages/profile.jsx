@@ -6,12 +6,19 @@ import Layout from '../components/layout'
 
 const Profile = (props) => {
   const router = useRouter();
-  const { user: { email, username } } = props;
 	
+  const [user, setUser] = useState(props.user.username);
+
+  useEffect(() => {
+    // storing input name
+    localStorage.setItem("name", JSON.stringify(user));
+  }, [user]);
+  
 
   const logout = async () => {
     try {
       await axios.get('/api/logout');
+      localStorage.removeItem("name");
       router.push('/');
     } catch (e) {
       console.log(e);
@@ -19,9 +26,14 @@ const Profile = (props) => {
   }
 
   return (
-    <Layout>
+    // <Layout>
+    //   <button onClick={logout}>Logout</button>
+    // </Layout>
+    <>
+      <p>{user}</p>
       <button onClick={logout}>Logout</button>
-    </Layout>
+    </>
+
   )
 }
 
