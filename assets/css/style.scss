@@ -11,6 +11,7 @@ html {
   color: #fff;
   font-size: 30px;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -89,14 +90,14 @@ canvas {
   position: fixed;
   top: 0px;
   right: 24px;
-  width: 200px;
+  width: 175px;
   height: auto;
   z-index: 999;
 }
 
 .navbar {
-  background-color: #fff;
-  border: 2px solid #0000ff;
+  background-color: #0000ff;
+  border: 2px solid #fff;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -105,6 +106,7 @@ canvas {
   height: 75px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   ul {
     list-style-type: none;
     margin: 0;
@@ -113,17 +115,17 @@ canvas {
     align-items: center;
     height: 75px;
     &:last-child {
-      border-left: 2px solid #0000ff;
+      border-left: 2px solid #fff;
     }
     li {
       font-size: 48px;
       text-transform: uppercase;
-      color: #0000ff;
+      color: #fff;
       padding: 0 14px;
-      border-right: 2px solid #0000ff;
+      border-right: 2px solid #fff;
       height: 75px;
       a {
-        color: #0000ff;
+        color: #fff;
       }
     }
   }
@@ -245,14 +247,23 @@ canvas {
 .menu-modal {
   position: fixed;
   bottom: 74px;
-  background-color: #fff;
-  border: 3px solid #0000ff;
+  background-color: #0000ff;
+  border: 3px solid #fff;
   a {
     display: block;
-    color: #0000ff;
+    color: #fff;
     font-size: 30px;
     text-transform: uppercase;
-    border-bottom: 3px solid #0000ff;
+    border-bottom: 3px solid #fff;
     padding: 10px;
   }
+}
+
+//REGISTER
+.register-page {
+  background-color: #0000ff;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  overflow: scroll;
 }

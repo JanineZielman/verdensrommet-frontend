@@ -26,24 +26,28 @@ const RegisterComponent = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username:
-        <input type="text" name="username" onChange={e => handleChange(e)} />
-      </label>
-      <br />
-      <label>
-        Email:
-        <input type="text" name="email" onChange={e => handleChange(e)} />
-      </label>
-      <br />
-      <label>
-        Password:
-        <input type="password" name="password" onChange={e => handleChange(e)} />
-      </label>
-      <br />
-      <button>Register</button>
-    </form>
+    <section className="register-page">
+      {/* /uploads/yellow_ball_847b2b2814.mp4 */}
+      <form onSubmit={handleSubmit}>
+        <label>
+          Username:
+          <input type="text" name="username" onChange={e => handleChange(e)} />
+        </label>
+        <br />
+        <label>
+          Email:
+          <input type="text" name="email" onChange={e => handleChange(e)} />
+        </label>
+        <br />
+        <label>
+          Password:
+          <input type="password" name="password" onChange={e => handleChange(e)} />
+        </label>
+        <br />
+        <button>Register</button>
+      </form>
+    </section>
+    
   )
 }
 
