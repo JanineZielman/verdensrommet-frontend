@@ -8,6 +8,13 @@ const RegisterComponent = () => {
     username: '',
     email: '',
     password: '',
+    full_name: '',
+    contact: '',
+    city: '',
+    languages: '',
+    exchange: '',
+    money: '',
+    kind: ''
   })
 
   const handleSubmit = async (e) => {
@@ -42,6 +49,41 @@ const RegisterComponent = () => {
         <label>
           Password:
           <input type="password" name="password" onChange={e => handleChange(e)} />
+        </label>
+        <br />
+        <label>
+          Name:
+          <input type="text" name="full_name" onChange={e => handleChange(e)} />
+        </label>
+         <br />
+        <label>
+          Contact:
+          <input type="text" name="contact" onChange={e => handleChange(e)} />
+        </label>
+        <br />
+        <label>
+          City:
+          <input type="text" name="city" onChange={e => handleChange(e)} />
+        </label>
+        <br />
+        <label>
+          Languages:
+          <input type="text" name="languages" onChange={e => handleChange(e)} />
+        </label>
+        <br />
+        <label>
+          Work Exchange (max 500 words): 
+          <input type="text" name="exchange" onChange={e => handleChange(e)} />
+        </label>
+        <br />
+        <label>
+          skill/knowledge/service you would like to exchange for money  (max 500 words):
+          <input type="text" name="money" onChange={e => handleChange(e)} />
+        </label>
+        <br />
+        <label>
+          skills/knowledge/services you would like to exchange in kind  (max 500 words): 
+          <input type="text" name="kind" onChange={e => handleChange(e)} />
         </label>
         <br />
         <button>Register</button>

@@ -2,13 +2,31 @@ import axios from 'axios';
 import { setCookie } from 'nookies'
 
 export default async (req, res) => {
-  const { username, password, email } = req.body;
+  const { 
+    username, 
+    password, 
+    email, 
+    full_name,
+    contact,
+    city,
+    languages,
+    exchange,
+    money,
+    kind,  
+  } = req.body;
 
   try {
     const response = await axios.post('http://85.214.72.113:1337/auth/local/register', {
       username,
       email,
       password,
+      full_name,
+      contact,
+      city,
+      languages,
+      exchange,
+      money,
+      kind,
     })
 
     setCookie({ res }, 'jwt', response.data.jwt, {
