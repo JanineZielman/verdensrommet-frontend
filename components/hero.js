@@ -14,11 +14,6 @@ const Hero = ({ page, homepage }) => {
 				<div className="icon">
 					<Image image={homepage.Hero.icon}/>
 				</div>
-				{/* <div className="back">
-					<Link href={'/'}>
-						<a>Back to index</a>
-					</Link>
-				</div> */}
 				{page.Hero &&
 					<>
 						<div className="hero-bg">

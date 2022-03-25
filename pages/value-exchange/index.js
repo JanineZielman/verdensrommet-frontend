@@ -7,7 +7,7 @@ import { fetchAPI } from "../../lib/api"
 const ValueExchange = ({ page, pages, homepage }) => {
   return (
 		<>
-			{/* <Hero page={page} homepage={homepage}/> */}
+			<Hero page={page} homepage={homepage}/>
 			<Layout pages={pages}>
 			</Layout>
 		</>
