@@ -95,7 +95,9 @@ const Nav = ( {pages}) => {
                 </Modal>
               </>
             : 
-              <div><button onClick={logout}>Logout</button></div>
+              <div onClick={logout} className="login-button">
+                <a>Log out</a>
+              </div>
             }
           </li>
         </ul>

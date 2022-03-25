@@ -51,7 +51,7 @@ const HomeNav = ({ homepage, pages }) => {
 					top: 5vh;
 					left: 25vw;
 				}
-				#log-in{
+				#profile{
 					top: 5vh;
 					right: 25vw;
 				}

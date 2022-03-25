@@ -14,11 +14,11 @@ const Hero = ({ page, homepage }) => {
 				<div className="icon">
 					<Image image={homepage.Hero.icon}/>
 				</div>
-				<div className="back">
+				{/* <div className="back">
 					<Link href={'/'}>
 						<a>Back to index</a>
 					</Link>
-				</div>
+				</div> */}
 				{page.Hero &&
 					<>
 						<div className="hero-bg">

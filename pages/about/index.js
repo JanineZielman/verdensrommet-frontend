@@ -3,12 +3,16 @@ import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import Hero from "../../components/hero"
 import { fetchAPI } from "../../lib/api"
+import Content from "../../components/content"
 
 const About = ({ page, pages, homepage }) => {
   return (
 		<>
 			<Hero page={page} homepage={homepage}/>
 			<Layout pages={pages}>
+        {page.content &&
+          <Content page={page}/>
+        }
 			</Layout>
 		</>
   )
