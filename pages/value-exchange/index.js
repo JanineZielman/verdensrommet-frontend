@@ -1,13 +1,21 @@
-import React from "react"
+import React, {useState, useEffect} from 'react';
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import Hero from "../../components/hero"
 import { fetchAPI } from "../../lib/api"
 
 const ValueExchange = ({ page, pages, homepage }) => {
+  const [username, setUsername] = useState('');
+
+  useEffect(() => {
+    const username = localStorage.getItem("name");
+    setUsername(username)
+  }, []);
+
+
   return (
 		<>
-			<Hero page={page} homepage={homepage}/>
+			<Hero page={page} homepage={homepage} username={username}/>
 			<Layout pages={pages}>
 			</Layout>
 		</>
