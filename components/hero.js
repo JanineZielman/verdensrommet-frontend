@@ -13,7 +13,7 @@ const Hero = ({ page, homepage, username }) => {
 			<TopBar page={page}/>
 			<div className="hero-wrapper container">
 				<div className="icon">
-					<Image image={homepage.Hero.icon}/>
+					<Image image={homepage.icon}/>
 				</div>
 				{page.Hero &&
 					<>

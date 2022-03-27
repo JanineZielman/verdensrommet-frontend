@@ -6,7 +6,7 @@ const HomeNav = ({ homepage, pages }) => {
   return (
     <section className="homenav">
 			<div className="icon">
-				<Image image={homepage.Hero.icon}/>
+				<Image image={homepage.icon}/>
 			</div>
 			<div className="logo">
 				<Image image={homepage.image}/>
