@@ -4,8 +4,9 @@ import Image from "../components/image";
 import Link from "next/link"
 import TopBar from "../components/topBar"
 import PodcastSection from "../components/podcastSection"
+import { getStrapiMedia } from "../lib/media";
 
-const Hero = ({ page, homepage }) => {
+const Hero = ({ page, homepage, username }) => {
 	console.log(page)
   return (
     <section className="hero">
@@ -18,7 +19,7 @@ const Hero = ({ page, homepage }) => {
 					<>
 						<div className="hero-bg">
 							<video loop={true} autoPlay="autoPlay" controls muted>
-								<source src={"https://cms.verdensrommet.network/app/public" + page.Hero?.background?.url} type="video/mp4"/>
+								<source src={getStrapiMedia(page.Hero?.background)} type="video/mp4"/>
 								Your browser does not support the video tag.
 							</video>
 						</div>
@@ -31,9 +32,15 @@ const Hero = ({ page, homepage }) => {
 						}
 						{page.Hero.links &&
 							<div className="links">
-								<ReactMarkdown 
-									children={page.Hero.links}
-								/>
+								{username == undefined ? 
+									<ReactMarkdown 
+										children={page.Hero.links}
+									/>
+									: 
+									<ReactMarkdown 
+										children={page.links_logged_in}
+									/>
+								}
 							</div>
 						}
 					</>
