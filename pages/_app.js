@@ -1,6 +1,8 @@
 import App from "next/app"
 import Head from "next/head"
 import "../assets/css/style.scss"
+import "../assets/css/homenav.scss"
+import "../assets/css/mobile.scss"
 import { createContext } from "react"
 import { fetchAPI } from "../lib/api"
 import { getStrapiMedia } from "../lib/media"
