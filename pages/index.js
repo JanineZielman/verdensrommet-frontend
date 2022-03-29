@@ -7,7 +7,7 @@ import { getStrapiMedia } from "../lib/media"
 import Image from "../components/image"
 
 const Home = ({ homepage, pages, news }) => {
-  console.log(news)
+  console.log(pages)
   return (
     <Layout pages={pages}>
       <div className="hero-bg">

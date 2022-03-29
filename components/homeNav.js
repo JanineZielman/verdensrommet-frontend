@@ -3,6 +3,7 @@ import Link from "next/link"
 import Image from "./image"
 
 const HomeNav = ({ homepage, pages }) => {
+	console.log(homepage)
   return (
     <section className="homenav">
 			<div className="icon">
@@ -15,7 +16,14 @@ const HomeNav = ({ homepage, pages }) => {
 				return (
 					<div id={page.slug} key={'link-'+ i} className="link">
 						<Link href={`/${page.slug}`}>
-							<a>{page.title}</a>
+							<a>
+								{page.title}
+								{page.icon &&
+									<div className="hidden-icon">
+										<Image image={page.icon}/>
+									</div>
+								}
+							</a>
 						</Link>
 					</div>
 				)
@@ -33,6 +41,9 @@ const HomeNav = ({ homepage, pages }) => {
 					height: auto;
 					align-items: center;
 				}
+				.icon{
+					cursor: pointer;
+				}
 				a{
 					color: #fff;
 					text-transform: uppercase;
@@ -42,6 +53,29 @@ const HomeNav = ({ homepage, pages }) => {
 					max-width: 15vw;
 					text-align: center;
 					line-height: 1;
+					transition: all 0.7s ease;
+				}
+				.link a{
+					transition: all 0.7s ease;
+				}
+				.link:hover a{
+					opacity: 0;
+				}
+				.link:hover .hidden-icon{
+					visibility: visible;
+					opacity: 1;
+					cursor: pointer;
+				}
+				.hidden-icon {
+					visibility: hidden;
+					opacity: 0;
+					margin: auto;
+					margin-top: -80px;
+					transition: all 0.7s ease;
+					height: auto;
+					width: 100%;
+					min-width: 100px;
+					max-width: 150px;
 				}
 				#about{
 					top: 10vh;
