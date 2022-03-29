@@ -75,7 +75,6 @@ const Home = ({ homepage, pages, news }) => {
           color: #00FF3B;
           padding: 5px 0px;
           min-height: 60vh;
-          font-size: 40px;
           width: 100%;
           overflow: hidden;
         }
@@ -84,7 +83,6 @@ const Home = ({ homepage, pages, news }) => {
           color: #0000FF;
           padding: 5px 0px;
           min-height: 100vh;
-          font-size: 40px;
           width: 100%;
           overflow: hidden;
           background-position: center;
@@ -92,7 +90,6 @@ const Home = ({ homepage, pages, news }) => {
           background-size: cover;
         }
         h2{
-          font-size: 40px;
           text-transform: uppercase;
           padding-bottom: 14px;
         }
