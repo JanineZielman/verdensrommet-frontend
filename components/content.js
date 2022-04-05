@@ -31,10 +31,15 @@ const Content = ({ page }) => {
 						{section.title && 
 							<h2 key={'title'+i}>{section.title}</h2>
 						}
-						<ReactMarkdown 
-							key={'text'+i}
-							children={section.text} 
-						/>
+						{section.text && 
+							<ReactMarkdown 
+								key={'text'+i}
+								children={section.text} 
+							/>
+						}
+						{section.image && 
+							<Image image={section.image}/>
+						}
 					</div>
 				)
 			})}
