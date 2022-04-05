@@ -10,7 +10,7 @@ const HomeNav = ({ homepage, pages }) => {
 				<Image image={homepage.icon}/>
 			</div>
 			<div className="logo">
-				<Image image={homepage.image}/>
+				<Image image={homepage.logo}/>
 			</div>
 			{pages.map((page, i) => {
 				return (
