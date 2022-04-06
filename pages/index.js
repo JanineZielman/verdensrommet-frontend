@@ -1,10 +1,12 @@
 import React from "react"
 import Layout from "../components/layout"
+import ReactMarkdown from "react-markdown";
 import Seo from "../components/seo"
 import { fetchAPI } from "../lib/api"
 import HomeNav from "../components/homeNav"
 import { getStrapiMedia } from "../lib/media"
 import Image from "../components/image"
+import Link from "next/link"
 
 const Home = ({ homepage, pages, news }) => {
   console.log(pages)
@@ -34,7 +36,11 @@ const Home = ({ homepage, pages, news }) => {
             <span>{homepage.about.title}</span>
             <span>{homepage.about.title}</span>
           </h2>
-          <p className="intro-text">{homepage.about.text}</p>
+          <p className="intro-text">
+            <ReactMarkdown 
+              children={homepage.about.text}
+            />
+          </p>
         </section>
       }
       {homepage.news &&
@@ -61,8 +67,13 @@ const Home = ({ homepage, pages, news }) => {
             {news.map((item, i) => {
               return(
                 <div className="news-item">
-                  <Image image={item.cover_image}/>
-                  <p>{item.intro_text}</p>
+                  <Link href={item.external_url ? item.external_url : 'news/' + item.slug }>
+                    <a target={item.external_url ? '_blank' : '' }>
+                      <Image image={item.cover_image}/>
+                      <h4>{item.title}</h4>
+                      <p>{item.intro_text}</p>
+                    </a>
+                  </Link>
                 </div>
               )
             })}
