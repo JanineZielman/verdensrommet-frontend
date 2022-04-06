@@ -12,6 +12,7 @@ const Profile = (props) => {
   useEffect(() => {
     // storing input name
     localStorage.setItem("name", JSON.stringify(user));
+    router.push('/');
   }, [user]);
   
 
@@ -26,13 +27,10 @@ const Profile = (props) => {
   }
 
   return (
-    // <Layout>
-    //   <button onClick={logout}>Logout</button>
-    // </Layout>
-    <>
-      <p>{user}</p>
-      <button onClick={logout}>Logout</button>
-    </>
+    <section className='profile' >
+      {/* <p>{user}</p>
+      <button onClick={logout}>Logout</button> */}
+    </section>
 
   )
 }
