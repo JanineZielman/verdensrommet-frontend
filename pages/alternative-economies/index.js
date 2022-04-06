@@ -12,7 +12,7 @@ const AltEco = ({ page, pages, homepage }) => {
 			{/* <Hero page={page} homepage={homepage}/> */}
       <TopBar page={page}/>
 			<Layout pages={pages}>
-        {page.content &&
+        {page.section &&
           <Content page={page}/>
         }
 			</Layout>
