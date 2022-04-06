@@ -10,7 +10,7 @@ const About = ({ page, pages, homepage }) => {
 		<>
 			<Hero page={page} homepage={homepage}/>
 			<Layout pages={pages}>
-        {page.content &&
+        {page.section &&
           <Content page={page}/>
         }
 			</Layout>
