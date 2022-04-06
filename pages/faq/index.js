@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import Hero from "../../components/hero"
+import Content from "../../components/content"
 import { fetchAPI } from "../../lib/api"
 
 const Faq = ({ page, pages, homepage }) => {
@@ -9,6 +10,9 @@ const Faq = ({ page, pages, homepage }) => {
 		<>
 			<Hero page={page} homepage={homepage}/>
 			<Layout pages={pages}>
+        {page.section &&
+          <Content page={page}/>
+        }
 			</Layout>
 		</>
   )

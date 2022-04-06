@@ -1,7 +1,9 @@
-import React from "react"
+import React, {useRef, useEffect} from "react"
 import ReactMarkdown from "react-markdown";
 import { getStrapiMedia } from "../lib/media";
 import Image from "../components/image"
+import Link from "next/link"
+import Collapsible from 'react-collapsible';
 
 const Content = ({ page }) => {
 	console.log(page)
@@ -56,7 +58,9 @@ const Content = ({ page }) => {
 							{item.image[0] && 
 								<>
 									{item.image.map((content, i) => {
-										<Image image={content.image}/>
+										return(
+											<Image image={content.image}/>
+										)
 									})}
 								</>
 							}
@@ -81,6 +85,46 @@ const Content = ({ page }) => {
 										)
 									})}
 								</>
+							}
+							{item.links[0] && 
+								<div className="sources">
+									{item.links.map((content, i) => {
+										return(
+											<Link href={content.link_url}>
+												<a target="_blank">
+													{content.link_text}
+													{content.popup &&
+														<div className="popup"> 
+															<span>?</span> 
+															<div className="hidden">{content.popup}</div>
+														</div>
+													}
+												</a>
+											</Link>
+										)
+									})}
+								</div>
+							}
+							{item.collapsible && 
+							<div className="collapsible-wrapper">
+								{item.collapsible.map((content, i) => {
+									return(
+										<>
+										{content.title &&
+											<h3>{content.title}</h3>
+										}
+										<div className="collapsible">
+											<Collapsible trigger={content.question}>
+												{content.answer ?
+													content.answer
+													: <div>Answer will be added soon!</div>
+												}
+											</Collapsible>
+										</div>
+										</>
+									)
+								})}
+							 </div>
 							}
 						</div>
 						<style jsx>{`

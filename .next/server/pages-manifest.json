@@ -2,6 +2,6 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/podcast": "pages/podcast.js",
-  "/alternative-economies": "pages/alternative-economies.js"
+  "/faq": "pages/faq.js",
+  "/": "pages/index.js"
 }
