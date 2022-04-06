@@ -4,6 +4,7 @@ import Image from "./image"
 
 const HomeNav = ({ homepage, pages }) => {
 	console.log(homepage)
+	
   return (
     <section className="homenav">
 			<div className="icon">
