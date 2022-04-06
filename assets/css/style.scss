@@ -276,7 +276,7 @@ canvas {
 .menu-toggle {
   cursor: pointer;
 }
-.menu-modal {
+.menu-modal{
   position: fixed;
   bottom: 74px;
   background-color: #0000ff;
@@ -327,5 +327,71 @@ canvas {
 .register , .alt-eco {
   .top-bar {
     background-color: #0000ff;
+  }
+}
+
+.sources{
+  a{
+    display: block;
+    font-size: 40px;
+    padding: 14px 0;
+    border-bottom: 3px solid #0000ff;
+    &:nth-child(1){
+      border-top: 3px solid #0000ff;
+    }
+    .popup{
+      color: #fff;
+      background-color: #0000ff;
+      width: 60px;
+      text-align: center;
+      margin-left: 14px;
+      border-radius: 10px;
+      display: inline-block;
+      position: absolute;
+      transition: all 0.4s ease-in-out;
+      .hidden{
+        display: none;
+        font-size: 18px;
+        padding: 14px;
+      }
+      &:hover{
+        width: 300px;
+        min-height: 60px;
+        z-index: 999;
+        span{
+          display: none;
+        }
+        .hidden {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.collapsible-wrapper{
+  font-size: 40px;
+  .collapsible{
+    padding: 14px 0;
+    border-bottom: 3px solid #0000ff;
+    cursor: pointer;
+    &:first-child{
+      border-top: 3px solid #0000ff;
+    }
+    .Collapsible span:after{
+      content: ' ';
+      display: inline-block;
+      width: 0px;
+      height: 0px;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-top: 20px solid #0000ff;
+      margin-left: 14px;
+      transition: all 0.4s ease-in-out;
+    }
+    .Collapsible span.is-open:after {
+      -webkit-transform: scaleY(-1);
+      transform: scaleY(-1);
+    }
   }
 }
