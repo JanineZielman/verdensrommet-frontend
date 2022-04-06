@@ -20,14 +20,20 @@ const Content = ({ page }) => {
 				return (
 					<section 
 						className="content container"
-						id={item.settings.section_id}
+						id={item.settings?.section_id}
 						style=
 						{{
-							backgroundColor: item.settings.background ? "transparent" : "#D5D5D5",
-							color: item.settings.background ? "#fff" : "#072FDE"
+							backgroundColor: item.settings?.background ? "transparent" : "#D5D5D5",
+							color: item.settings?.background ? "#fff" : "#072FDE"
 						}} 
 					>
 						<div className="wrapper">
+							{page.cover_image &&
+								<div>
+									<h2>{page.title}</h2>
+									<Image image={page.cover_image}/>
+								</div>
+							}
 							{item.text[0] && 
 							<>
 								{item.text.map((content, i) => {

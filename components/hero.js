@@ -17,12 +17,15 @@ const Hero = ({ page, homepage, username }) => {
 				</div>
 				{page.Hero &&
 					<>
-						<div className="hero-bg">
-							<video loop={true} autoPlay="autoPlay" controls muted>
-								<source src={getStrapiMedia(page.Hero?.background)} type="video/mp4"/>
-								Your browser does not support the video tag.
-							</video>
-						</div>
+						{page.Hero.background &&
+							<div className="hero-bg">
+								<video loop={true} autoPlay="autoPlay" controls muted>
+									<source src={getStrapiMedia(page.Hero?.background)} type="video/mp4"/>
+									Your browser does not support the video tag.
+								</video>
+							</div>
+						}
+					
 						{page.Hero.text &&
 							<div className="intro-text">
 								<ReactMarkdown 

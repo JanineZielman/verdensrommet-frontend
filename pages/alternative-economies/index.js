@@ -9,7 +9,7 @@ import { fetchAPI } from "../../lib/api"
 const AltEco = ({ page, pages, homepage }) => {
   return (
 		<section className="alt-eco">
-			{/* <Hero page={page} homepage={homepage}/> */}
+			<Hero page={page} homepage={homepage}/>
       <TopBar page={page}/>
 			<Layout pages={pages}>
         {page.section &&
