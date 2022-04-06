@@ -1,3 +1,6 @@
-.next
+.next 
+.next/
+.next/cache
 .next/*
 package-lock.json
+*.pack
