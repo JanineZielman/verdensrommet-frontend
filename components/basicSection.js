@@ -47,9 +47,9 @@ const BasicSection = ({ page }) => {
 							padding-bottom: 48px;
 							text-transform: uppercase;
 						}
-						.wrapper{
+						/* .wrapper{
 							max-width: 900px;
-						}
+						} */
 					`}</style>
 				</section>
 			)

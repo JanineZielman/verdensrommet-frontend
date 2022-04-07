@@ -21,12 +21,12 @@ const Content = ({ page }) => {
 			{page.section.map((item, i) => {
 				return (
 					<section 
-						className="content container"
+						className={`content container ${item.settings?.background ? "moving-bg" : ""} `}
 						id={item.settings?.section_id}
 						style=
 						{{
 							backgroundColor: item.settings?.background ? "transparent" : "#D5D5D5",
-							color: item.settings?.background ? "#fff" : "#072FDE"
+							color: item.settings?.background ? "#fff" : "#072FDE",
 						}} 
 					>
 						<div className="wrapper">
@@ -90,17 +90,21 @@ const Content = ({ page }) => {
 								<div className="sources">
 									{item.links.map((content, i) => {
 										return(
-											<Link href={content.link_url}>
-												<a target="_blank">
-													{content.link_text}
-													{content.popup &&
-														<div className="popup"> 
-															<span>?</span> 
-															<div className="hidden">{content.popup}</div>
-														</div>
-													}
-												</a>
-											</Link>
+											<>
+											{content.link_url &&
+												<Link href={content.file ? 'https://cms.verdensrommet.network/app/public' + content.link_url : content.link_url}>
+													<a target="_blank">
+														{content.link_text}
+														{content.popup &&
+															<div className="popup"> 
+																<span>?</span> 
+																<div className="hidden">{content.popup}</div>
+															</div>
+														}
+													</a>
+												</Link>
+											}
+											</>
 										)
 									})}
 								</div>
@@ -133,16 +137,9 @@ const Content = ({ page }) => {
 								color: #072FDE;
 								background-size: cover;
 							}
-							/* h2{
-								font-size: 120px;
-								line-height: 1;
-								margin: 0;
-								padding-bottom: 48px;
-								text-transform: uppercase;
-							} */
-							.wrapper{
+							/* .wrapper{
 								max-width: 900px;
-							}
+							} */
 						`}</style>
 					</section>
 				)

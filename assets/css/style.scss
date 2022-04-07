@@ -50,9 +50,21 @@ p a {
   padding: 24px 48px;
 }
 
+.content{
+  padding-bottom: 48px;
+}
+
+.wrapper{
+  max-width: 900px;
+}
+
 h1 {
   font-size: 53px;
   margin: 0;
+}
+
+h2{
+  margin-top: 0;
 }
 
 button {
@@ -397,6 +409,18 @@ canvas {
     .Collapsible span.is-open:after {
       -webkit-transform: scaleY(-1);
       transform: scaleY(-1);
+    }
+  }
+}
+
+.moving-bg{
+  .sources {
+    a {
+      border-bottom: 3px solid #fff;
+  
+      &:nth-child(1) {
+        border-top: 3px solid #fff;
+      }
     }
   }
 }
