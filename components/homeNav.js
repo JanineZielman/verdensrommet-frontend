@@ -11,7 +11,7 @@ const HomeNav = ({ homepage, pages }) => {
 				<Image image={homepage.icon}/>
 			</div>
 			<div className="logo">
-				<Image image={homepage.logo}/>
+				<Image image={homepage.logo} layout='responsive' objectFit='contain'/>
 			</div>
 			{pages.map((page, i) => {
 				return (
