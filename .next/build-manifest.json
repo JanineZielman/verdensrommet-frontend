@@ -14,11 +14,6 @@
     "static/development/_ssgManifest.js"
   ],
   "pages": {
-    "/": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/index.js"
-    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -34,10 +29,20 @@
       "static/chunks/main.js",
       "static/chunks/pages/about.js"
     ],
+    "/contact": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/contact.js"
+    ],
     "/faq": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/faq.js"
+    ],
+    "/podcast": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/podcast.js"
     ],
     "/visa-help": [
       "static/chunks/webpack.js",

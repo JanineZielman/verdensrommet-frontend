@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Link from "next/link"
-import Modal from 'react-bootstrap/Modal'
+import Modal from 'react-modal';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import LoginComponent from './loginComponent';
@@ -52,18 +52,24 @@ const Nav = ( {pages}) => {
   const goToRegister = () => {
     router.push('/register');
   }
+
+  const modalStyles = {
+    overlay: {
+      backgroundColor: 'transparent',
+    },
+  };
   
  
   
   return (
     <div>
-      <nav className="navbar">
+      <div className="navbar">
         <ul>
           <li>
             <div onClick={handleMenuShow} className="menu-toggle">
               <a>Menu</a>
             </div>
-            <Modal show={menuShow} onHide={handleMenuClose} className="menu-modal">
+            <Modal isOpen={menuShow} onHide={handleMenuClose} className="menu-modal" style={modalStyles}>
               {pages.map((menu, i) => {
                 return(
                   <Link href={menu.slug}>
@@ -73,20 +79,20 @@ const Nav = ( {pages}) => {
               })}
             </Modal>
           </li>
-          <li>
+          <li className="search">
             <Link href="/">
               <a>Search</a>
             </Link>
           </li>
         </ul>
-        <ul>
+        <ul className="desktop-login">
           <li>
             {username == undefined ? 
               <>
                 <div onClick={handleShow} className="login-button">
                   <a>Log in</a>
                 </div>
-                <Modal show={show} onHide={handleClose} className="login">
+                <Modal isOpen={show} onHide={handleClose} className="login" style={modalStyles}>
                   <LoginComponent />
                   <div className="register">
                     <a>Not a member yet?</a>
@@ -101,7 +107,7 @@ const Nav = ( {pages}) => {
             }
           </li>
         </ul>
-      </nav>
+      </div>
     </div>
   )
 }
