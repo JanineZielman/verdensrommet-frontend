@@ -10,11 +10,8 @@ const Hero = ({ page, homepage, username }) => {
 	console.log(page)
   return (
     <section className="hero">
-			<TopBar page={page}/>
+			<TopBar page={page} homepage={homepage}/>
 			<div className="hero-wrapper container">
-				<div className="icon">
-					<Image image={homepage.icon}/>
-				</div>
 				{page.Hero &&
 					<>
 						{page.Hero.background &&

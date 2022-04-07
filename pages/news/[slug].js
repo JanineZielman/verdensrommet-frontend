@@ -5,16 +5,16 @@ import Content from "../../components/content"
 import Image from "../../components/image"
 import Seo from "../../components/seo"
 
-const Page = ({pages, page, menu}) => {
+const NewsPage = ({pages, page, menu, homepage}) => {
   return (
-    <>
-      {/* <Topbar page={page}/> */}
+    <section className="news-page">
+      <Topbar page={page} homepage={homepage}/>
       <Layout pages={menu}>
 				{page.section &&
           <Content page={page}/>
         }
       </Layout>
-    </>
+    </section>
   )
 }
 
@@ -43,31 +43,16 @@ export async function getStaticProps({ params }) {
     },
   })
 
+  const homepage = await fetchAPI("/homepage", {
+    populate: {
+      page: { populate: "*" },
+    },
+  })
+
   return {
-    props: { page: pagesRes[0], pages: allPagesRes, menu: menu },
+    props: { page: pagesRes[0], pages: allPagesRes, menu: menu, homepage: homepage },
     revalidate: 1,
   };
 }
 
-
-// export async function getStaticProps({ params }) {
-//   const pagesRes = await fetchAPI("/pages", {
-//     filters: { slug: params.slug },
-//     // populate: {
-//     //   text: "*",
-//     //   page: { populate: "*" },
-//     //   seo: { populate: "*" },
-//     // },
-//   })
-//   const allPagesRes = await fetchAPI("/pages", {
-//     // populate: {
-//     //   page: { populate: "*" },
-//     // },
-//   })
-//   return {
-//     props: { page: pagesRes[0], pages: allPagesRes },
-//     revalidate: 1,
-//   }
-// }
-
-export default Page
+export default NewsPage
