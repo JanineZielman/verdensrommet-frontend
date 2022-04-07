@@ -115,16 +115,30 @@ const Content = ({ page }) => {
 									return(
 										<>
 										{content.title &&
-											<h3>{content.title}</h3>
+											<>
+												<h4>{content.title}</h4>
+										
+												<div className={`collapsible first ${content.answer ? 'answer' : 'no-answer'}`}>
+													<Collapsible trigger={content.question}>
+														{content.answer}
+													</Collapsible>
+												</div>
+
+												<div className="load-more">
+													<Collapsible trigger={' '}>
+														{item.collapsible.slice(1).map((content, i) => {
+															return(
+																<div className={`collapsible ${content.answer ? 'answer' : 'no-answer'}`}>
+																	<Collapsible trigger={content.question}>
+																		{content.answer}
+																	</Collapsible>
+																</div>
+															)
+														})}
+													</Collapsible>
+												</div>
+											</>
 										}
-										<div className="collapsible">
-											<Collapsible trigger={content.question}>
-												{content.answer ?
-													content.answer
-													: <div>Answer will be added soon!</div>
-												}
-											</Collapsible>
-										</div>
 										</>
 									)
 								})}
@@ -137,9 +151,7 @@ const Content = ({ page }) => {
 								color: #072FDE;
 								background-size: cover;
 							}
-							/* .wrapper{
-								max-width: 900px;
-							} */
+
 						`}</style>
 					</section>
 				)
