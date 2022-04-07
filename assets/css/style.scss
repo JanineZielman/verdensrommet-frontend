@@ -388,28 +388,63 @@ canvas {
 }
 
 .collapsible-wrapper{
-  font-size: 40px;
+  font-size: 30px;
   .collapsible{
     padding: 14px 0;
     border-bottom: 3px solid #0000ff;
     cursor: pointer;
-    &:first-child{
+    &.first{
       border-top: 3px solid #0000ff;
     }
-    .Collapsible span:after{
-      content: ' ';
-      display: inline-block;
-      width: 0px;
-      height: 0px;
-      border-left: 20px solid transparent;
-      border-right: 20px solid transparent;
-      border-top: 20px solid #0000ff;
-      margin-left: 14px;
-      transition: all 0.4s ease-in-out;
+    &.answer{
+      .Collapsible span:after {
+        content: ' ';
+        display: inline-block;
+        width: 0px;
+        height: 0px;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 20px solid #0000ff;
+        margin-left: 14px;
+        transition: all 0.4s ease-in-out;
+      }
+      
+      .Collapsible span.is-open:after {
+        -webkit-transform: scaleY(-1);
+        transform: scaleY(-1);
+      }
     }
-    .Collapsible span.is-open:after {
-      -webkit-transform: scaleY(-1);
-      transform: scaleY(-1);
+  }
+  .load-more{
+    cursor: pointer;
+    text-align: right;
+    .Collapsible__trigger{
+      border: none;
+      font-size: 24px;
+      transition: all 0.4s ease-in-out;
+      &:before{
+        content: 'View all questions...';
+      }
+      &.is-open{
+        &:before {
+          content: 'Close all questions...';
+        }
+      }
+    }
+    .Collapsible__contentInner{
+      text-align: left;
+      .Collapsible__trigger {
+        font-size: 30px;
+        &:before {
+          content: '';
+        }
+        
+        &.is-open {
+          &:before {
+            content: '';
+          }
+        }
+      }
     }
   }
 }
@@ -427,7 +462,7 @@ canvas {
   .collapsible-wrapper {
     .collapsible {
       border-bottom: 3px solid #fff;
-      &:first-child {
+      &.first {
         border-top: 3px solid #fff;
       }
       .Collapsible span:after {
