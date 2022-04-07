@@ -212,9 +212,9 @@ canvas {
   flex-wrap: wrap;
   width: 98vw;
   padding: 0 1vw;
-  justify-content: center;
+  justify-content: left;
   .news-item {
-    width: 30vw;
+    width: 30.5vw;
     margin: 0 1vw 2vw 1vw;
     .image{
       position: relative;
@@ -243,28 +243,29 @@ canvas {
   text-decoration: underline;
 }
 .login {
-  background-color: #fff;
+  background-color: #0000ff;
   position: fixed;
   bottom: 74px;
   right: -3px;
-  border: 3px solid #0000ff;
-  color: #0000ff;
+  border: 3px solid #fff;
+  color: #fff;
   input {
     border: none;
-    border-bottom: 3px solid #0000ff;
-    color: #0000ff;
+    border-bottom: 3px solid #fff;
+    background-color: #0000ff;
+    color: #fff;
     width: calc(100% - 20px);
     font-size: 30px;
     line-height: 1.4;
     padding: 10px;
     &::placeholder {
-      color: #0000ff;
+      color: #fff;
       font-size: 30px;
       line-height: 1.4;
     }
   }
   button {
-    color: #0000ff;
+    color: #fff;
     background-color: transparent;
     border: none;
     font-size: 30px;
@@ -341,7 +342,7 @@ canvas {
   }
 }
 
-.register , .alt-eco {
+.register , .alt-eco, .news-page {
   .top-bar {
     background-color: #0000ff;
   }
@@ -423,4 +424,15 @@ canvas {
       }
     }
   }
+  .collapsible-wrapper {
+    .collapsible {
+      border-bottom: 3px solid #fff;
+      &:first-child {
+        border-top: 3px solid #fff;
+      }
+      .Collapsible span:after {
+        border-top: 20px solid #fff;
+      }
+    }
+  } 
 }

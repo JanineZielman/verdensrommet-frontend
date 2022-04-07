@@ -1,10 +1,19 @@
 import React from "react"
 import Link from "next/link"
+import Image from "../components/image"
 
-const TopBar = ({ page }) => {
+const TopBar = ({ page, homepage }) => {
+  console.log(homepage)
   return (
     <section className="top-bar">
-			<h1><Link href={'/'}><a>{page.slug}</a></Link></h1>
+			<h1>
+        <Link href={'/'}>
+          <a>{page.order ? 'news' : page.slug}</a>
+        </Link>
+      </h1>
+      <div className="icon">
+        <Image image={homepage.icon}/>
+      </div>
 			<style jsx>{`
         h1{
           width: 100%;
