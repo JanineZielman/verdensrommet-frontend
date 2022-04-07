@@ -1,18 +1,96 @@
 @media only screen and (max-width: 600px) {
-  .homenav {
-    font-size: 20px;
-  }
   .icon {
     width: 80px;
     right: 5px;
   }
+  h1{
+    font-size: 40px;
+  }
   h2 {
     font-size: 30px;
+  }
+  h4{
+    font-size: 24px;
   }
   p {
     font-size: 20px;
   }
-  .news-container div {
+  ul{
+    font-size: 20px;
+  }
+  .container{
+    padding: 10px;
+  }
+  .news-container .news-item {
     width: 100%;
+    margin-bottom: 48px;
+  }
+  .navbar{
+    .search{
+      display: none;
+    }
+  }
+  .sources{
+    a{
+      font-size: 20px;
+      .popup {
+        width: 30px;
+      }
+    }
+  }
+  .login{
+    right: 0;
+    input{
+      font-size: 20px;
+      &::placeholder{
+        font-size: 20px;
+      }
+    }
+    a, button{
+      font-size: 20px;
+    }
+  }
+  .homenav{
+    font-size: 24px;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .logo{
+      top: 20vh;
+      width: 100vw;
+    }
+    .links-wrapper{
+      height: 60vh;
+      width: 100vw;
+      margin-top: 30vh;
+    }
+    .link{
+      position: relative;
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: 50px;
+    }
+  }
+  .spacer {
+    display: none;
+  }
+  .hero{
+    .links {
+      position: relative;
+      bottom: 0;
+      left: 0;
+      text-align: left;
+      width: 100%;
+      padding: 0 10px;
+    }
+  }
+  .collapsible-wrapper, .collapsible-wrapper .load-more .Collapsible__contentInner .Collapsible__trigger{
+    font-size: 20px;
+  }
+  .collapsible-wrapper .load-more .Collapsible__trigger{
+    font-size: 18px;
   }
 }

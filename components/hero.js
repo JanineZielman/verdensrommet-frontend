@@ -52,9 +52,9 @@ const Hero = ({ page, homepage, username }) => {
 			<style jsx>{`
 				section{
 					position: relative;
-					height: calc(100vh - 79px);
+					height: calc(100vh - 60px);
 				}
-				.back{
+				/* .back{
 					position: fixed;
 					top: 200px;
 					right: 48px;
@@ -74,7 +74,7 @@ const Hero = ({ page, homepage, username }) => {
 					bottom: 84px;
 					width: 350px;
 					font-size: 40px;
-				}
+				} */
 			`}</style>
     </section>
   )

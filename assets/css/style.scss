@@ -10,12 +10,16 @@ html {
   padding: 0;
   color: #fff;
   font-size: 30px;
+  width: 100vw;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 body {
   padding-bottom: 80px;
+  position:fixed;
+  overflow-y: scroll;
+  height: calc(100vh - 60px);
 }
 
 body * {
@@ -93,11 +97,6 @@ button {
   line-height: 1.75;
 }
 
-canvas {
-  width: 100vw;
-  height: calc(100vh - 75px);
-}
-
 .icon {
   position: fixed;
   top: 0px;
@@ -115,7 +114,7 @@ canvas {
   left: 0;
   z-index: 999;
   width: 100vw;
-  height: 75px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -125,17 +124,17 @@ canvas {
     padding: 0;
     display: flex;
     align-items: center;
-    height: 75px;
+    height: 60px;
     &:last-child {
       border-left: 2px solid #fff;
     }
     li {
-      font-size: 48px;
+      font-size: 40px;
       text-transform: uppercase;
       color: #fff;
       padding: 0 14px;
       border-right: 2px solid #fff;
-      height: 75px;
+      height: 60px;
       a {
         color: #fff;
       }
@@ -148,7 +147,8 @@ canvas {
   top: 0;
   left: 0;
   width: 100vw;
-  height: calc(100vh - 79px);
+  height: calc(100vh - 60px);
+  overflow-y: scroll;
   z-index: -1;
   video {
     object-fit: cover;
@@ -168,7 +168,7 @@ canvas {
   top: 0;
   left: 0;
   width: 100vw;
-  height: calc(100vh - 79px);
+  height: calc(100vh - 60px);
   z-index: -1;
   video {
     object-fit: cover;
@@ -245,7 +245,7 @@ canvas {
 .login {
   background-color: #0000ff;
   position: fixed;
-  bottom: 74px;
+  bottom: 60px;
   right: -3px;
   border: 3px solid #fff;
   color: #fff;
@@ -296,7 +296,7 @@ canvas {
 }
 .menu-modal{
   position: fixed;
-  bottom: 74px;
+  bottom: 58px;
   background-color: #0000ff;
   border: 3px solid #fff;
   a {
@@ -449,6 +449,17 @@ canvas {
   }
 }
 
+#allies{
+  ul{
+    list-style-type: none;
+    padding: 0;
+    li{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
 .moving-bg{
   .sources {
     a {
@@ -470,4 +481,33 @@ canvas {
       }
     }
   } 
+}
+
+.hero{
+  position: relative;
+  height: calc(100vh - 60px);
+  overflow-y: scroll;
+  .back {
+    position: fixed;
+    top: 200px;
+    right: 48px;
+    background-color: #fff;
+    padding: 5px 20px 10px 20px;
+    border-radius: 24px;
+    color: #0000FF;
+    font-size: 18px;
+  }
+  
+  .intro-text {
+    color: #fff;
+    font-size: 30px;
+  }
+  
+  .links {
+    position: fixed;
+    right: 24px;
+    bottom: 84px;
+    width: 350px;
+    font-size: 40px;
+  }
 }

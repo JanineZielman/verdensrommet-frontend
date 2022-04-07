@@ -48,36 +48,35 @@
     }
   }
 
-  // #about {
-  //   top: 10vh;
-  //   left: 5vw;
-  // }
-  #about {
-    top: 5vh;
-    left: 23vw;
-  }
-  #contact {
-    top: 5vh;
-    right: 28vw;
-  }
-  #visa-help {
-    top: 30vh;
-    right: 5vw;
-  }
-  #faq {
-    top: 60vh;
-    right: 12vw;
-  }
-  #podcast {
-    top: 80vh;
-    right: 30vw;
-  }
-  #value-exchange {
-    top: 35vh;
-    left: 5vw;
-  }
-  #alternative-economies {
-    top: 70vh;
-    left: 10vw;
+
+  @media only screen and (min-width: 600px) {
+    #about {
+      top: 5vh;
+      left: 23vw;
+    }
+    #contact {
+      top: 5vh;
+      right: 28vw;
+    }
+    #visa-help {
+      top: 30vh;
+      right: 5vw;
+    }
+    #faq {
+      top: 60vh;
+      right: 12vw;
+    }
+    #podcast {
+      top: 80vh;
+      right: 30vw;
+    }
+    #value-exchange {
+      top: 35vh;
+      left: 5vw;
+    }
+    #alternative-economies {
+      top: 70vh;
+      left: 10vw;
+    }
   }
 }

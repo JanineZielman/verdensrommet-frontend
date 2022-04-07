@@ -13,22 +13,24 @@ const HomeNav = ({ homepage, pages }) => {
 			<div className="logo">
 				<Image image={homepage.logo} layout='responsive' objectFit='contain'/>
 			</div>
-			{pages.map((page, i) => {
-				return (
-					<div id={page.slug} key={'link-'+ i} className="link">
-						<Link href={`/${page.slug}`}>
-							<a>
-								{page.title}
-								{page.icon &&
-									<div className="hidden-icon">
-										<Image image={page.icon}/>
-									</div>
-								}
-							</a>
-						</Link>
-					</div>
-				)
-			})}
+			<div className="links-wrapper">
+				{pages.map((page, i) => {
+					return (
+						<div id={page.slug} key={'link-'+ i} className="link">
+							<Link href={`/${page.slug}`}>
+								<a>
+									{page.title}
+									{page.icon &&
+										<div className="hidden-icon">
+											<Image image={page.icon}/>
+										</div>
+									}
+								</a>
+							</Link>
+						</div>
+					)
+				})}
+			</div>
     </section>
   )
 }
