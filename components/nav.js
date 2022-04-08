@@ -87,7 +87,7 @@ const Nav = ( {pages, homepage}) => {
           <li className='announcements'>
             <div className="marquee">
               {homepage.announcement &&
-                <span>{homepage.announcement}</span>
+                <span>{homepage.announcement} &nbsp; &nbsp; &nbsp; {homepage.announcement}</span>
               }
             </div>
           </li>
