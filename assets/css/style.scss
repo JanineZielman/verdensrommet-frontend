@@ -3,6 +3,10 @@
   src: url("../Karelia-Outtakes.otf");
 }
 
+*{
+  overflow-x: hidden;
+}
+
 body,
 html {
   font-family: "Karelia-Outtakes";
@@ -36,8 +40,12 @@ a {
 }
 
 p a {
-  display: block;
+  // display: block;
   text-decoration: underline;
+}
+
+.intro-text p a, .columns p a {
+  display: block;
 }
 
 .links a {
@@ -97,13 +105,39 @@ button {
   line-height: 1.75;
 }
 
-.icon {
+.icon,
+.icon2 {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.icon{
   position: fixed;
   top: 0px;
   right: 24px;
   width: 175px;
   height: auto;
   z-index: 999;
+  transition: all 0.4s ease-in-out;
+  .hidden-icon{
+    visibility: hidden;
+    position: fixed;
+    right: 24px;
+    top: 0px;
+    width: 175px;
+    height: auto;
+    opacity: 0;
+  }
+  &:hover{
+    .default-icon{
+      visibility: hidden;
+      opacity: 0;
+    }
+    .hidden-icon {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
 }
 
 .navbar {
@@ -311,30 +345,28 @@ button {
 
 //REGISTER
 .register-page {
-  // height: 100vh;
   width: 900px;
-  // position: absolute;
-  // overflow: scroll;
   input {
     border: none;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #0000ff;
     background-color: transparent;
     display: block;
-    width: 100%;
+    width: 98%;
     font-size: 30px;
-    color: #fff;
+    color: #0000ff;
   }
   textarea {
-    width: 100%;
+    width: 98%;
     display: block;
-    border: 2px solid #fff;
+    border: 2px solid #0000ff;
     height: 250px;
     background-color: transparent;
     font-size: 30px;
-    color: #fff;
+    color: #0000ff;
     margin-top: 10px;
   }
   button {
+    color: #0000ff;
     &:before {
       content: "➝";
       margin-right: 10px;
@@ -345,6 +377,26 @@ button {
 .register , .alt-eco, .news-page {
   .top-bar {
     background-color: #0000ff;
+  }
+}
+
+.top-bar{
+  transition: all 0.4s ease-in-out;
+  h1{
+    a{
+      margin-left: 34px;
+    }
+    &:hover{
+      a{
+        opacity: 0;
+      }
+      &:after {
+        opacity: 1;
+        content: 'back to home';
+        position: absolute;
+        left: 10px;
+      }
+    }
   }
 }
 
@@ -510,4 +562,10 @@ button {
     width: 350px;
     font-size: 40px;
   }
+}
+
+.error{
+  color: red;
+  font-size: 20px;
+  margin-left: 10px;
 }

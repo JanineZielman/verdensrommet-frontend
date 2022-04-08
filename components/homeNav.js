@@ -8,7 +8,17 @@ const HomeNav = ({ homepage, pages }) => {
   return (
     <section className="homenav">
 			<div className="icon">
-				<Image image={homepage.icon}/>
+				<Link href="mailto:info@verdensrommet.network">
+					<a>
+						<div className="default-icon">
+							<Image image={homepage.icon}/>
+						</div>
+						<div className="hidden-icon">
+							<Image image={homepage.icon_pressed}/>
+						</div>
+					</a>
+				</Link>
+			
 			</div>
 			<div className="logo">
 				<Image image={homepage.logo} layout='responsive' objectFit='contain'/>
@@ -30,6 +40,9 @@ const HomeNav = ({ homepage, pages }) => {
 						</div>
 					)
 				})}
+			</div>
+			<div className="icon2">
+				<Image image={homepage.icon2}/>
 			</div>
     </section>
   )

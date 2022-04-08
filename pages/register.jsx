@@ -8,52 +8,51 @@ import ReactMarkdown from "react-markdown";
 const Register = ({page, pages, homepage}) => {
   console.log(page)
   return(
-    <div>hello</div>
-    // <section className="register">
-    //   <TopBar page={page}/>
-    //   <Layout pages={pages}>
-    //     {page.content &&
-    //       <>
-    //         <div className="section-bg">
-    //           <video loop={true} autoPlay="autoPlay" controls muted>
-    //             <source src={getStrapiMedia(page.content[0].background)} type="video/mp4"/>
-    //             Your browser does not support the video tag.
-    //           </video>
-    //         </div>
+    <section className="register">
+      <TopBar page={page} homepage={homepage}/>
+      <Layout pages={pages}>
+        {page.content &&
+          <>
+            <div className="section-bg">
+              {/* <video loop={true} autoPlay="autoPlay" controls muted>
+                <source src={getStrapiMedia(page.content[0].background)} type="video/mp4"/>
+                Your browser does not support the video tag.
+              </video> */}
+            </div>
 		
-    //         <div 
-    //           className="content container"
-    //           id={page.content[0].section_id}
-    //           style=
-    //           {{
-    //             backgroundColor: page.content[0].background ? "transparent" : "#D5D5D5",
-    //             color: page.content[0].background ? "#fff" : "#072FDE"
-    //           }} 
-    //         >
-    //           {page.content.map((section, i) => {
-    //             return (
-    //               <div className="wrapper">
-    //                 {/* {section.title && 
-    //                   <h2 key={'title'+i}>{section.title}</h2>
-    //                 } */}
-    //                 <ReactMarkdown 
-    //                   key={'text'+i}
-    //                   children={section.text} 
-    //                 />
-    //               </div>
-    //             )
-    //           })}
-    //           <RegisterComponent />
-		//         </div>
-	  //       </>
-    //     }
-    //   </Layout>
-    //   <style jsx>{`
-		// 		.wrapper{
-		// 			max-width: 900px;
-		// 		}
-		// 	`}</style>
-    // </section>
+            <div 
+              className="content container"
+              id={page.content[0].section_id}
+              style=
+              {{
+                backgroundColor: page.content[0].background ? "transparent" : "#D5D5D5",
+                color: page.content[0].background ? "#fff" : "#072FDE"
+              }} 
+            >
+              {page.content.map((section, i) => {
+                return (
+                  <div className="wrapper">
+                    {/* {section.title && 
+                      <h2 key={'title'+i}>{section.title}</h2>
+                    } */}
+                    <ReactMarkdown 
+                      key={'text'+i}
+                      children={section.text} 
+                    />
+                  </div>
+                )
+              })}
+              <RegisterComponent />
+		        </div>
+	        </>
+        }
+      </Layout>
+      <style jsx>{`
+				.wrapper{
+					max-width: 900px;
+				}
+			`}</style>
+    </section>
   )
 }
 

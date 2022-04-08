@@ -8,16 +8,7 @@ import Collapsible from 'react-collapsible';
 const Content = ({ page }) => {
 	console.log(page)
   return (
-	<>
-		{/* {page.section[0]?.settings.background &&
-			<div className="section-bg">
-				<video loop={true} autoPlay="autoPlay" controls muted>
-					<source src={getStrapiMedia(page.section[0].settings.background)} type="video/mp4"/>
-					Your browser does not support the video tag.
-				</video>
-			</div>
-		} */}
-		
+	<>		
 			{page.section.map((item, i) => {
 				return (
 					<section 
