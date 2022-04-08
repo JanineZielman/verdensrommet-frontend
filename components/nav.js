@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import LoginComponent from './loginComponent';
 
-const Nav = ( {pages}) => {
+const Nav = ( {pages, homepage}) => {
   const router = useRouter();
   const [username, setUsername] = useState('');
 
@@ -83,6 +83,13 @@ const Nav = ( {pages}) => {
             <Link href="/">
               <a>Search</a>
             </Link>
+          </li>
+          <li className='announcements'>
+            <div className="marquee">
+              {homepage.announcement &&
+                <span>{homepage.announcement}</span>
+              }
+            </div>
           </li>
         </ul>
         <ul className="desktop-login">

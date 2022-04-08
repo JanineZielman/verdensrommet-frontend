@@ -9,7 +9,7 @@ const About = ({ page, pages, homepage }) => {
   return (
 		<>
 			<Hero page={page} homepage={homepage}/>
-			<Layout pages={pages}>
+			<Layout pages={pages} homepage={homepage}>
         {page.section &&
           <Content page={page}/>
         }

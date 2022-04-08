@@ -3,10 +3,6 @@
   src: url("../Karelia-Outtakes.otf");
 }
 
-*{
-  overflow-x: hidden;
-}
-
 body,
 html {
   font-family: "Karelia-Outtakes";
@@ -28,6 +24,14 @@ body {
 
 body * {
   font-family: "Karelia-Outtakes";
+}
+
+video{
+  pointer-events: none!important;
+}
+
+section{
+  overflow-x: hidden;
 }
 
 .spacer {
@@ -169,6 +173,10 @@ button {
       padding: 0 14px;
       border-right: 2px solid #fff;
       height: 60px;
+      &.announcements{
+        padding: 0;
+        width: calc(100vw - 482px);
+      }
       a {
         color: #fff;
       }
@@ -386,15 +394,16 @@ button {
     a{
       margin-left: 34px;
     }
+    .hidden-link{
+      display: none;
+    }
     &:hover{
-      a{
-        opacity: 0;
+      .hidden-link {
+        display: inline-block;
       }
-      &:after {
-        opacity: 1;
-        content: 'back to home';
+      .default-link{
+        display: none;
         position: absolute;
-        left: 10px;
       }
     }
   }
@@ -564,8 +573,54 @@ button {
   }
 }
 
+.podcast-section{
+  width: 1100px;
+  iframe {
+    display: block;
+    width: 1100px;
+    margin: 24px 0;
+  }
+}
+
 .error{
   color: red;
   font-size: 20px;
   margin-left: 10px;
+}
+
+.announcements {
+  display: none;
+  border-right: none!important;
+}
+
+@media only screen and (min-width: 600px) {
+  .announcements{
+    display: block;
+  }
+  .marquee {
+    position: relative;
+    width: auto;
+    max-width: 100%;
+    height: 200px;
+    overflow-x: hidden;
+    span{
+      position: absolute;
+      white-space: nowrap;
+      will-change: transform;
+      animation: marquee 20s linear infinite;
+      font-size: 24px;
+      line-height: 60px;
+    }
+  }
+  
+  
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+  
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }

@@ -11,7 +11,7 @@ import Link from "next/link"
 const Home = ({ homepage, pages, news }) => {
   console.log(pages)
   return (
-    <Layout pages={pages}>
+    <Layout pages={pages} homepage={homepage}>
       <div className="hero-bg">
         <video loop={true} autoPlay="autoPlay" controls muted playsinline>
           <source src={"https://cms.verdensrommet.network/app/public/" + homepage.Hero.background.url} type="video/mp4"/>
@@ -127,7 +127,7 @@ export async function getStaticProps() {
   // Run API calls in parallel
   const [homepageRes, newsRes, pagesRes] = await Promise.all([
     fetchAPI("/homepage"),
-    fetchAPI("/news-items"),
+    fetchAPI("/news-items?_sort=date"),
     fetchAPI("/menus"),
   ])
 
