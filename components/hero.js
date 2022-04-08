@@ -16,7 +16,7 @@ const Hero = ({ page, homepage, username }) => {
 					<>
 						{page.Hero.background &&
 							<div className="hero-bg">
-								<video loop={true} autoPlay="autoPlay" controls muted>
+								<video loop={true} autoPlay="autoPlay" controls muted playsinline>
 									<source src={getStrapiMedia(page.Hero?.background)} type="video/mp4"/>
 									Your browser does not support the video tag.
 								</video>

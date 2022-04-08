@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const RegisterComponent = () => {
   const router = useRouter();
+  const [error, setError] = useState()
   const [userData, setUserData] = useState({
     username: '',
     email: '',
@@ -24,6 +25,7 @@ const RegisterComponent = () => {
       router.replace('/profile');
     } catch (err) {
       console.log(err.response.data);
+      setError('! check if all the fields are filled in');
     }
   }
 
@@ -85,6 +87,7 @@ const RegisterComponent = () => {
           <textarea type="text" name="kind" onChange={e => handleChange(e)}></textarea>
         </label>
         <br />
+         <div className="error">{error}</div>
         <button>Register</button>
       </form>
     </section>

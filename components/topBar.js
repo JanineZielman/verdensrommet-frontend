@@ -8,7 +8,7 @@ const TopBar = ({ page, homepage }) => {
     <section className="top-bar">
 			<h1>
         <Link href={'/'}>
-          <a>{page.order ? 'news' : page.slug}</a>
+          <a><span>{page.order ? 'news' : page.slug}</span></a>
         </Link>
       </h1>
       <div className="icon">
