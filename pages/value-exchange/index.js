@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import Hero from "../../components/hero"
+import Content from '../../components/content';
 import { fetchAPI } from "../../lib/api"
 
 const ValueExchange = ({ page, pages, homepage }) => {
@@ -17,6 +18,9 @@ const ValueExchange = ({ page, pages, homepage }) => {
 		<>
 			<Hero page={page} homepage={homepage} username={username}/>
 			<Layout pages={pages} homepage={homepage}>
+        {page.section && username &&
+          <Content page={page}/>
+        }
 			</Layout>
 		</>
   )
