@@ -26,10 +26,6 @@ body * {
   font-family: "Karelia-Outtakes";
 }
 
-video{
-  pointer-events: none!important;
-}
-
 section{
   overflow-x: hidden;
 }
@@ -400,10 +396,10 @@ button {
     &:hover{
       .hidden-link {
         display: inline-block;
+        position: absolute;
       }
       .default-link{
         display: none;
-        position: absolute;
       }
     }
   }
@@ -450,6 +446,7 @@ button {
 
 .collapsible-wrapper{
   font-size: 30px;
+  position: relative;
   .collapsible{
     padding: 14px 0;
     border-bottom: 3px solid #0000ff;
@@ -460,7 +457,9 @@ button {
     &.answer{
       .Collapsible span:after {
         content: ' ';
-        display: inline-block;
+        float: right;
+        right: 0;
+        margin-top: 10px;
         width: 0px;
         height: 0px;
         border-left: 20px solid transparent;
@@ -474,6 +473,9 @@ button {
         -webkit-transform: scaleY(-1);
         transform: scaleY(-1);
       }
+      .Collapsible__contentOuter{
+        font-size: 20px;
+      }
     }
   }
   .load-more{
@@ -484,11 +486,11 @@ button {
       font-size: 24px;
       transition: all 0.4s ease-in-out;
       &:before{
-        content: 'View all questions...';
+        content: 'View all...';
       }
       &.is-open{
         &:before {
-          content: 'Close all questions...';
+          content: 'Close all...';
         }
       }
     }

@@ -102,34 +102,34 @@ const Content = ({ page }) => {
 							}
 							{item.collapsible && 
 							<div className="collapsible-wrapper">
-								{item.collapsible.map((content, i) => {
+								{item.collapsible.filter(list => list.title !== null && list.title !== '').map((content, i) => {
 									return(
 										<>
-										{content.title &&
-											<>
-												<h4>{content.title}</h4>
-										
-												<div className={`collapsible first ${content.answer ? 'answer' : 'no-answer'}`}>
-													<Collapsible trigger={content.question}>
-														{content.answer}
-													</Collapsible>
-												</div>
+											<h4>{content.title}</h4>
+									
+											<div className={`collapsible first ${content.answer ? 'answer' : 'no-answer'}`}>
+												<Collapsible trigger={content.question}>
+													<ReactMarkdown 
+														children={content.answer} 
+													/>
+												</Collapsible>
+											</div>
 
-												<div className="load-more">
-													<Collapsible trigger={' '}>
-														{item.collapsible.slice(1).map((content, i) => {
-															return(
-																<div className={`collapsible ${content.answer ? 'answer' : 'no-answer'}`}>
-																	<Collapsible trigger={content.question}>
-																		{content.answer}
-																	</Collapsible>
-																</div>
-															)
-														})}
-													</Collapsible>
-												</div>
-											</>
-										}
+											<div className="load-more">
+												<Collapsible trigger={' '}>
+													{item.collapsible.filter(list => parseInt(list.number) === i + 1).slice(1).map((content, i) => {
+														return(
+															<div className={`collapsible ${content.answer ? 'answer' : 'no-answer'}`}>
+																<Collapsible trigger={content.question}>
+																	<ReactMarkdown 
+																		children={content.answer} 
+																	/>
+																</Collapsible>
+															</div>
+														)
+													})}
+												</Collapsible>
+											</div>
 										</>
 									)
 								})}

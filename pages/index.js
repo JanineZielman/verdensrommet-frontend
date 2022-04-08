@@ -13,7 +13,7 @@ const Home = ({ homepage, pages, news }) => {
   return (
     <Layout pages={pages} homepage={homepage}>
       <div className="hero-bg">
-        <video loop={true} autoPlay="autoPlay" controls muted playsinline>
+        <video loop={true} autoPlay="autoPlay" pointerEvents="none" controls muted playsinline>
           <source src={"https://cms.verdensrommet.network/app/public/" + homepage.Hero.background.url} type="video/mp4"/>
           Your browser does not support the video tag.
         </video>
