@@ -9,7 +9,7 @@ const NewsPage = ({pages, page, menu, homepage}) => {
   return (
     <section className="news-page">
       <Topbar page={page} homepage={homepage}/>
-      <Layout pages={menu}>
+      <Layout pages={menu} homepage={homepage}>
 				{page.section &&
           <Content page={page}/>
         }

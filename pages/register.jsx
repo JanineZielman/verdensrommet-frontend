@@ -10,7 +10,7 @@ const Register = ({page, pages, homepage}) => {
   return(
     <section className="register">
       <TopBar page={page} homepage={homepage}/>
-      <Layout pages={pages}>
+      <Layout pages={pages} homepage={homepage}>
         {page.content &&
           <>
             <div className="section-bg">

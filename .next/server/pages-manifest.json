@@ -2,6 +2,6 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/visa-help": "pages/visa-help.js",
-  "/": "pages/index.js"
+  "/podcast": "pages/podcast.js",
+  "/about": "pages/about.js"
 }

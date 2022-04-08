@@ -4,7 +4,7 @@ import Image from "../components/image"
 const PodcastSection = ({page}) => {
 	return (
 		<section className="podcast-section">
-			<div className="columns" style={{width:'1100px'}}>
+			<div className="columns">
 				<div className="small">
 					<Image image={page.podcast_highlight.image}/>
 				</div>
@@ -20,11 +20,11 @@ const PodcastSection = ({page}) => {
 				)
 			})}
 			<style jsx>{`
-				iframe{
+				/* iframe{
 					display: block;
 					width: 1100px;
 					margin: 24px 0;
-				}
+				} */
 			`}</style>
 		</section>
 	)

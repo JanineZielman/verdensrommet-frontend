@@ -16,7 +16,7 @@ const ValueExchange = ({ page, pages, homepage }) => {
   return (
 		<>
 			<Hero page={page} homepage={homepage} username={username}/>
-			<Layout pages={pages}>
+			<Layout pages={pages} homepage={homepage}>
 			</Layout>
 		</>
   )

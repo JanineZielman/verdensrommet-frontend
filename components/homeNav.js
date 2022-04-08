@@ -8,7 +8,7 @@ const HomeNav = ({ homepage, pages }) => {
   return (
     <section className="homenav">
 			<div className="icon">
-				<Link href="mailto:info@verdensrommet.network">
+				<Link href={`mailto:info@verdensrommet.network?subject=${homepage.mail_subject}`}>
 					<a>
 						<div className="default-icon">
 							<Image image={homepage.icon}/>
@@ -40,6 +40,13 @@ const HomeNav = ({ homepage, pages }) => {
 						</div>
 					)
 				})}
+				<div id='news' className="link">
+					<Link href='#news'>
+						<a>
+							news
+						</a>
+					</Link>
+				</div>
 			</div>
 			<div className="icon2">
 				<Image image={homepage.icon2}/>
