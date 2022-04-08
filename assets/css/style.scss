@@ -79,6 +79,10 @@ p a {
   }
 }
 
+.small-text{
+  font-size: 18px;
+}
+
 .wrapper{
   max-width: 900px;
 }
@@ -184,7 +188,7 @@ button {
       height: 60px;
       &.announcements{
         padding: 0;
-        width: calc(100vw - 300px);
+        width: calc(100vw - 340px);
       }
       a {
         color: #fff;
@@ -291,6 +295,8 @@ button {
 
 .login-button {
   cursor: pointer;
+  width: 165px;
+  text-align: center;
 }
 .login-link {
   cursor: pointer;

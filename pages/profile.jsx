@@ -12,6 +12,7 @@ const Profile = (props) => {
   useEffect(() => {
     // storing input name
     localStorage.setItem("name", JSON.stringify(user));
+    alert("you've succesfully logged in, welcome!");
     router.push('/');
   }, [user]);
   
