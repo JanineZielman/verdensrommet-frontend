@@ -14,7 +14,6 @@ const Content = ({ page }) => {
 		slidesToShow: 1,
 		slidesToScroll: 1
 	};
-	
 
   return (
 	<div className={page.slug}>		
@@ -42,7 +41,7 @@ const Content = ({ page }) => {
 									return(
 										<>
 											{content.title && 
-												<h2 key={'title'+i}>{content.title}</h2>
+												<h2 className={`${content.big_title ? 'big-title' : ''}`} key={'title'+i}>{content.title}</h2>
 											}
 											{content.text && 
 												<ReactMarkdown 

@@ -200,4 +200,22 @@
       margin-left: 50%;
     }
   }
+  .big-title {
+    font-size: 42px;
+    padding: 24px 0;
+  }
+  .content blockquote {
+    margin: 0;
+    text-align: right;
+    display: block;
+    margin-right: 0;
+    margin-left: auto;
+    max-width: 150px;
+  
+    p {
+      margin-top: -50px;
+      padding-bottom: 20px;
+      font-size: 18px;
+    }
+  }
 }

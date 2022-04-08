@@ -64,6 +64,19 @@ p a {
 
 .content{
   padding-bottom: 48px;
+  blockquote{
+    margin: 0;
+    font-size: 30px;
+    text-align: right;
+    display: block;
+    margin-right: 0;
+    margin-left: auto;
+    max-width: 300px;
+    p{
+      margin-top: -200px;
+      padding-bottom: 40px;
+    }
+  }
 }
 
 .wrapper{
@@ -171,13 +184,17 @@ button {
       height: 60px;
       &.announcements{
         padding: 0;
-        width: calc(100vw - 482px);
+        width: calc(100vw - 300px);
       }
       a {
         color: #fff;
       }
     }
   }
+}
+
+.search {
+  display: none;
 }
 
 .hero-bg {
@@ -403,6 +420,14 @@ button {
       }
     }
   }
+}
+
+.big-title{
+  font-size: 90px;
+  line-height: 1;
+  transform: rotate(-10deg);
+  text-transform: uppercase;
+  padding: 48px 0 48px 0;
 }
 
 .image-slider{
