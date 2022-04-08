@@ -1,12 +1,21 @@
-import React, {useRef, useEffect} from "react"
+import React, {useRef, useEffect, useState} from "react"
 import ReactMarkdown from "react-markdown";
 import { getStrapiMedia } from "../lib/media";
 import Image from "../components/image"
 import Link from "next/link"
 import Collapsible from 'react-collapsible';
+import Slider from "react-slick";
 
 const Content = ({ page }) => {
-	console.log(page)
+	const settings = {
+		dots: false,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1
+	};
+	
+
   return (
 	<div className={page.slug}>		
 			{page.section.map((item, i) => {
@@ -50,7 +59,9 @@ const Content = ({ page }) => {
 								<>
 									{item.image.map((content, i) => {
 										return(
-											<Image image={content.image}/>
+											<div className={`content-image ${content.small ? 'small': ''}`}>
+												<Image image={content.image}/>
+											</div>
 										)
 									})}
 								</>
@@ -138,6 +149,19 @@ const Content = ({ page }) => {
 									)
 								})}
 							 </div>
+							}
+							{item.slider?.slider && 
+								<div className="image-slider">
+									<Slider {...settings}>
+										{item.slider.slider.map((content, i) => {
+											return(
+												<div className={`${item.slider.small ? 'small': ''}`}>
+													<Image image={content}/>
+												</div>
+											)
+										})}
+									</Slider>
+								</div>
 							}
 						</div>
 						<style jsx>{`

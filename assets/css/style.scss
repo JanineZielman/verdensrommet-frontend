@@ -405,10 +405,40 @@ button {
   }
 }
 
+.image-slider{
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 24px;
+  .small{
+    width: 25%!important;
+    min-width: 200px!important;
+    display: block!important;
+    margin: auto!important;
+  }
+  .slick-track {
+    display: flex;
+  }
+  
+  .slick-track .slick-slide {
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.content-image{
+  margin: 14px 0;
+  &.small{
+    width: 25%;
+    min-width: 200px;
+  }
+}
+
 .sources{
   a{
     display: block;
-    font-size: 40px;
+    font-size: 30px;
     padding: 14px 0;
     border-bottom: 3px solid #0000ff;
     &:nth-child(1){
