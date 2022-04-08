@@ -9,8 +9,8 @@ export default async (req, res) => {
     full_name,
     contact,
     city,
-    languages,
-    exchange,
+    language,
+    website,
     money,
     kind,  
   } = req.body;
@@ -23,8 +23,8 @@ export default async (req, res) => {
       full_name,
       contact,
       city,
-      languages,
-      exchange,
+      language,
+      website,
       money,
       kind,
     })

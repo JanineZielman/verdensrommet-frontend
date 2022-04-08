@@ -12,8 +12,8 @@ const RegisterComponent = () => {
     full_name: '',
     contact: '',
     city: '',
-    languages: '',
-    exchange: '',
+    language: '',
+    website: '',
     money: '',
     kind: ''
   })
@@ -38,58 +38,65 @@ const RegisterComponent = () => {
     <section className="register-page">
       <form onSubmit={handleSubmit}>
         <label>
-          Username:
+          *Username:
           <input type="text" name="username" onChange={e => handleChange(e)} />
         </label>
         <br />
         <label>
-          Email:
+          *Email:
           <input type="text" name="email" onChange={e => handleChange(e)} />
         </label>
         <br />
         <label>
-          Password:
+          *Password:
           <input type="password" name="password" onChange={e => handleChange(e)} />
         </label>
         <br />
         <label>
-          Name:
+          *Name:
           <input type="text" name="full_name" onChange={e => handleChange(e)} />
         </label>
          <br />
         <label>
-          Contact:
+          *Contact:
           <input type="text" name="contact" onChange={e => handleChange(e)} />
         </label>
         <br />
         <label>
-          City:
+          *City:
           <input type="text" name="city" onChange={e => handleChange(e)} />
         </label>
         <br />
         <label>
-          Languages:
-          <input type="text" name="languages" onChange={e => handleChange(e)} />
+          *Language:
+          <input type="text" name="language" onChange={e => handleChange(e)} />
         </label>
         <br />
         <label>
-          Work Exchange (max 500 words): 
-          <textarea type="text" name="exchange" onChange={e => handleChange(e)}></textarea>
+          Website:
+          <input type="text" name="website" onChange={e => handleChange(e)} />
         </label>
         <br />
         <label>
-          skill/knowledge/service you would like to exchange for money  (max 500 words):
+          *Please list at least 2 skill/knowledge/service* you would like to exchange for money:
           <textarea type="text" name="money" onChange={e => handleChange(e)}></textarea>
         </label>
         <br />
         <label>
-          skills/knowledge/services you would like to exchange in kind  (max 500 words): 
+          *Please list at least 2 skills/knowledge/services you would like to exchange in-kind**:
           <textarea type="text" name="kind" onChange={e => handleChange(e)}></textarea>
         </label>
         <br />
          <div className="error">{error}</div>
         <button>Register</button>
       </form>
+      <p className='small-text'>
+        *  Examples of skills (hard or soft), knowledge and services that can be exchanged: video-editing, writing, proofreading, researching, teaching, lending equipment, lending books, driving, caretaking, dumpster diving, food, accounting and taxes, reading buddy, translation, interpretation, explaining philosophical concepts, application writing, stylist, haircut, etc.
+      </p>
+      <p className='small-text'>
+        **What do we mean by “exchange In-kind”: you can trade your skills, knowledge or services other skills, knowledge, services, self-determining exchange of value. 
+
+      </p>
     </section>
     
   )
