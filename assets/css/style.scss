@@ -448,11 +448,32 @@ button {
   font-size: 30px;
   position: relative;
   .collapsible{
-    padding: 14px 0;
+    padding: 14px 14px 14px 0;
     border-bottom: 3px solid #0000ff;
     cursor: pointer;
     &.first{
       border-top: 3px solid #0000ff;
+      .Collapsible span:after {
+        content: ' ';
+        float: right;
+        right: 0;
+        margin-top: 10px;
+        width: 0px;
+        height: 0px;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 20px solid #0000ff;
+        margin-left: 14px;
+        transition: all 0.4s ease-in-out;
+      }
+      
+      .Collapsible span.is-open:after {
+        -webkit-transform: scaleY(-1);
+        transform: scaleY(-1);
+      }
+      .Collapsible__contentOuter{
+        font-size: 20px;
+      }
     }
     &.answer{
       .Collapsible span:after {
@@ -593,6 +614,30 @@ button {
 .announcements {
   display: none;
   border-right: none!important;
+}
+
+#timeline{
+  background-image: url(../history.svg);
+  background-size: 1100px;
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  .collapsible-wrapper{
+    margin-top: 100px;
+  }
+}
+
+.faq{
+  .normal-bg{
+    background-image: url(../blue_yellow.png);
+    background-size: cover;
+    *{
+      color: #fff;
+      border-color: #fff!important;
+    }
+  }
+  .collapsible-wrapper .collapsible.first .Collapsible span:after{
+    border-top: 20px solid #fff;
+  }
 }
 
 @media only screen and (min-width: 600px) {

@@ -8,11 +8,11 @@ import Collapsible from 'react-collapsible';
 const Content = ({ page }) => {
 	console.log(page)
   return (
-	<>		
+	<div className={page.slug}>		
 			{page.section.map((item, i) => {
 				return (
 					<section 
-						className={`content container ${item.settings?.background ? "moving-bg" : ""} `}
+						className={`content container ${item.settings?.background ? "moving-bg" : "normal-bg"} `}
 						id={item.settings?.section_id}
 						style=
 						{{
@@ -109,9 +109,13 @@ const Content = ({ page }) => {
 									
 											<div className={`collapsible first ${content.answer ? 'answer' : 'no-answer'}`}>
 												<Collapsible trigger={content.question}>
-													<ReactMarkdown 
-														children={content.answer} 
-													/>
+													{content.answer ?
+														<ReactMarkdown 
+															children={content.answer} 
+														/>
+														: 'Answer will be added soon...'
+													}
+													
 												</Collapsible>
 											</div>
 
@@ -148,7 +152,7 @@ const Content = ({ page }) => {
 				)
 			})}
 	
-	</>
+	</div>
   )
 }
 
