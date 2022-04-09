@@ -76,6 +76,9 @@ p a {
       margin-top: -200px;
       padding-bottom: 40px;
     }
+    a{
+      display: block;
+    }
   }
 }
 
@@ -144,6 +147,27 @@ button {
     width: 175px;
     height: auto;
     opacity: 0;
+    .tooltiptext {
+      position: relative;
+      font-size: 14px;
+      line-height: 1.2;
+      text-transform: none;
+      background-color: #0000ff;
+      padding: 10px;
+      border-radius: 5px;
+      border: 2px solid white;
+      &:after{
+        content: " ";
+        position: absolute;
+        bottom: 100%;
+        /* At the top of the tooltip */
+        left: 50%;
+        margin-left: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent transparent white transparent;
+      }
+    }
   }
   &:hover{
     .default-icon{

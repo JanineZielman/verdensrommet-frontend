@@ -58,7 +58,7 @@ const RegisterComponent = () => {
         </label>
          <br />
         <label>
-          *Contact:
+          *Phone:
           <input type="text" name="contact" onChange={e => handleChange(e)} />
         </label>
         <br />
