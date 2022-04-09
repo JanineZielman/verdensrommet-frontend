@@ -9,7 +9,7 @@ import Image from "../components/image"
 import Link from "next/link"
 
 const Home = ({ homepage, pages, news }) => {
-  console.log(pages)
+
   return (
     <Layout pages={pages} homepage={homepage}>
       <div className="hero-bg">

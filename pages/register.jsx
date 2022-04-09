@@ -6,7 +6,7 @@ import { getStrapiMedia } from "../lib/media";
 import ReactMarkdown from "react-markdown";
 
 const Register = ({page, pages, homepage}) => {
-  console.log(page)
+
   return(
     <section className="register">
       <TopBar page={page} homepage={homepage}/>
