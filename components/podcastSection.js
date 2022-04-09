@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react"
 import Image from "../components/image"
+import Link from "next/link"
 
 const PodcastSection = ({page}) => {
 	return (
@@ -16,12 +17,25 @@ const PodcastSection = ({page}) => {
 			
 			
 			<div>
-				{page.podcast.map((item, i) => {
+				{page.podcast.slice(0,3).map((item, i) => {
 					return (
 						<iframe key={'podcast-'+i} src={item.podcast_embed} frameBorder="0" scrolling="no"></iframe>
 					)
 				})}
 			</div>
+			{page.link?.link_url &&
+				<Link href={page.link.file ? 'https://cms.verdensrommet.network/app/public' + page.link.link_url : page.link.link_url}>
+					<a target="_blank">
+						➝ {page.link.link_text}
+						{page.link.popup &&
+							<div className="popup"> 
+								<span>?</span> 
+								<div className="hidden">{page.link.popup}</div>
+							</div>
+						}
+					</a>
+				</Link>
+			}
 		</section>
 	)
 }
