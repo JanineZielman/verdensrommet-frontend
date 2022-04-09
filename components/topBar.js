@@ -3,7 +3,7 @@ import Link from "next/link"
 import Image from "../components/image"
 
 const TopBar = ({ page, homepage }) => {
-  console.log(homepage)
+
   return (
     <section className="top-bar">
 			<h1>

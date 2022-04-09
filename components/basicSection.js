@@ -4,7 +4,7 @@ import { getStrapiMedia } from "../lib/media";
 import Image from "../components/image"
 
 const BasicSection = ({ page }) => {
-	console.log(page)
+
   return (
 		<>
 		{page.basic_section.map((section, i) => {
