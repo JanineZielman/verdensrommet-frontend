@@ -35,9 +35,9 @@ const Content = ({ page }) => {
 			</section>
 		}
 			{page.section.map((item, i) => {
-				console.log(page.section[0])
 				return (
 					<section 
+						key={`content-section${i}`}
 						className={`content container ${item.settings?.background ? "moving-bg" : "normal-bg"} `}
 						id={item.settings?.section_id}
 						style=
@@ -48,12 +48,6 @@ const Content = ({ page }) => {
 						}} 
 					>
 						<div className="wrapper">
-							{/* {page.cover_image &&
-								<div>
-									<h2>{page.title}</h2>
-									<Image image={page.cover_image}/>
-								</div>
-							} */}
 							{item.text[0] && 
 							<>
 								{item.text.map((content, i) => {
@@ -63,10 +57,12 @@ const Content = ({ page }) => {
 												<h2 className={`${content.big_title ? 'big-title' : ''}`} key={'title'+i}>{content.title}</h2>
 											}
 											{content.text && 
-												<ReactMarkdown 
-													key={'text'+i}
-													children={content.text} 
-												/>
+												<div style={{padding: "5px 0"}}>
+													<ReactMarkdown 
+														key={'text'+i}
+														children={content.text} 
+													/>
+												</div>
 											}
 										</>
 									)
