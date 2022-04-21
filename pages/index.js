@@ -9,7 +9,6 @@ import Image from "../components/image"
 import Link from "next/link"
 
 const Home = ({ homepage, pages, news }) => {
-
   return (
     <Layout pages={pages} homepage={homepage}>
       <div className="hero-bg">
@@ -67,15 +66,13 @@ const Home = ({ homepage, pages, news }) => {
             {news.map((item, i) => {
               return(
                 <div className="news-item">
-                  <Link href={item.external_url ? item.external_url : 'news/' + item.slug }>
-                    <a target={item.external_url ? '_blank' : '' }>
-                      <div className="image">
-                        <Image image={item.cover_image} layout='fill' objectFit='cover'/>
-                      </div>
-                      <h4>{item.title}</h4>
-                      <p>{item.intro_text}</p>
-                    </a>
-                  </Link>
+                  <a href={item.external_url ? item.external_url : 'news/' + item.slug } target={item.external_url ? '_blank' : '' }>
+                    <div className="image">
+                      <Image image={item.cover_image} layout='fill' objectFit='cover'/>
+                    </div>
+                    <h4>{item.title}</h4>
+                    <p>{item.intro_text}</p>
+                  </a>
                 </div>
               )
             })}

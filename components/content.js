@@ -17,24 +17,43 @@ const Content = ({ page }) => {
 
   return (
 	<div className={page.slug}>		
+	 	{page.cover_image &&
+			<section 
+				className={`content container normal-bg news-bg`}
+				style=
+				{{
+					backgroundColor: "#D5D5D5",
+					color: "#072FDE",
+				}} 
+			>
+				<div className="wrapper">
+					<div>
+						<h2>{page.title}</h2>
+						<Image image={page.cover_image}/>
+					</div>
+				</div>
+			</section>
+		}
 			{page.section.map((item, i) => {
+				console.log(page.section[0])
 				return (
 					<section 
 						className={`content container ${item.settings?.background ? "moving-bg" : "normal-bg"} `}
 						id={item.settings?.section_id}
 						style=
 						{{
+							backgroundImage: 	page.cover_image && item.settings?.background && "url(https://cms.verdensrommet.network/app/public/uploads/blue_purple1_5b12f5fb5d.png)",
 							backgroundColor: item.settings?.background ? "transparent" : "#D5D5D5",
 							color: item.settings?.background ? "#fff" : "#072FDE",
 						}} 
 					>
 						<div className="wrapper">
-							{page.cover_image &&
+							{/* {page.cover_image &&
 								<div>
 									<h2>{page.title}</h2>
 									<Image image={page.cover_image}/>
 								</div>
-							}
+							} */}
 							{item.text[0] && 
 							<>
 								{item.text.map((content, i) => {
@@ -169,7 +188,6 @@ const Content = ({ page }) => {
 								color: #072FDE;
 								background-size: cover;
 							}
-
 						`}</style>
 					</section>
 				)
