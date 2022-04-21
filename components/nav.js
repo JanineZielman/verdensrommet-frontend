@@ -72,7 +72,7 @@ const Nav = ( {pages, homepage}) => {
             <Modal isOpen={menuShow} onHide={handleMenuClose} className="menu-modal" style={modalStyles}>
               {pages.map((menu, i) => {
                 return(
-                  <Link href={menu.slug}>
+                  <Link href={'/'+menu.slug}>
                     <a>{menu.title}</a>
                   </Link>
                 )
