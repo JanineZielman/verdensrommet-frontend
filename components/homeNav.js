@@ -7,19 +7,17 @@ const HomeNav = ({ homepage, pages }) => {
   return (
     <section className="homenav">
 			<div className="icon">
-				<Link href={`mailto:info@verdensrommet.network?subject=${homepage.mail_subject}`}>
-					<a>
-						<div className="default-icon">
-							<Image image={homepage.icon}/>
+				<a href={`mailto:info@verdensrommet.network?subject=${homepage.mail_subject}`}>
+					<div className="default-icon">
+						<Image image={homepage.icon}/>
+					</div>
+					<div className="hidden-icon">
+						<Image image={homepage.icon_pressed}/>
+						<div className="tooltiptext">
+							This is an emergency button, use it to trigger immigration-emergency response from Verdensrommet
 						</div>
-						<div className="hidden-icon">
-							<Image image={homepage.icon_pressed}/>
-							<div className="tooltiptext">
-								This is an emergency button, use it to trigger immigration-emergency response from Verdensrommet
-							</div>
-						</div>
-					</a>
-				</Link>
+					</div>
+				</a>
 			
 			</div>
 			<div className="logo">
@@ -29,25 +27,21 @@ const HomeNav = ({ homepage, pages }) => {
 				{pages.map((page, i) => {
 					return (
 						<div id={page.slug} key={'link-'+ i} className="link">
-							<Link href={`/${page.slug}`}>
-								<a>
-									{page.title}
-									{page.icon &&
-										<div className="hidden-icon">
-											<Image image={page.icon}/>
-										</div>
-									}
-								</a>
-							</Link>
+							<a href={`/${page.slug}`}>
+								{page.title}
+								{page.icon &&
+									<div className="hidden-icon">
+										<Image image={page.icon}/>
+									</div>
+								}
+							</a>
 						</div>
 					)
 				})}
-				<div id='news' className="link">
-					<Link href='#news'>
-						<a>
-							news
-						</a>
-					</Link>
+				<div id='news-link' className="link">
+					<a href='#news'>
+						news
+					</a>
 				</div>
 			</div>
 			<div className="icon2">

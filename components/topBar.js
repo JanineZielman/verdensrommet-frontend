@@ -7,16 +7,25 @@ const TopBar = ({ page, homepage }) => {
   return (
     <section className="top-bar">
 			<h1>
-        <Link href={'/'}>
-          <a>
-            <span className="default-link">{page.order ? 'news' : page.slug}</span>
-            <span className="hidden-link">⭠ Back to home</span>
-          </a>
-        </Link>
+        <a href={'/'}>
+          <span className="default-link">{page.order ? 'news' : page.slug}</span>
+          <span className="hidden-link">⭠ Back to home</span>
+        </a>
       </h1>
       <div className="icon">
-        <Image image={homepage.icon}/>
-      </div>
+				<a href={`mailto:info@verdensrommet.network?subject=${homepage.mail_subject}`}>
+					<div className="default-icon">
+						<Image image={homepage.icon}/>
+					</div>
+					<div className="hidden-icon">
+						<Image image={homepage.icon_pressed}/>
+						<div className="tooltiptext">
+							This is an emergency button, use it to trigger immigration-emergency response from Verdensrommet
+						</div>
+					</div>
+				</a>
+			
+			</div>
 			<style jsx>{`
         h1{
           width: 100%;

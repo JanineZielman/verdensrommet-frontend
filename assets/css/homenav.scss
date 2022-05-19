@@ -94,9 +94,14 @@
       top: 60vh;
       left: 6vw;
     }
-    #news {
+    #news-link {
       top: 80vh;
       left: 30vw;
     }
   }
+}
+
+
+#news-link:hover a {
+  opacity: 1 !important;
 }

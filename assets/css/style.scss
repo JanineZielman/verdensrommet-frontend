@@ -493,11 +493,14 @@ button {
 }
 
 .sources{
+  position: relative;
   a{
-    display: block;
+    position: relative;
+    display: flex;
     font-size: 30px;
-    padding: 14px 0;
+    padding: 14px 44px 14px 0;
     border-bottom: 3px solid #0000ff;
+    justify-content: space-between;
     &:nth-child(1){
       border-top: 3px solid #0000ff;
     }
@@ -506,7 +509,7 @@ button {
       background-color: #0000ff;
       width: 60px;
       text-align: center;
-      margin-left: 14px;
+      right: 0;
       border-radius: 10px;
       display: inline-block;
       position: absolute;

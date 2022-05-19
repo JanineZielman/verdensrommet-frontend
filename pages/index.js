@@ -43,7 +43,7 @@ const Home = ({ homepage, pages, news, seo }) => {
         </section>
       }
       {homepage.news &&
-        <section className="news-section" style={{backgroundImage: homepage.news.background ? "url(" + getStrapiMedia(homepage.news.background) + ")" : "transparent",}} >
+        <section id="news" className="news-section" style={{backgroundImage: homepage.news.background ? "url(" + getStrapiMedia(homepage.news.background) + ")" : "transparent",}} >
           <h2>
             <span>{homepage.news.title}</span>
             <span>{homepage.news.title}</span>
