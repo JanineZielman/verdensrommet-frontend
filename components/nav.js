@@ -70,19 +70,22 @@ const Nav = ( {pages, homepage}) => {
               <a>Menu</a>
             </div>
             <Modal isOpen={menuShow} onHide={handleMenuClose} className="menu-modal" style={modalStyles}>
+              <a href={'/'}>
+                Home
+              </a>
               {pages.map((menu, i) => {
                 return(
-                  <Link href={'/'+menu.slug}>
-                    <a>{menu.title}</a>
-                  </Link>
+                  <a href={'/'+menu.slug}>
+                    {menu.title}
+                  </a>
                 )
               })}
             </Modal>
           </li>
           <li className="search">
-            <Link href="/">
-              <a>Search</a>
-            </Link>
+            <a href="/">
+              Search
+            </a>
           </li>
           <li className='announcements'>
             <div className="marquee">

@@ -24,17 +24,15 @@ const PodcastSection = ({page}) => {
 				})}
 			</div>
 			{page.link?.link_url &&
-				<Link href={page.link.file ? 'https://cms.verdensrommet.network/app/public' + page.link.link_url : page.link.link_url}>
-					<a target="_blank">
-						➝ {page.link.link_text}
-						{page.link.popup &&
-							<div className="popup"> 
-								<span>?</span> 
-								<div className="hidden">{page.link.popup}</div>
-							</div>
-						}
-					</a>
-				</Link>
+				<a target="_blank" href={page.link.file ? 'https://cms.verdensrommet.network/app/public' + page.link.link_url : page.link.link_url}>
+					➝ {page.link.link_text}
+					{page.link.popup &&
+						<div className="popup"> 
+							<span>?</span> 
+							<div className="hidden">{page.link.popup}</div>
+						</div>
+					}
+				</a>
 			}
 		</section>
 	)

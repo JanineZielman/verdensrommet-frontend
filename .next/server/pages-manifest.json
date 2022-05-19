@@ -2,5 +2,10 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/": "pages/index.js"
+  "/": "pages/index.js",
+  "/alternative-economies": "pages/alternative-economies.js",
+  "/visa-help": "pages/visa-help.js",
+  "/faq": "pages/faq.js",
+  "/about": "pages/about.js",
+  "/contact": "pages/contact.js"
 }

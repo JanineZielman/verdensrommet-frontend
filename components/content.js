@@ -108,17 +108,15 @@ const Content = ({ page }) => {
 										return(
 											<>
 											{content.link_url &&
-												<Link href={content.file ? 'https://cms.verdensrommet.network/app/public' + content.link_url : content.link_url}>
-													<a target="_blank">
-														{content.link_text}
-														{content.popup &&
-															<div className="popup"> 
-																<span>?</span> 
-																<div className="hidden">{content.popup}</div>
-															</div>
-														}
-													</a>
-												</Link>
+												<a target="_blank" href={content.file ? 'https://cms.verdensrommet.network/app/public' + content.link_url : content.link_url}>
+													{content.link_text}
+													{content.popup &&
+														<div className="popup"> 
+															<span>?</span> 
+															<div className="hidden">{content.popup}</div>
+														</div>
+													}
+												</a>
 											}
 											</>
 										)
