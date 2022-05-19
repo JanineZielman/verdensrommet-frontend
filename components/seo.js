@@ -1,12 +1,12 @@
 import Head from "next/head"
-import { useContext } from "react"
-import { GlobalContext } from "../pages/_app"
+// import { useContext } from "react"
+// import { GlobalContext } from "../pages/_app"
 import { getStrapiMedia } from "../lib/media"
 
 const Seo = ({ seo }) => {
-  const { defaultSeo, siteName } = useContext(GlobalContext)
+  // const { data } = useContext(GlobalContext)
   const seoWithDefaults = {
-    ...defaultSeo,
+    // ...data,
     ...seo,
   }
   const fullSeo = {
@@ -16,6 +16,8 @@ const Seo = ({ seo }) => {
     // Get full image URL
     image: getStrapiMedia(seoWithDefaults.image),
   }
+
+  console.log(seoWithDefaults)
 
   return (
     <Head>
