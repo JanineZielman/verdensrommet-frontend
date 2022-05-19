@@ -28,7 +28,7 @@ const HomeNav = ({ homepage, pages }) => {
 					return (
 						<div id={page.slug} key={'link-'+ i} className="link">
 							<a href={`/${page.slug}`}>
-								{page.title}
+								<span>{page.title}</span>
 								{page.icon &&
 									<div className="hidden-icon">
 										<Image image={page.icon}/>
