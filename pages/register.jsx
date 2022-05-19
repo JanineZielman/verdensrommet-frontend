@@ -5,12 +5,12 @@ import TopBar from "../components/topBar"
 import { getStrapiMedia } from "../lib/media";
 import ReactMarkdown from "react-markdown";
 
-const Register = ({page, pages, homepage}) => {
+const Register = ({page, pages, homepage, seo}) => {
 
   return(
     <section className="register">
       <TopBar page={page} homepage={homepage}/>
-      <Layout pages={pages} homepage={homepage}>
+      <Layout pages={pages} homepage={homepage} seo={seo}>
         {page.content &&
           <>
             <div className="section-bg">
@@ -58,10 +58,11 @@ const Register = ({page, pages, homepage}) => {
 
 export async function getStaticProps() {
   // Run API calls in parallel
-  const [pageRes, pagesRes, homepageRes] = await Promise.all([
+  const [pageRes, pagesRes, homepageRes, seoRes] = await Promise.all([
     fetchAPI("/register"),
     fetchAPI("/menus"),
 		fetchAPI("/homepage"),
+    fetchAPI("/global"),
   ])
 
   return {
@@ -69,6 +70,7 @@ export async function getStaticProps() {
       page: pageRes,
       pages: pagesRes,
 			homepage: homepageRes,
+      seo: seoRes,
     },
     revalidate: 1,
   }
