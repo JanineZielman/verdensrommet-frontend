@@ -24,7 +24,7 @@ const PodcastSection = ({page}) => {
 				})}
 			</div>
 			{page.link?.link_url &&
-				<a target="_blank" href={page.link.file ? 'https://cms.verdensrommet.network/app/public' + page.link.link_url : page.link.link_url}>
+				<a target="_blank" href={page.link.file ? 'https://cms.verdensrommet.network/' + page.link.link_url : page.link.link_url}>
 					➝ {page.link.link_text}
 					{page.link.popup &&
 						<div className="popup"> 

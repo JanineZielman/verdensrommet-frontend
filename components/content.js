@@ -42,7 +42,7 @@ const Content = ({ page }) => {
 						id={item.settings?.section_id}
 						style=
 						{{
-							backgroundImage: 	page.cover_image && item.settings?.background && "url(https://cms.verdensrommet.network/app/public/uploads/blue_purple1_5b12f5fb5d.png)",
+							backgroundImage: 	page.cover_image && item.settings?.background && "url(https://cms.verdensrommet.network/uploads/blue_purple1_5b12f5fb5d.png)",
 							backgroundColor: item.settings?.background ? "transparent" : "#D5D5D5",
 							color: item.settings?.background ? "#fff" : "#072FDE",
 						}} 
@@ -108,7 +108,7 @@ const Content = ({ page }) => {
 										return(
 											<>
 											{content.link_url &&
-												<a target="_blank" href={content.file ? 'https://cms.verdensrommet.network/app/public' + content.link_url : content.link_url}>
+												<a target="_blank" href={content.file ? 'https://cms.verdensrommet.network/' + content.link_url : content.link_url}>
 													{content.link_text}
 													{content.popup &&
 														<div className="popup"> 
