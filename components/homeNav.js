@@ -14,7 +14,7 @@ const HomeNav = ({ homepage, pages }) => {
 						</div>
 						<div className="hidden-icon">
 							<Image image={homepage.icon_pressed}/>
-							<div class="tooltiptext">
+							<div className="tooltiptext">
 								This is an emergency button, use it to trigger immigration-emergency response from Verdensrommet
 							</div>
 						</div>
