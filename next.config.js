@@ -4,7 +4,7 @@
 const nextConfig = {
   images: {
     loader: "default",
-    domains: ["localhost", "85.214.72.113"],
+    domains: ["localhost", "https://cms.verdensrommet.network"],
   },
   eslint: {
     // Warning: This allows production builds to successfully complete even if
