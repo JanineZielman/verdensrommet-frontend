@@ -8,9 +8,9 @@ import { getStrapiMedia } from "../lib/media"
 import Image from "../components/image"
 import Link from "next/link"
 
-const Home = ({ homepage, pages, news }) => {
+const Home = ({ homepage, pages, news, seo }) => {
   return (
-    <Layout pages={pages} homepage={homepage}>
+    <Layout pages={pages} homepage={homepage} seo={seo}>
       <div className="hero-bg">
         <video loop={true} autoPlay="autoPlay" pointerEvents="none" preload="none" controls muted playsinline>
           <source src={"https://cms.verdensrommet.network/app/public/" + homepage.Hero.background.url} type="video/mp4"/>
@@ -122,10 +122,11 @@ const Home = ({ homepage, pages, news }) => {
 
 export async function getStaticProps() {
   // Run API calls in parallel
-  const [homepageRes, newsRes, pagesRes] = await Promise.all([
+  const [homepageRes, newsRes, pagesRes, seoRes] = await Promise.all([
     fetchAPI("/homepage"),
     fetchAPI("/news-items?_sort=date%3Adesc"),
     fetchAPI("/menus"),
+    fetchAPI("/global"),
   ])
 
   return {
@@ -133,6 +134,7 @@ export async function getStaticProps() {
       homepage: homepageRes,
       news: newsRes,
       pages: pagesRes,
+      seo: seoRes,
     },
     revalidate: 1,
   }

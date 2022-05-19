@@ -6,12 +6,11 @@ import Content from "../../components/content"
 import TopBar from "../../components/topBar"
 import { fetchAPI } from "../../lib/api"
 
-const AltEco = ({ page, pages, homepage }) => {
+const AltEco = ({ page, pages, homepage, seo }) => {
   return (
 		<section className="alt-eco">
-			{/* <Hero page={page} homepage={homepage}/> */}
       <TopBar page={page} homepage={homepage}/>
-			<Layout pages={pages} homepage={homepage}>
+			<Layout pages={pages} homepage={homepage} seo={seo}>
         {page.section &&
           <Content page={page}/>
         }
@@ -22,10 +21,11 @@ const AltEco = ({ page, pages, homepage }) => {
 
 export async function getStaticProps() {
   // Run API calls in parallel
-  const [pageRes, pagesRes, homepageRes] = await Promise.all([
+  const [pageRes, pagesRes, homepageRes, seoRes] = await Promise.all([
     fetchAPI("/alternative-economies"),
     fetchAPI("/menus"),
 		fetchAPI("/homepage"),
+    fetchAPI("/global"),
   ])
 
   return {
@@ -33,6 +33,7 @@ export async function getStaticProps() {
       page: pageRes,
       pages: pagesRes,
 			homepage: homepageRes,
+      seo: seoRes,
     },
     revalidate: 1,
   }
