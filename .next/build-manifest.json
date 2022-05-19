@@ -14,11 +14,6 @@
     "static/development/_ssgManifest.js"
   ],
   "pages": {
-    "/": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/index.js"
-    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -29,30 +24,25 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/about": [
+    "/auth/reset-password": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/about.js"
+      "static/chunks/pages/auth/reset-password.js"
     ],
-    "/auth/forgot-password": [
+    "/forgot-password": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/auth/forgot-password.js"
+      "static/chunks/pages/forgot-password.js"
     ],
-    "/news/[slug]": [
+    "/next/dist/pages/_error": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/news/[slug].js"
+      "static/chunks/pages/next/dist/pages/_error.js"
     ],
-    "/register": [
+    "/reset-password": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/register.js"
-    ],
-    "/visa-help": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/visa-help.js"
+      "static/chunks/pages/reset-password.js"
     ]
   },
   "ampFirstPages": []
