@@ -106,7 +106,7 @@ const Nav = ( {pages, homepage}) => {
                   <LoginComponent />
                   <div className="register">
                     <a>Not a member yet?</a>
-                    <button onClick={goToRegister}>Start here</button>
+                    <button onClick={goToRegister}>Register</button>
                   </div>
                 </Modal>
               </>
