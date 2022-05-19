@@ -16,7 +16,7 @@ export default async (req, res) => {
   } = req.body;
 
   try {
-    const response = await axios.post('http://85.214.72.113:1337/auth/local/register', {
+    const response = await axios.post('https://cms.verdensrommet.network/auth/local/register', {
       username,
       email,
       password,

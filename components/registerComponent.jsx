@@ -18,12 +18,22 @@ const RegisterComponent = () => {
     kind: ''
   })
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await axios.post('/api/register', userData);
+      // await strapi.plugins['email'].services.email.send({
+      //   to: 'janine.zielman@icloud.com',
+      //   from: 'info@verdensrommet.network',
+      //   replyTo: 'info@verdensrommet.network',
+      //   subject: 'Use strapi email provider successfully',
+      //   text: 'Hello world!',
+      //   html: 'Hello world!',
+      // });
       router.replace('/profile');
     } catch (err) {
+      // console.log(err);
       console.log(err.response.data);
       setError('! check if all the fields are filled in');
     }
