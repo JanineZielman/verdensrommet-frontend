@@ -30,6 +30,7 @@ const Content = ({ page }) => {
 					<div>
 						<h2>{page.title}</h2>
 						<Image image={page.cover_image}/>
+						<div className="caption">{page.cover_image.caption}</div>
 					</div>
 				</div>
 			</section>
@@ -75,6 +76,7 @@ const Content = ({ page }) => {
 										return(
 											<div className={`content-image ${content.small ? 'small': ''}`}>
 												<Image image={content.image}/>
+												<div className="caption">{content.image.caption}</div>
 											</div>
 										)
 									})}
@@ -169,6 +171,7 @@ const Content = ({ page }) => {
 											return(
 												<div className={`${item.slider.small ? 'small': ''}`}>
 													<Image image={content}/>
+													<div className="caption">{content.caption}</div>
 												</div>
 											)
 										})}
