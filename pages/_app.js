@@ -11,7 +11,7 @@ import { getStrapiMedia } from "../lib/media"
 export const GlobalContext = createContext({})
 
 const MyApp = ({ Component, pageProps }) => {
-  // const { global } = pageProps
+  const { seo } = pageProps
   return (
     <>
       <Head>
@@ -22,7 +22,7 @@ const MyApp = ({ Component, pageProps }) => {
         <link
           rel="stylesheet"
           type="text/css"
-          charset="UTF-8"
+          charSet="UTF-8"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
         />
         <link
@@ -31,10 +31,10 @@ const MyApp = ({ Component, pageProps }) => {
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
         />
       </Head>
-      <Component {...pageProps} />
-      {/* <GlobalContext.Provider value={global.attributes}>
+      {/* <Component {...pageProps} /> */}
+      <GlobalContext.Provider value={seo}>
         <Component {...pageProps} />
-      </GlobalContext.Provider> */}
+      </GlobalContext.Provider>
     </>
   )
 }
