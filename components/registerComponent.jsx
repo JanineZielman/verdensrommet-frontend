@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 
@@ -18,25 +18,23 @@ const RegisterComponent = () => {
     kind: ''
   })
 
+  const registerPage = useRef();
+  const [loading, setLoading] = useState(null);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
     try {
       await axios.post('/api/register', userData);
-      // await strapi.plugins['email'].services.email.send({
-      //   to: 'janine.zielman@icloud.com',
-      //   from: 'info@verdensrommet.network',
-      //   replyTo: 'info@verdensrommet.network',
-      //   subject: 'Use strapi email provider successfully',
-      //   text: 'Hello world!',
-      //   html: 'Hello world!',
-      // });
-      router.replace('/profile');
+      // router.replace('/profile');
+      setLoading(false);
+      registerPage.current.classList.add("confirmation");
     } catch (err) {
-      // console.log(err);
-      console.log(err.response.data);
-      setError('! check if all the fields are filled in');
-    }
+      console.log(err.response.data.message);
+      setError(err.response.data.message);
+      setLoading(false);
+    } 
   }
 
   const handleChange = (e) => {
@@ -45,7 +43,7 @@ const RegisterComponent = () => {
   }
 
   return (
-    <section className="register-page">
+    <section className="register-page" ref={registerPage}>
       <form onSubmit={handleSubmit}>
         <label>
           *Username:
@@ -100,6 +98,7 @@ const RegisterComponent = () => {
          <div className="error">{error}</div>
         <button>Register</button>
       </form>
+      {loading && "Loading..."}
       <p className='small-text'>
         *  Examples of skills (hard or soft), knowledge and services that can be exchanged: video-editing, writing, proofreading, researching, teaching, lending equipment, lending books, driving, caretaking, dumpster diving, food, accounting and taxes, reading buddy, translation, interpretation, explaining philosophical concepts, application writing, stylist, haircut, etc.
       </p>
@@ -107,6 +106,10 @@ const RegisterComponent = () => {
         **What do we mean by “exchange In-kind”: you can trade your skills, knowledge or services other skills, knowledge, services, self-determining exchange of value. 
 
       </p>
+      <div className='confirmation-page'>
+        An email has been send to {userData.email}! <br/>
+        Check your mailbox to confirm your registration.
+      </div>
     </section>
     
   )
