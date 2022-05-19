@@ -5,6 +5,8 @@ import Image from "../components/image"
 const TopBar = ({ page, homepage }) => {
 
   return (
+    <>
+    <div className="top-bar-wrap"></div>
     <section className="top-bar">
 			<h1>
         <a href={'/'}>
@@ -36,6 +38,7 @@ const TopBar = ({ page, homepage }) => {
         }
       `}</style>
     </section>
+    </>
   )
 }
 
