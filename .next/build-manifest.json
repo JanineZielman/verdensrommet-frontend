@@ -29,10 +29,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/forgot-password": [
+    "/news/[slug]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/forgot-password.js"
+      "static/chunks/pages/news/[slug].js"
     ]
   },
   "ampFirstPages": []
