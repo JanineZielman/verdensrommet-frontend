@@ -31,10 +31,7 @@ const MyApp = ({ Component, pageProps }) => {
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
         />
       </Head>
-      {/* <Component {...pageProps} /> */}
-      <GlobalContext.Provider value={seo}>
-        <Component {...pageProps} />
-      </GlobalContext.Provider>
+      <Component {...pageProps} />
     </>
   )
 }
