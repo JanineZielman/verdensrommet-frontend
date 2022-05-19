@@ -6,7 +6,7 @@ const Lexicon = () => {
 
   useEffect(() => {
     router.push('https://portal.verdensrommet.network/lexicon');
-  }, []);
+  });
   
 
   return (

@@ -6,10 +6,18 @@ import Image from "../../components/image"
 import Seo from "../../components/seo"
 
 const NewsPage = ({pages, page, menu, homepage}) => {
+  const seo = []
+  seo.push(
+    {
+    image: page.cover_image,
+    title: page.title,
+    description: page.intro_text
+    }
+  )
   return (
     <section className="news-page">
       <Topbar page={page} homepage={homepage}/>
-      <Layout pages={menu} homepage={homepage}>
+      <Layout pages={menu} homepage={homepage} seo={seo[0]}>
 				{page.section &&
           <Content page={page}/>
         }
@@ -50,7 +58,12 @@ export async function getStaticProps({ params }) {
   })
 
   return {
-    props: { page: pagesRes[0], pages: allPagesRes, menu: menu, homepage: homepage },
+    props: { 
+      page: pagesRes[0], 
+      pages: allPagesRes, 
+      menu: menu, 
+      homepage: homepage,
+    },
     revalidate: 1,
   };
 }
