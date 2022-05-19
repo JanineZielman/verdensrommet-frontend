@@ -388,6 +388,18 @@ button {
   }
 }
 
+.login-buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgot-pw{
+  // text-decoration: underline;
+  padding-right: 14px;
+  font-size: 20px;
+}
+
 .confirmation-page{
   display: none;
 }

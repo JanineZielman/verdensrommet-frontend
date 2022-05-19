@@ -30,7 +30,10 @@ const LoginComponent = () => {
         <input type="text" name="identifier" placeholder="Email..." onChange={e => handleChange(e)} />
         <input type="password" name="password" placeholder="Password..." onChange={e => handleChange(e)} />
         <br />
-        <button className="login-link">Login</button>
+        <div className='login-buttons'>
+          <button className="login-link">Login</button>
+          <a className="forgot-pw" href="/forgot-password">I forgot my password</a>
+        </div>
       </form>
     </div>
   )
