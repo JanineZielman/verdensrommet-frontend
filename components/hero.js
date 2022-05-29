@@ -7,6 +7,7 @@ import PodcastSection from "../components/podcastSection"
 import { getStrapiMedia } from "../lib/media";
 
 const Hero = ({ page, homepage, username }) => {
+	console.log(page)
 
   return (
     <section className="hero">
