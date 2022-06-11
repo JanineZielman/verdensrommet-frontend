@@ -20,6 +20,7 @@ const HomeNav = ({ homepage, pages }) => {
 			<div className="logo">
 				<video id="video" width="600" height="100%" autoPlay loop muted playsInline>
 					<source src="/logo.webm" type="video/webm"/>
+          <img src="/fallback.png" title="Your browser does not support the <video> tag"/>
 				</video>
 				{/* <Image image={homepage.logo} layout='responsive' objectFit='contain'/> */}
 			</div>
