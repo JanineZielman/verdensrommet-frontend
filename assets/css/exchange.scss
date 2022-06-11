@@ -1,3 +1,35 @@
+*:focus {
+	outline: none;
+}
+
+#skills{
+	padding-bottom: 0;
+	h2{
+		margin:0;
+	}
+}
+
+#listSearch{
+	border: 2px solid #072FDE;
+	background: none;
+	color: #072FDE;
+	border-radius: 24px;
+	width: 400px;
+	font-size: 24px;
+	padding: 0px 20px 5px 20px;
+	margin-bottom: 24px;
+	&::placeholder {
+		color: #072FDE;
+		opacity: 1;
+	}
+	&:-ms-input-placeholder {
+		color: #072FDE;
+	}
+	&::-ms-input-placeholder {
+		color: #072FDE;
+	}
+}
+
 .exchange-list{
 	background-color: #D5D5D5;
 	color: #072FDE;
@@ -18,7 +50,7 @@
 			margin: 0;
 			text-decoration: underline;
 		}
-		div{
+		td{
 			width: 33%;
 			padding: 10px 24px 10px 0;
 			div{
