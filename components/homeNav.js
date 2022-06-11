@@ -1,13 +1,6 @@
-import React, {useEffect} from "react"
-import Link from "next/link"
 import Image from "./image"
 
-const HomeNav = ({ homepage, pages }) => {
-
-	useEffect(() => {
-		document.querySelector('#video').playbackRate = 0.8;
-	});
-	
+const HomeNav = ({ homepage, pages }) => {	
   return (
     <section className="homenav">
 			<div className="icon">
@@ -26,9 +19,7 @@ const HomeNav = ({ homepage, pages }) => {
 			</div>
 			<div className="logo">
 				<video id="video" width="600" height="100%" autoPlay loop muted playsInline>
-					<source 
-						src="/logo.webm" 
-						type="video/webm"/>
+					<source src="/logo.webm" type="video/webm"/>
 				</video>
 				{/* <Image image={homepage.logo} layout='responsive' objectFit='contain'/> */}
 			</div>
