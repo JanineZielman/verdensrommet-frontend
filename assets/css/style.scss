@@ -213,7 +213,7 @@ button {
       height: 60px;
       &.announcements{
         padding: 0;
-        width: calc(100vw - 340px);
+        width: calc(100vw - 540px);
       }
       a {
         color: #fff;
@@ -223,7 +223,101 @@ button {
 }
 
 .search {
-  display: none;
+  cursor: pointer;
+}
+
+#faqSearch {
+  border: 2px solid white;
+  background: none;
+  color: white;
+  border-radius: 24px;
+  width: 400px;
+  max-width: 80%;
+  font-size: 24px;
+  padding: 0px 20px 5px 20px;
+  margin-bottom: 24px;
+
+  &::placeholder {
+    color: white;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    color: white;
+  }
+
+  &::-ms-input-placeholder {
+    color: white;
+  }
+}
+
+.search-modal{
+  position: fixed;
+  background-color: #0000ff;
+  border: 3px solid white;
+  bottom: 58px;
+  left: 142px;
+  input {
+    background: none;
+    color: white;
+    border: none;
+    width: 400px;
+    font-size: 40px;
+    padding: 0px 20px 5px 20px;
+
+    &::placeholder {
+      color: white;
+      opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+      color: white;
+    }
+
+    &::-ms-input-placeholder {
+      color: white;
+    }
+  }
+}
+
+.search-results{
+  margin-top: 20px;
+  padding: 2vw 34px;
+  background-color: #D5D5D5;
+  color: #0000ff;
+  min-height: 100vh;
+  .col-search{
+    border-bottom: 3px solid #0000ff;
+    padding-bottom: 10px;
+    margin-top: 36px;
+    font-size: 36px;
+    .news-container{
+      margin-top: 24px;
+    }
+  }
+  h4 {
+    margin: 0;
+    margin-top: 100px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #0000ff;
+  }
+  .collapsible-wrapper:first-child{
+    h4{
+      margin-top: 24px;
+    }
+  }
+  .Collapsible{
+    cursor: pointer;
+  }
+  .sources{
+    margin-top: 5px;
+    &:nth-child(1){
+      margin-top: 24px;
+    }
+    a:nth-child(1){
+      border-top: none;
+    }
+  }
 }
 
 .hero-bg {

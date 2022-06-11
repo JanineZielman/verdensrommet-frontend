@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import LoginComponent from './loginComponent';
+import Search from './search'
 
 const Nav = ( {pages, homepage}) => {
   const router = useRouter();
@@ -83,9 +84,7 @@ const Nav = ( {pages, homepage}) => {
             </Modal>
           </li>
           <li className="search">
-            <a href="/">
-              Search
-            </a>
+            <Search params={''}/>
           </li>
           <li className='announcements'>
             <div className="marquee">

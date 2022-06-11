@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import Layout from "../../components/layout"
-import Seo from "../../components/seo"
 import Hero from "../../components/hero"
 import Content from "../../components/content"
 import { fetchAPI } from "../../lib/api"

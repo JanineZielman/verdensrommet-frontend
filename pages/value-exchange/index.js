@@ -13,11 +13,6 @@ const ValueExchange = ({ page, pages, homepage, seo, users }) => {
 
   }, []);
 
-  useEffect(() => {
-    
-  }, []);
-
-
 function myFunction() {
   // Declare variables 
   var input, filter, table, tr, td, td2, td3, i, txtValue;

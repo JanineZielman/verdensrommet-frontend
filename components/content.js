@@ -1,8 +1,6 @@
-import React, {useRef, useEffect, useState} from "react"
+import React from "react"
 import ReactMarkdown from "react-markdown";
-import { getStrapiMedia } from "../lib/media";
 import Image from "../components/image"
-import Link from "next/link"
 import Collapsible from 'react-collapsible';
 import Slider from "react-slick";
 
@@ -126,43 +124,43 @@ const Content = ({ page }) => {
 								</div>
 							}
 							{item.collapsible && 
-							<div className="collapsible-wrapper">
-								{item.collapsible.filter(list => list.title !== null && list.title !== '').map((content, i) => {
-									return(
-										<>
-											<h4>{content.title}</h4>
-									
-											<div className={`collapsible first ${content.answer ? 'answer' : 'no-answer'}`}>
-												<Collapsible trigger={content.question}>
-													{content.answer ?
-														<ReactMarkdown 
-															children={content.answer} 
-														/>
-														: 'Answer will be added soon...'
-													}
-													
-												</Collapsible>
-											</div>
+								<div className="collapsible-wrapper">
+									{item.collapsible.filter(list => list.title !== null && list.title !== '').map((content, i) => {
+										return(
+											<>
+												<h4>{content.title}</h4>
+										
+												<div className={`collapsible first ${content.answer ? 'answer' : 'no-answer'}`}>
+													<Collapsible trigger={content.question}>
+														{content.answer ?
+															<ReactMarkdown 
+																children={content.answer} 
+															/>
+															: 'Answer will be added soon...'
+														}
+														
+													</Collapsible>
+												</div>
 
-											<div className="load-more">
-												<Collapsible trigger={' '}>
-													{item.collapsible.filter(list => parseInt(list.number) === i + 1).slice(1).map((content, i) => {
-														return(
-															<div className={`collapsible ${content.answer ? 'answer' : 'no-answer'}`}>
-																<Collapsible trigger={content.question}>
-																	<ReactMarkdown 
-																		children={content.answer} 
-																	/>
-																</Collapsible>
-															</div>
-														)
-													})}
-												</Collapsible>
-											</div>
-										</>
-									)
-								})}
-							 </div>
+												<div className="load-more">
+													<Collapsible trigger={' '}>
+														{item.collapsible.filter(list => parseInt(list.number) === i + 1).slice(1).map((content, i) => {
+															return(
+																<div className={`collapsible ${content.answer ? 'answer' : 'no-answer'}`}>
+																	<Collapsible trigger={content.question}>
+																		<ReactMarkdown 
+																			children={content.answer} 
+																		/>
+																	</Collapsible>
+																</div>
+															)
+														})}
+													</Collapsible>
+												</div>
+											</>
+										)
+									})}
+								</div>
 							}
 							{item.slider?.slider && 
 								<div className="image-slider">

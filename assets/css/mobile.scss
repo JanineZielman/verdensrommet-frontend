@@ -24,6 +24,7 @@
   .top-bar{
     h1{
       font-size: 30px;
+      padding: 10px 0!important;
       a{
         margin-left: 10px;
       }
@@ -51,14 +52,54 @@
     width: 100%;
     margin-bottom: 48px;
   }
+  .exchange-list {
+    .list-item {
+      flex-direction: column;
+      td{
+        width: 100%;
+        font-size: 20px;
+      }
+    }
+    .list-header{
+      flex-direction: column;
+      div{
+        width: 100%;
+        font-size: 24px;
+        padding: 5px 0;
+      }
+    }
+  }
   .navbar{
     width: calc(100vw - 3px);
+    height: 50px;
+    ul{
+      height: 50px;
+      li{
+        font-size: 30px;
+        height: 50px;
+      }
+    }
+    .login-button{
+      width: 100px;
+    }
     .search{
-      display: none;
+      // display: none;
+    }
+    a{
+      font-size: 30px !important;
+    }
+  }
+  .search-modal {
+    left: 0;
+    width: calc(100vw - 6px);
+    bottom: 50px;
+    input{
+      font-size: 30px;
     }
   }
   .menu-modal{
     width: calc(100vw - 6px );
+    bottom: 50px;
   }
   .sources{
     a{
@@ -70,6 +111,7 @@
   }
   .login{
     right: 0;
+    bottom: 50px;
     input{
       font-size: 20px;
       &::placeholder{
@@ -109,6 +151,12 @@
   }
   .spacer {
     display: none;
+  }
+  .search-results{
+    padding: 0 10px;
+    .col-search{
+      font-size: 30px;
+    }
   }
   .collapsible-wrapper, .collapsible-wrapper .load-more .Collapsible__contentInner .Collapsible__trigger{
     font-size: 20px;
