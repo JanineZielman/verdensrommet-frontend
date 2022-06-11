@@ -43,21 +43,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/next/dist/pages/_error.js"
-    ],
-    "/search/[slug]": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/search/[slug].js"
-    ],
-    "/value-exchange": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/value-exchange.js"
-    ],
-    "/visa-help": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/visa-help.js"
     ]
   },
   "ampFirstPages": []

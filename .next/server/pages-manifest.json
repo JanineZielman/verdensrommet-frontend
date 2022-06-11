@@ -3,10 +3,7 @@
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
   "/faq": "pages/faq.js",
-  "/search/[slug]": "pages/search/[slug].js",
   "/faq/search/[slug]": "pages/faq/search/[slug].js",
-  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
   "/": "pages/index.js",
-  "/visa-help": "pages/visa-help.js",
-  "/value-exchange": "pages/value-exchange.js"
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
 }
