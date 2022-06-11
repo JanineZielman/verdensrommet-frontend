@@ -1,12 +1,10 @@
 import React from "react"
 import Layout from "../components/layout"
 import ReactMarkdown from "react-markdown";
-import Seo from "../components/seo"
 import { fetchAPI } from "../lib/api"
 import HomeNav from "../components/homeNav"
 import { getStrapiMedia } from "../lib/media"
 import Image from "../components/image"
-import Link from "next/link"
 
 const Home = ({ homepage, pages, news, seo }) => {
   return (
