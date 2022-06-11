@@ -5,6 +5,7 @@ import Link from "next/link"
 import TopBar from "../components/topBar"
 import PodcastSection from "../components/podcastSection"
 import { getStrapiMedia } from "../lib/media";
+import FaqSearch from "./faqSearch"
 
 const Hero = ({ page, homepage, username }) => {
 
@@ -28,6 +29,9 @@ const Hero = ({ page, homepage, username }) => {
 								<ReactMarkdown 
 									children={page.Hero.text}
 								/>
+								{username != undefined && page.slug == 'faq' &&
+									<FaqSearch params={'/faq'}/>
+								}
 							</div>
 						}
 						{page.Hero.links &&
