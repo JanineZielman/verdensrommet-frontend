@@ -17,8 +17,6 @@ const Seo = ({ seo }) => {
     image: getStrapiMedia(seoWithDefaults.image),
   }
 
-  console.log(seoWithDefaults)
-
   return (
     <Head>
       {fullSeo.title && (
