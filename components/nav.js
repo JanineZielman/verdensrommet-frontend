@@ -110,9 +110,9 @@ const Nav = ( {pages, homepage}) => {
                 </Modal>
               </>
             : 
-              <div onClick={logout} className="login-button">
-                <a>Log out</a>
-              </div>
+              <a href="/profile" className="login-button">
+                Profile
+              </a>
             }
           </li>
         </ul>
