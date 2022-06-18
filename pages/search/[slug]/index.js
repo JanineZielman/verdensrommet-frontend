@@ -6,7 +6,7 @@ import Collapsible from 'react-collapsible';
 import ReactMarkdown from "react-markdown";
 import Image from "../../../components/image"
 
-const Search = ({ pages, homepage, seo, search, faq, visa, news }) => {
+const Search = ({ pages, homepage, seo, search, faq, visa, news, podcast}) => {
   const page = {
 		slug: `search: ${search}`
 	}
@@ -19,19 +19,23 @@ const Search = ({ pages, homepage, seo, search, faq, visa, news }) => {
 
   }, []);
 
-	const [faqResults, setFaqResults] = useState(false);
-	const [visaResults, setVisaResults] = useState(false);
-
 	useEffect(() => {
-		if (document.getElementsByClassName('col-search')[0]?.children[0].children[1].children[0].textContent != ''
-		&& document.getElementsByClassName('col-search')[0]?.children[0].children[1].children[0].textContent != 'No results found'){
-			setFaqResults(true)
+		if (parseInt(document.getElementsByClassName('col-search')[0]?.children[0].children[1].children[0].children.length) > 1) {
+			if (document.getElementById('no-results-faq')){
+				document.getElementById('no-results-faq').style.display = "none"
+			}
 		}
-		if (document.getElementsByClassName('col-search')[1]?.children[0].children[1].children[0].textContent != '' 
-		&& document.getElementsByClassName('col-search')[1]?.children[0].children[1].children[0].textContent != 'No results found'){
-			setVisaResults(true)
+		if (parseInt(document.getElementsByClassName('col-search')[1]?.children[0].children[1].children[0].children.length) > 1) {
+			if (document.getElementById('no-results-visa')){
+				document.getElementById('no-results-visa').style.display = "none"
+			}
 		}
-  }, []);
+		if (parseInt(document.getElementsByClassName('col-search')[3]?.children[0].children[1].children[0].children.length) > 1) {
+			if (document.getElementById('no-results-podcast')){
+				document.getElementById('no-results-podcast').style.display = "none"
+			}
+		}
+  });
   return (
 		<>
 			<TopBar page={page} homepage={homepage}/>
@@ -39,7 +43,7 @@ const Search = ({ pages, homepage, seo, search, faq, visa, news }) => {
 				<section className="search-results">
 					{username &&
 						<>
-							<div className="col-search">
+							<div className="col-search faq">
 								<Collapsible trigger={'➝ FAQ'}>
 									<>
 									{faq.section.map((item, i) => {
@@ -70,11 +74,11 @@ const Search = ({ pages, homepage, seo, search, faq, visa, news }) => {
 											})
 										)
 									})}
-									{faqResults == false && 'No results found'}
+									<span id={'no-results-faq'}>No results found</span>
 									</>
 								</Collapsible>
 							</div>
-							<div className="col-search">
+							<div className="col-search visa">
 								<Collapsible trigger={'➝ Visa, help!'}>
 									<>
 									{visa.section.map((item, i) => {
@@ -102,13 +106,13 @@ const Search = ({ pages, homepage, seo, search, faq, visa, news }) => {
 											})
 										)
 									})}
-									{visaResults == false && 'No results found'}
+									<span id='no-results-visa'>No results found</span>
 									</>
 								</Collapsible>
 							</div>
 						</>
 					}
-					<div className="col-search">
+					<div className="col-search news">
 						<Collapsible trigger={'➝ News'}>
 							<div className="news-container">
 								{news.map((item, i) => {
@@ -128,6 +132,28 @@ const Search = ({ pages, homepage, seo, search, faq, visa, news }) => {
 							</div>
 						</Collapsible>
 					</div>
+					<div className="col-search podcast">
+						<Collapsible trigger={'➝ Podcast'}>
+							{podcast.podcast_highlight.map((item, i) => {
+								return(
+									<>
+									{item.description.toLowerCase().includes(search) &&
+										<div className="columns smaller">
+											<div className="small">
+												<Image image={item.image}/>
+											</div>
+											<div className="text large">
+												<h3>{item.title}</h3>
+												<a target="_blank" href={item.link}>Link to podcast</a>
+											</div>
+										</div>
+									}
+									</>
+								)
+							})}
+							<span id={'no-results-podcast'}>No results found</span>
+						</Collapsible>
+					</div>
 				</section>
 			</Layout>
 		</>
@@ -144,6 +170,10 @@ export async function getServerSideProps({params}) {
 
 	const faq = await fetchAPI(`/faq`);
 	const visa = await fetchAPI(`/visa-help`);
+	const podcast = await fetchAPI(`/podcast`);
+	const contact = await fetchAPI(`/contact`);
+	const about = await fetchAPI(`/about`);
+
 
 	const news = await fetchAPI(`/news-items?intro_text_contains=${params.slug}`);
 
@@ -156,6 +186,7 @@ export async function getServerSideProps({params}) {
 			faq: faq,
 			visa: visa,
 			news: news,
+			podcast: podcast,
     }
   }
 }
