@@ -507,10 +507,15 @@ button {
   width: 100%;
   color: #0000ff;
   min-height: 100vh;
+  .buttons{
+    display: flex;
+    justify-content: space-between;
+  }
   button{
     color: #0000ff;
     display: block;
-    margin: 14px 0 0 auto;
+    margin: 14px 0px;
+    width: auto;
     &:before{
       content: '➝ ';
     }
@@ -526,8 +531,32 @@ button {
   .list-item{
     display: flex;
     flex-wrap: wrap;
+    .title{
+      border-bottom: 2px solid #0000ff;
+    }
     td{
       width: 30%;
+      textarea{
+        width: 90%;
+        height: 200px;
+      }
+      div{
+        margin-bottom: 10px;
+      }
+    }
+    input{
+      border-color: #0000ff;
+      background-color: transparent;
+      color: #0000ff;
+      border-width: 1px;
+      // padding: 5px 20px;
+    }
+    textarea{
+      margin-top: 14px;
+      border-color: #0000ff;
+      background-color: transparent;
+      color: #0000ff;
+      resize: none;
     }
   }
 }
