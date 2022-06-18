@@ -71,7 +71,6 @@ function myFunction() {
             </div>
             <div id="list">
               {users.map((user, i) => {
-                console.log(user.money.split(","))
                 const moneyList = user.money.split(",");
                 return(
                   <tr className='list-item'>
