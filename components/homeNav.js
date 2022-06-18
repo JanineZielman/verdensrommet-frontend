@@ -18,12 +18,7 @@ const HomeNav = ({ homepage, pages }) => {
 			
 			</div>
 			<div className="logo">
-				<img src="/fallback.png"/>
-				{/* <video id="video" width="600" height="100%" autoPlay loop muted playsInline>
-					<source src="/logo.webm" type="video/webm"/>
-					
-				</video> */}
-				{/* <Image image={homepage.logo} layout='responsive' objectFit='contain'/> */}
+				<Image image={homepage.logo} layout='responsive' objectFit='contain'/>
 			</div>
 			<div className="links-wrapper">
 				{pages.map((page, i) => {

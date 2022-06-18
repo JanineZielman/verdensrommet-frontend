@@ -66,7 +66,7 @@ const RegisterComponent = () => {
         </label>
          <br />
         <label>
-          *Phone:
+          Phone:
           <input type="text" name="contact" onChange={e => handleChange(e)} />
         </label>
         <br />
@@ -86,12 +86,14 @@ const RegisterComponent = () => {
         </label>
         <br />
         <label>
-          *Please list at least 2 skill/knowledge/service* you would like to exchange for money:
+          *Please list at least 2 skills, services or knowledge* you would like to exchange for money (separate each item with a comma to form a list):
+          <p className='small-text'>Examples of skills (hard or soft), knowledge and services that can be exchanged: video-editing, writing, proofreading, researching, teaching, lending equipment, lending books, driving, caretaking, dumpster diving, cooking, accounting and taxes, application writing, reading buddy, translation, interpretation, explaining philosophical concepts, stitching, stylist, haircutting etc.</p>
           <textarea type="text" name="money" onChange={e => handleChange(e)}></textarea>
         </label>
         <br />
         <label>
-          *Please list at least 2 skills/knowledge/services you would like to exchange in-kind**:
+          *Please list at least 2 skills, services, knowledge or anything else you would like to exchange in-kind (separate each item with a comma to form a list):
+          <p className='small-text'>Examples of “exchange In-kind”: you can trade your skills, knowledge or services for other skills, knowledge, services, a self-determined and negotiated exchange value, like translating a text for cutting hair. </p>
           <textarea type="text" name="kind" onChange={e => handleChange(e)}></textarea>
         </label>
         <br />
@@ -99,13 +101,6 @@ const RegisterComponent = () => {
         <button>Register</button>
       </form>
       {loading && "Loading..."}
-      <p className='small-text'>
-        *  Examples of skills (hard or soft), knowledge and services that can be exchanged: video-editing, writing, proofreading, researching, teaching, lending equipment, lending books, driving, caretaking, dumpster diving, food, accounting and taxes, reading buddy, translation, interpretation, explaining philosophical concepts, application writing, stylist, haircut, etc.
-      </p>
-      <p className='small-text'>
-        **What do we mean by “exchange In-kind”: you can trade your skills, knowledge or services other skills, knowledge, services, self-determining exchange of value. 
-
-      </p>
       <div className='confirmation-page'>
         An email has been send to {userData.email}! <br/>
         Check your mailbox to confirm your registration.

@@ -10,6 +10,18 @@ const Profile = ({user, pages, homepage, seo, users}) => {
 	
   const [username, setUser] = useState(user.username);
 
+  const [error, setError] = useState()
+  const [userData, setUserData] = useState({
+    full_name: '',
+    language: '',
+    city: '',
+    contact: '',
+    website: '',
+    money: '',
+    kind: '',
+  })
+  const [loading, setLoading] = useState(null);
+
   useEffect(() => {
     // storing input name
     localStorage.setItem("name", JSON.stringify(user));
@@ -28,34 +40,66 @@ const Profile = ({user, pages, homepage, seo, users}) => {
     }
   }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true)
+    try {
+      await axios.put(`https://cms.verdensrommet.network/users/${user.id}`, {
+				full_name: userData.full_name || user.full_name,
+        language: userData.language || user.language,
+        city: userData.city || user.city,
+        contact: userData.contact || user.contact,
+        website: userData.website || user.website,
+        money: userData.money || user.money,
+        kind: userData.kind || user.kind,
+			})
+      setLoading(false);
+      router.push('/profile');
+      // router.replace('/profile');
+    } catch (err) {
+      console.log(err.response.data.message);
+      setError(err.response.data.message);
+      setLoading(false);
+    } 
+  }
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserData({...userData, [name]: value });
+  }
+
+  console.log(user)
+
   return (
     <section className='profile' >
       <Layout pages={pages} homepage={homepage} seo={seo}>
         <div className='container'>
           <h1>My profile</h1><br/>
-          <div id="list">
-            <div className='list-header'>
-              <div>Contact</div>
-              <div>Exchange for money</div>
-              <div>Exchange in kind</div>
-            </div>
+          <form id="list" onSubmit={handleSubmit}>
             <tr className='list-item'>
               <td className='contact'>
-                {user.full_name && <div>Name: <span>{user.full_name}</span></div>}
-                {user.language && <div>Language: <span>{user.language}</span></div>}
-                {user.city && <div>City: <span>{user.city}</span></div>}
-                {user.contact && <div>Phone: <span>{user.contact}</span></div>}
-                {user.website && <div>Website: <a target="_blank" href={'https://' + user.website.replace('https://', '')}>{user.website}</a></div>}
+                <div className='title'>Contact:</div>
+                <div>Name: <input type="full_name" name="full_name" onChange={e => handleChange(e)} placeholder={user.full_name}/></div>
+                <div>Language: <input type="language" name="language" onChange={e => handleChange(e)} placeholder={user.language}/></div>
+                <div>City: <input type="city" name="city" onChange={e => handleChange(e)} placeholder={user.city}/></div>
+                <div>Phone: <input type="contact" name="contact" onChange={e => handleChange(e)} placeholder={user.contact}/></div>
+                <div>Website: <input type="website" name="website" onChange={e => handleChange(e)} placeholder={user.website}/></div>
               </td>
               <td className='money' id="money">
-                <span>{user.money ? user.money : '-'}</span>
+                <div className='title'>Exchange for money:</div>
+                <textarea cols="40" rows="5" type="money" name="money" onChange={e => handleChange(e)} placeholder={user.money}/>
               </td>
               <td className='kind' id="kind">
-                {user.kind ? user.kind : '-'}
+                <div className='title'>Exchange in kind:</div>
+                <textarea cols="40" rows="5" type="kind" name="kind" onChange={e => handleChange(e)} placeholder={user.kind}/>
               </td>
             </tr>
+          </form>
+          {loading && "Loading..."}
+          <div className='buttons'>
+            <button>Update</button>
+            <button onClick={logout}>Logout</button>
           </div>
-          <button onClick={logout}>Logout</button>
         </div>
       </Layout>
     </section>
