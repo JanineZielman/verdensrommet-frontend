@@ -12,6 +12,13 @@ const Search = ({ pages, homepage, seo, search, faq, visa, news, podcast}) => {
 	}
 
 	const [username, setUsername] = useState('');
+	const [loading, setLoading] = useState('');
+
+	useEffect(() => {
+    setTimeout(function() {
+       setLoading(false)
+    }, 100);
+  }, []);
 
   useEffect(() => {
     const username = localStorage.getItem("name");
@@ -40,121 +47,124 @@ const Search = ({ pages, homepage, seo, search, faq, visa, news, podcast}) => {
 		<>
 			<TopBar page={page} homepage={homepage}/>
 			<Layout pages={pages} homepage={homepage} seo={seo}>
-				<section className="search-results">
-					{username &&
-						<>
-							<div className="col-search faq">
-								<Collapsible trigger={'➝ FAQ'}>
-									<>
-									{faq.section.map((item, i) => {
-										return(
-											item.collapsible.map((list, i) => {
-												return(
-													<>
-													{list.question.toLowerCase().includes(search) &&
-														<div className="collapsible-wrapper">
-															{list.title &&
-																<h4>{item.text[0].title} - {list.title}</h4>
-															}
-															<div className={`collapsible ${list.answer ? 'answer' : 'no-answer'}`}>
-																<Collapsible trigger={list.question}>
-																	{list.answer ?
-																		<ReactMarkdown 
-																			children={list.answer} 
-																		/>
-																		: 'Answer will be added soon...'
-																	}
-																	
-																</Collapsible>
+				{loading ? 'loading...'
+				:
+					<section className="search-results">
+						{username &&
+							<>
+								<div className="col-search faq">
+									<Collapsible trigger={'➝ FAQ'}>
+										<>
+										{faq.section.map((item, i) => {
+											return(
+												item.collapsible.map((list, i) => {
+													return(
+														<>
+														{list.question.toLowerCase().includes(search) &&
+															<div className="collapsible-wrapper">
+																{list.title &&
+																	<h4>{item.text[0].title} - {list.title}</h4>
+																}
+																<div className={`collapsible ${list.answer ? 'answer' : 'no-answer'}`}>
+																	<Collapsible trigger={list.question}>
+																		{list.answer ?
+																			<ReactMarkdown 
+																				children={list.answer} 
+																			/>
+																			: 'Answer will be added soon...'
+																		}
+																		
+																	</Collapsible>
+																</div>
 															</div>
-														</div>
-													}
-													</>
-												)
-											})
-										)
-									})}
-									<span id={'no-results-faq'}>No results found</span>
-									</>
-								</Collapsible>
-							</div>
-							<div className="col-search visa">
-								<Collapsible trigger={'➝ Visa, help!'}>
-									<>
-									{visa.section.map((item, i) => {
+														}
+														</>
+													)
+												})
+											)
+										})}
+										<span id={'no-results-faq'}>No results found</span>
+										</>
+									</Collapsible>
+								</div>
+								<div className="col-search visa">
+									<Collapsible trigger={'➝ Visa, help!'}>
+										<>
+										{visa.section.map((item, i) => {
+											return(
+												item.links.map((content, i) => {
+													return(
+														<>
+														{content.link_text.toLowerCase().includes(search) &&
+															<div className="sources">
+																{content.link_url &&
+																	<a target="_blank" href={content.file ? 'https://cms.verdensrommet.network/' + content.link_url : content.link_url}>
+																		{content.link_text}
+																		{content.popup &&
+																			<div className="popup"> 
+																				<span>?</span> 
+																				<div className="hidden">{content.popup}</div>
+																			</div>
+																		}
+																	</a>
+																}
+															</div>
+														}
+														</>
+													)
+												})
+											)
+										})}
+										<span id='no-results-visa'>No results found</span>
+										</>
+									</Collapsible>
+								</div>
+							</>
+						}
+						<div className="col-search news">
+							<Collapsible trigger={'➝ News'}>
+								<div className="news-container">
+									{news.map((item, i) => {
 										return(
-											item.links.map((content, i) => {
-												return(
-													<>
-													{content.link_text.toLowerCase().includes(search) &&
-														<div className="sources">
-															{content.link_url &&
-																<a target="_blank" href={content.file ? 'https://cms.verdensrommet.network/' + content.link_url : content.link_url}>
-																	{content.link_text}
-																	{content.popup &&
-																		<div className="popup"> 
-																			<span>?</span> 
-																			<div className="hidden">{content.popup}</div>
-																		</div>
-																	}
-																</a>
-															}
-														</div>
-													}
-													</>
-												)
-											})
+											<div className="news-item">
+												<a href={item.external_url ? item.external_url : 'news/' + item.slug } target={item.external_url ? '_blank' : '' }>
+													<div className="image">
+														<Image image={item.cover_image} layout='fill' objectFit='cover'/>
+													</div>
+													<h4>{item.title}</h4>
+													<p>{item.intro_text}</p>
+												</a>
+										</div>
 										)
 									})}
-									<span id='no-results-visa'>No results found</span>
-									</>
-								</Collapsible>
-							</div>
-						</>
-					}
-					<div className="col-search news">
-						<Collapsible trigger={'➝ News'}>
-							<div className="news-container">
-								{news.map((item, i) => {
+									{news.length < 1 && 'No results found'}
+								</div>
+							</Collapsible>
+						</div>
+						<div className="col-search podcast">
+							<Collapsible trigger={'➝ Podcast'}>
+								{podcast.podcast_highlight.map((item, i) => {
 									return(
-										<div className="news-item">
-											<a href={item.external_url ? item.external_url : 'news/' + item.slug } target={item.external_url ? '_blank' : '' }>
-												<div className="image">
-													<Image image={item.cover_image} layout='fill' objectFit='cover'/>
+										<>
+										{item.description.toLowerCase().includes(search) &&
+											<div className="columns smaller">
+												<div className="small">
+													<Image image={item.image}/>
 												</div>
-												<h4>{item.title}</h4>
-												<p>{item.intro_text}</p>
-											</a>
-									</div>
+												<div className="text large">
+													<h3>{item.title}</h3>
+													<a target="_blank" href={item.link}>Link to podcast</a>
+												</div>
+											</div>
+										}
+										</>
 									)
 								})}
-								{news.length < 1 && 'No results found'}
-							</div>
-						</Collapsible>
-					</div>
-					<div className="col-search podcast">
-						<Collapsible trigger={'➝ Podcast'}>
-							{podcast.podcast_highlight.map((item, i) => {
-								return(
-									<>
-									{item.description.toLowerCase().includes(search) &&
-										<div className="columns smaller">
-											<div className="small">
-												<Image image={item.image}/>
-											</div>
-											<div className="text large">
-												<h3>{item.title}</h3>
-												<a target="_blank" href={item.link}>Link to podcast</a>
-											</div>
-										</div>
-									}
-									</>
-								)
-							})}
-							<span id={'no-results-podcast'}>No results found</span>
-						</Collapsible>
-					</div>
-				</section>
+								<span id={'no-results-podcast'}>No results found</span>
+							</Collapsible>
+						</div>
+					</section>
+				}
 			</Layout>
 		</>
   )
