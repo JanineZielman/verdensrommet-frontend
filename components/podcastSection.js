@@ -9,7 +9,6 @@ const PodcastSection = ({page}) => {
 		<section className="podcast-section">
 			{page.podcast_highlight.map((item, i) => {
 				return(
-					
 						<div className="columns">
 							<div className="small">
 								<Image image={item.image}/>

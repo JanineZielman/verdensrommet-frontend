@@ -9,6 +9,7 @@ const Search = ({ pages, homepage, seo, search, faq }) => {
   const page = {
 		slug: `search: ${search}`
 	}
+	console.log(faq.section)
   return (
 		<>
 			<TopBar page={page} homepage={homepage}/>
@@ -16,32 +17,31 @@ const Search = ({ pages, homepage, seo, search, faq }) => {
 				<section className="search-results">
 					{faq.section.map((item, i) => {
 						return(
-							item.collapsible.map((list, i) => {
-								return(
-									<>
-									{list.question.includes(search) &&
-										<div className="collapsible-wrapper">
-											{list.title &&
-												<h4>{item.text[0].title} - {list.title}</h4>
+							<div className="collapsible-wrapper">
+								<h4>{item.text[0].title}</h4>
+								{item.collapsible.map((list, i) => {
+									return(
+										<>
+											{list.question.includes(search) &&
+												<div className={`collapsible ${list.answer ? 'answer' : 'no-answer'}`}>
+													<Collapsible trigger={list.question}>
+														{list.answer ?
+															<ReactMarkdown 
+																children={list.answer} 
+															/>
+															: 'Answer will be added soon...'
+														}
+														
+													</Collapsible>
+												</div>
 											}
-											<div className={`collapsible ${list.answer ? 'answer' : 'no-answer'}`}>
-												<Collapsible trigger={list.question}>
-													{list.answer ?
-														<ReactMarkdown 
-															children={list.answer} 
-														/>
-														: 'Answer will be added soon...'
-													}
-													
-												</Collapsible>
-											</div>
-										</div>
-									}
-									</>
-								)
-							})
+										</>
+									)
+								})}
+							</div>
 						)
 					})}
+					{faq.section.length < 1 && 'No results found...'}
 				</section>
 			</Layout>
 		</>

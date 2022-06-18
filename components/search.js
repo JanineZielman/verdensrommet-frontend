@@ -39,7 +39,7 @@ const Search = ({params}) => {
 				Search
 			</a>
 			<Modal isOpen={show2} onHide={handleClose2} className="search-modal" style={modalStyles}>
-				<input type="text" onChange={inputHandler} onKeyUp={inputHandler}/>
+				<input type="text" onChange={inputHandler} onKeyUp={inputHandler} placeholder="type here..."/>
 			</Modal>
 		</>
     
