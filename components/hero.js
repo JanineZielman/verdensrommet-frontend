@@ -8,7 +8,6 @@ import { getStrapiMedia } from "../lib/media";
 import FaqSearch from "./faqSearch"
 
 const Hero = ({ page, homepage, username }) => {
-
   return (
     <section className="hero">
 			<TopBar page={page} homepage={homepage}/>
@@ -49,7 +48,7 @@ const Hero = ({ page, homepage, username }) => {
 						}
 					</>
 				}
-				{page.podcast &&
+				{page.slug == "podcast" &&
 					<PodcastSection page={page}/>
 				}
 			</div>

@@ -1,39 +1,49 @@
-import React, {useState, useEffect} from "react"
+import React from "react"
 import Image from "../components/image"
-import Link from "next/link"
+import ReactMarkdown from "react-markdown";
+import Collapsible from 'react-collapsible';
 
 const PodcastSection = ({page}) => {
+	console.log(page)
 	return (
 		<section className="podcast-section">
-			<div className="columns">
-				<div className="small">
-					<Image image={page.podcast_highlight.image}/>
-				</div>
-				<div className="text large">
-					<h1>{page.podcast_highlight.title}</h1>
-					<p>{page.podcast_highlight.subtitle}</p>
-				</div>
-			</div>	
-			
-			
-			<div>
-				{page.podcast.slice(0,3).map((item, i) => {
-					return (
-						<iframe key={'podcast-'+i} src={item.podcast_embed} frameBorder="0" scrolling="no"></iframe>
-					)
-				})}
-			</div>
-			{page.link?.link_url &&
-				<a target="_blank" href={page.link.file ? 'https://cms.verdensrommet.network/' + page.link.link_url : page.link.link_url}>
-					➝ {page.link.link_text}
-					{page.link.popup &&
-						<div className="popup"> 
-							<span>?</span> 
-							<div className="hidden">{page.link.popup}</div>
+			{page.podcast_highlight.map((item, i) => {
+				return(
+					
+						<div className="columns">
+							<div className="small">
+								<Image image={item.image}/>
+								<audio controls>
+									<source src={'https://cms.verdensrommet.network' + item.audio.url} type="audio/mpeg"/>
+									Your browser does not support the audio element.
+								</audio>
+								<a target="_blank" href={item.link}>➝ Link to podcast</a>
+							</div>
+							<div className="text large">
+								<h1>{item.title}</h1>
+								<ReactMarkdown 
+									children={item.description} 
+								/>
+								<Collapsible trigger={''}>
+									{item.podcast.map((item, j) => {
+										return(
+											<div className="columns smaller">
+												<div className="small">
+													<Image image={item.image}/>
+												</div>
+												<div className="text large">
+													<h3>{item.title}</h3>
+													<a target="_blank" href={item.link}>Link to podcast</a>
+												</div>
+											</div>
+										)
+									})}
+								</Collapsible>
+							</div>
 						</div>
-					}
-				</a>
-			}
+				
+				)
+			})}
 		</section>
 	)
 }

@@ -2,6 +2,8 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/profile": "pages/profile.js",
-  "/value-exchange": "pages/value-exchange.js"
+  "/": "pages/index.js",
+  "/podcast": "pages/podcast.js",
+  "/faq": "pages/faq.js",
+  "/faq/search/[slug]": "pages/faq/search/[slug].js"
 }
