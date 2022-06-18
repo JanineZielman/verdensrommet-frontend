@@ -4,7 +4,6 @@ import ReactMarkdown from "react-markdown";
 import Collapsible from 'react-collapsible';
 
 const PodcastSection = ({page}) => {
-	console.log(page)
 	return (
 		<section className="podcast-section">
 			{page.podcast_highlight.map((item, i) => {

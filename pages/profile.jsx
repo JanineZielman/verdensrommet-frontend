@@ -68,8 +68,6 @@ const Profile = ({user, pages, homepage, seo, users}) => {
     setUserData({...userData, [name]: value });
   }
 
-  console.log(user)
-
   return (
     <section className='profile' >
       <Layout pages={pages} homepage={homepage} seo={seo}>

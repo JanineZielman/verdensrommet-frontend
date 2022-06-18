@@ -9,7 +9,6 @@ const Search = ({ pages, homepage, seo, search, faq }) => {
   const page = {
 		slug: `search: ${search}`
 	}
-	console.log(faq.section)
   return (
 		<>
 			<TopBar page={page} homepage={homepage}/>
