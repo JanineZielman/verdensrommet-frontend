@@ -29,10 +29,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/profile.js"
     ],
-    "/register": [
+    "/value-exchange": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/register.js"
+      "static/chunks/pages/value-exchange.js"
     ]
   },
   "ampFirstPages": []

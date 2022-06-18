@@ -12,6 +12,7 @@ const ValueExchange = ({ page, pages, homepage, seo, users }) => {
     setUsername(username)
 
   }, []);
+  
 
 function myFunction() {
   // Declare variables 
@@ -70,6 +71,8 @@ function myFunction() {
             </div>
             <div id="list">
               {users.map((user, i) => {
+                console.log(user.money.split(","))
+                const moneyList = user.money.split(",");
                 return(
                   <tr className='list-item'>
                     <td className='contact'>
@@ -80,10 +83,17 @@ function myFunction() {
                       {user.website && <div>Website: <a target="_blank" href={'https://' + user.website.replace('https://', '')}>{user.website}</a></div>}
                     </td>
                     <td className='money' id="money">
-                      <span>{user.money ? user.money : '-'}</span>
+                      {moneyList.length > 1 ?
+                        moneyList.map((item, j) => {
+                          return(
+                            <div>- {item}</div>
+                          )
+                        })
+                        : <span>{user.money ? user.money : '-'}</span>
+                      }
                     </td>
                     <td className='kind' id="kind">
-                      {user.kind ? user.kind : '-'}
+                      {user.kind ? user.kind.split(",") : '-'}
                     </td>
                   </tr>
                 )
