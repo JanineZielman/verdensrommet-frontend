@@ -2,8 +2,7 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/faq": "pages/faq.js",
-  "/visa-help": "pages/visa-help.js",
-  "/search/[slug]": "pages/search/[slug].js",
-  "/faq/search/[slug]": "pages/faq/search/[slug].js"
+  "/about": "pages/about.js",
+  "/": "pages/index.js",
+  "/podcast": "pages/podcast.js"
 }

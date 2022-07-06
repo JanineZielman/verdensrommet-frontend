@@ -8,7 +8,7 @@ html {
   font-family: "Karelia-Outtakes";
   margin: 0;
   padding: 0;
-  background-color: #0000ff;
+  // background-color: #0000ff;
   color: #fff;
   font-size: 30px;
   width: 100vw;
@@ -17,10 +17,10 @@ html {
 }
 
 body {
-  padding-bottom: 80px;
-  position:fixed;
-  overflow-y: scroll;
-  height: calc(100vh - 60px);
+  padding-bottom: 60px;
+  // position:fixed;
+  // overflow-y: scroll;
+  // height: calc(100vh - 60px);
 }
 
 body * {
@@ -334,7 +334,8 @@ button {
   left: 0;
   width: 100vw;
   height: calc(100vh - 60px);
-  overflow-y: scroll;
+  // overflow-y: scroll;
+  overflow-y: hidden;
   z-index: -1;
   video {
     object-fit: cover;
@@ -860,6 +861,8 @@ button {
   position: relative;
   min-height: 100vh;
   overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100vw;
   .back {
     position: fixed;
     top: 200px;
@@ -889,6 +892,31 @@ button {
   width: 100%;
   margin-top: 24px;
   padding-bottom: 100px;
+  #myAudio{
+    display: none;
+  }
+  .toggle-sound{
+    border: 1px solid white;
+    span:first-child {
+      border-right: 1px solid white;
+      padding: 0 5px;
+    }
+    span:last-child {
+      padding: 0 5px;
+    }
+    &.play{
+      span:first-child{
+        background-color: white;
+        color: #0000ff
+      }
+    }
+    &.pause {
+      span:last-child {
+        background-color: white;
+        color: #0000ff
+      }
+    }
+  }
   .Collapsible{
     cursor: pointer;
     .is-open {
