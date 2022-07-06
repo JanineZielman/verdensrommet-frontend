@@ -65,9 +65,11 @@ const Home = ({ homepage, pages, news, seo }) => {
               return(
                 <div className="news-item">
                   <a href={item.external_url ? item.external_url : 'news/' + item.slug } target={item.external_url ? '_blank' : '' }>
-                    <div className="image">
-                      <Image image={item.cover_image} layout='fill' objectFit='cover'/>
-                    </div>
+                    {item.cover_image && 
+                      <div className="image">
+                        <Image image={item.cover_image} layout='fill' objectFit='cover'/>
+                      </div>
+                    }
                     <h4>{item.title}</h4>
                     <p>{item.intro_text}</p>
                   </a>
