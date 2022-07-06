@@ -27,7 +27,9 @@ const Content = ({ page }) => {
 				<div className="wrapper">
 					<div>
 						<h2>{page.title}</h2>
-						<Image image={page.cover_image}/>
+						{page.cover_image && 
+							<Image image={page.cover_image}/>
+						}
 						<div className="caption">{page.cover_image.caption}</div>
 					</div>
 				</div>
