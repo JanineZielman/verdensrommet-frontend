@@ -310,4 +310,23 @@
       }
     }
   }
+  .columns{
+    margin-top: 14px;
+    .text {
+      margin-left: 0;
+    }
+    .small{
+      width: 100%;
+    }
+    .large{
+      width: 100%;
+      h3{
+        margin: 0;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .search-results{
+    margin-top: 0;
+  }
 }
