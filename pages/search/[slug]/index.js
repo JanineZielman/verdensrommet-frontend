@@ -143,7 +143,7 @@ const Search = ({ pages, homepage, seo, search, faq, visa, news, podcast}) => {
 						</div>
 						<div className="col-search podcast">
 							<Collapsible trigger={'➝ Podcast'}>
-								{podcast.podcast_highlight.map((item, i) => {
+								{podcast.podcast_item.map((item, i) => {
 									return(
 										<>
 										{item.description.toLowerCase().includes(search) &&
