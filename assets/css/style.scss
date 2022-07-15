@@ -523,12 +523,14 @@ button {
   min-height: 100vh;
   .buttons{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
   }
   button{
     color: #0000ff;
     display: block;
-    margin: 14px 0px;
+    margin: 0px 0px;
     width: auto;
     &:before{
       content: '➝ ';

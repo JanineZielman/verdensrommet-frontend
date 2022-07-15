@@ -12,13 +12,13 @@ const Profile = ({user, pages, homepage, seo, users}) => {
 
   const [error, setError] = useState()
   const [userData, setUserData] = useState({
-    full_name: '',
-    language: '',
-    city: '',
-    contact: '',
-    website: '',
-    money: '',
-    kind: '',
+    full_name: user.full_name,
+    language: user.language,
+    city: user.city,
+    contact: user.contact,
+    website: user.website,
+    money: user.money,
+    kind: user.kind,
   })
   const [loading, setLoading] = useState(null);
 
@@ -66,6 +66,7 @@ const Profile = ({user, pages, homepage, seo, users}) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData({...userData, [name]: value });
+    console.log(userData)
   }
 
   return (
@@ -77,27 +78,29 @@ const Profile = ({user, pages, homepage, seo, users}) => {
             <tr className='list-item'>
               <td className='contact'>
                 <div className='title'>Contact:</div>
-                <div>Name: <input type="full_name" name="full_name" onChange={e => handleChange(e)} placeholder={user.full_name}/></div>
-                <div>Language: <input type="language" name="language" onChange={e => handleChange(e)} placeholder={user.language}/></div>
-                <div>City: <input type="city" name="city" onChange={e => handleChange(e)} placeholder={user.city}/></div>
-                <div>Phone: <input type="contact" name="contact" onChange={e => handleChange(e)} placeholder={user.contact}/></div>
-                <div>Website: <input type="website" name="website" onChange={e => handleChange(e)} placeholder={user.website}/></div>
+                <div>Name: <input type="full_name" name="full_name" onChange={e => handleChange(e)} value={userData.full_name}/></div>
+                <div>Language: <input type="language" name="language" onChange={e => handleChange(e)} value={userData.language}/></div>
+                <div>City: <input type="city" name="city" onChange={e => handleChange(e)} value={userData.city}/></div>
+                <div>Phone: <input type="contact" name="contact" onChange={e => handleChange(e)} value={userData.contact}/></div>
+                <div>Website: <input type="website" name="website" onChange={e => handleChange(e)} value={userData.website}/></div>
               </td>
               <td className='money' id="money">
-                <div className='title'>Exchange for money:</div>
-                <textarea cols="40" rows="5" type="money" name="money" onChange={e => handleChange(e)} placeholder={user.money}/>
+                <div className='title'>Exchange for money:*</div>
+                <textarea cols="40" rows="5" type="money" name="money" onChange={e => handleChange(e)} value={userData.money}/>
+                <p className='small-text'>Examples of skills (hard or soft), knowledge and services that can be exchanged: video-editing, writing, proofreading, researching, teaching, lending equipment, lending books, driving, caretaking, dumpster diving, cooking, accounting and taxes, application writing, reading buddy, translation, interpretation, explaining philosophical concepts, stitching, stylist, haircutting etc.</p>
               </td>
               <td className='kind' id="kind">
-                <div className='title'>Exchange in kind:</div>
-                <textarea cols="40" rows="5" type="kind" name="kind" onChange={e => handleChange(e)} placeholder={user.kind}/>
+                <div className='title'>Exchange in kind:*</div>
+                <textarea cols="40" rows="5" type="kind" name="kind" onChange={e => handleChange(e)} value={userData.kind}/>
+                <p className='small-text'>*Examples of “exchange In-kind”: you can trade your skills, knowledge or services for other skills, knowledge, services, a self-determined and negotiated exchange value, like translating a text for cutting hair. </p>
               </td>
             </tr>
+            {loading && "Loading..."}
+            <div className='buttons'>
+              <button>Update</button>
+              <button onClick={logout}>Logout</button>
+            </div>
           </form>
-          {loading && "Loading..."}
-          <div className='buttons'>
-            <button>Update</button>
-            <button onClick={logout}>Logout</button>
-          </div>
         </div>
       </Layout>
     </section>

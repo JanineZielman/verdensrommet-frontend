@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
+  "/register": "pages/register.js",
   "/": "pages/index.js",
-  "/search/[slug]": "pages/search/[slug].js",
-  "/podcast": "pages/podcast.js"
+  "/news/[slug]": "pages/news/[slug].js"
 }

@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import ReactMarkdown from "react-markdown";
 import Image from "../components/image"
 import Collapsible from 'react-collapsible';
@@ -12,6 +12,18 @@ const Content = ({ page }) => {
 		slidesToShow: 1,
 		slidesToScroll: 1
 	};
+
+	useEffect(() => {
+    var text = document.getElementsByTagName('p');
+		for (let i = 0; i < text.length; i++) { 
+			var links = text[i].getElementsByTagName('a');
+			for (let j = 0; j < links.length; j++) { 
+				if (links[j].href.includes('http') == true) {
+					links[j].setAttribute('target', '_blank');
+				} 
+			}
+		}
+  }, []);
 
   return (
 	<div className={page.slug}>		
