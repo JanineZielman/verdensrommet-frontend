@@ -18,8 +18,12 @@ const Content = ({ page }) => {
 		for (let i = 0; i < text.length; i++) { 
 			var links = text[i].getElementsByTagName('a');
 			for (let j = 0; j < links.length; j++) { 
-				if (links[j].href.includes('http') == true) {
-					links[j].setAttribute('target', '_blank');
+				if (links[j].href.includes('http')) {
+					if (links[j].href.includes('#') == false) {
+						if (links[j].href.includes('verdensrommet') == false) {
+							links[j].setAttribute('target', '_blank');
+						}
+					}
 				} 
 			}
 		}
