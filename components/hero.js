@@ -1,7 +1,5 @@
 import React from "react"
 import ReactMarkdown from "react-markdown";
-import Image from "../components/image";
-import Link from "next/link"
 import TopBar from "../components/topBar"
 import PodcastSection from "../components/podcastSection"
 import { getStrapiMedia } from "../lib/media";
