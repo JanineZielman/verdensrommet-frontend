@@ -817,12 +817,12 @@ button {
       .Collapsible__trigger {
         font-size: 30px;
         &:before {
-          content: '';
+          content: none;
         }
         
         &.is-open {
           &:before {
-            content: '';
+            content: none;
           }
         }
       }
@@ -1006,6 +1006,19 @@ button {
     *{
       color: #fff;
       border-color: #fff!important;
+    }
+    .Collapsible span{
+      display: block;
+      padding-right: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &::after {
+        border-top-color: #fff !important;
+        margin-right: -40px;
+        
+        
+      }
     }
   }
   .collapsible-wrapper .collapsible.first .Collapsible span:after{
