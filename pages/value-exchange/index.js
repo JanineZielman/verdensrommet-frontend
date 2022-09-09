@@ -8,7 +8,7 @@ const ValueExchange = ({ page, pages, homepage, seo, users }) => {
   const [username, setUsername] = useState('');
 
   useEffect(() => {
-    const username = localStorage.getItem("name");
+    const username = localStorage.getItem("name2");
     setUsername(username)
 
   }, []);
