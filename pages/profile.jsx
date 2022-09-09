@@ -24,6 +24,7 @@ const Profile = ({user, pages, homepage, seo, users}) => {
 
   useEffect(() => {
     // storing input name
+    localStorage.removeItem("name");
     localStorage.setItem("name", JSON.stringify(user));
     // alert("you've succesfully logged in, welcome!");
     // router.push('/account');
