@@ -9,7 +9,7 @@ const VisaHelp = ({ page, pages, homepage, seo }) => {
   const [username, setUsername] = useState('');
 
   useEffect(() => {
-    const username = localStorage.getItem("name");
+    const username = localStorage.getItem("name2");
     setUsername(username)
   }, []);
 

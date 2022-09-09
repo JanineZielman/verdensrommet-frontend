@@ -11,14 +11,14 @@ const Nav = ( {pages, homepage}) => {
   const [username, setUsername] = useState('');
 
   useEffect(() => {
-    const username = localStorage.getItem("name");
+    const username = localStorage.getItem("name2");
     setUsername(username)
   }, []);
 
   const logout = async () => {
     try {
       await axios.get('/api/logout');
-      localStorage.removeItem("name");
+      localStorage.removeItem("name2");
       router.push('/');
       window.location.reload();
     } catch (e) {

@@ -24,8 +24,7 @@ const Profile = ({user, pages, homepage, seo, users}) => {
 
   useEffect(() => {
     // storing input name
-    localStorage.removeItem("name");
-    localStorage.setItem("name", JSON.stringify(user));
+    localStorage.setItem("name2", JSON.stringify(user));
     // alert("you've succesfully logged in, welcome!");
     // router.push('/account');
   }, []);
@@ -34,7 +33,7 @@ const Profile = ({user, pages, homepage, seo, users}) => {
   const logout = async () => {
     try {
       await axios.get('/api/logout');
-      localStorage.removeItem("name");
+      localStorage.removeItem("name2");
       router.push('/');
     } catch (e) {
       console.log(e);

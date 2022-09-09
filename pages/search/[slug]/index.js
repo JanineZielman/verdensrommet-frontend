@@ -21,7 +21,7 @@ const Search = ({ pages, homepage, seo, search, faq, visa, news, podcast}) => {
   }, []);
 
   useEffect(() => {
-    const username = localStorage.getItem("name");
+    const username = localStorage.getItem("name2");
     setUsername(username)
 
   }, []);
