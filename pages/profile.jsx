@@ -121,7 +121,7 @@ export const getServerSideProps = async (ctx) => {
 
   if (cookies?.jwt) {
     try {
-      const { data } = await axios.get('http://85.214.72.113:1337/users/me', {
+      const { data } = await axios.get('https://cms.verdensrommet.network/users/me', {
         headers: {
           Authorization:
             `Bearer ${cookies.jwt}`,
