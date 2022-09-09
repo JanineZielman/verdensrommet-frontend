@@ -9,6 +9,8 @@ const LoginComponent = () => {
     password: '',
   });
 
+  const [error, setError] = useState("");
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -16,6 +18,8 @@ const LoginComponent = () => {
       router.push('/profile');
     } catch (err) {
       console.log(err.response.data);
+      setError(err.response.data.message)
+      
     }
   }
 
@@ -34,6 +38,7 @@ const LoginComponent = () => {
           <button className="login-link">Login</button>
           <a className="forgot-pw" href="/forgot-password">I forgot my password</a>
         </div>
+        {error && <div className='error'>{error}</div>}
       </form>
     </div>
   )
