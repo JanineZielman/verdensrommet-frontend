@@ -28,7 +28,7 @@ const Profile = ({user, pages, homepage, seo, users}) => {
     localStorage.setItem("name", JSON.stringify(user));
     // alert("you've succesfully logged in, welcome!");
     // router.push('/account');
-  }, [user]);
+  }, []);
   
 
   const logout = async () => {
