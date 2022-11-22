@@ -7,7 +7,7 @@ class MyDocument extends Document {
         <Head>
           <script
             async
-            src="https://www.googletagmanager.com/gtag/js?id=G-1VCLSB2RWG"
+            src="https://www.googletagmanager.com/gtag/js?id=G-5WJ7RRLCRM"
           />
           <script
             dangerouslySetInnerHTML={{
@@ -15,7 +15,7 @@ class MyDocument extends Document {
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', 'G-1VCLSB2RWG', { page_path: window.location.pathname });
+                gtag('config', 'G-5WJ7RRLCRM', { page_path: window.location.pathname });
               `,
             }}
           />
