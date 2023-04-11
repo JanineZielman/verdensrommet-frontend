@@ -46,7 +46,7 @@ const Content = ({ page }) => {
 						{page.cover_image && 
 							<Image image={page.cover_image}/>
 						}
-						<div className="caption">{page.cover_image.caption}</div>
+						<div className="caption">{page.cover_image?.caption}</div>
 					</div>
 				</div>
 			</section>
@@ -90,10 +90,14 @@ const Content = ({ page }) => {
 								<>
 									{item.image.map((content, i) => {
 										return(
-											<div className={`content-image ${content.small ? 'small': ''}`}>
-												<Image image={content.image}/>
-												<div className="caption">{content.image.caption}</div>
-											</div>
+											<>
+											{content.image &&
+												<div className={`content-image ${content.small ? 'small': ''}`}>
+													<Image image={content.image}/>
+													<div className="caption">{content.image?.caption}</div>
+												</div>
+											}
+											</>
 										)
 									})}
 								</>
