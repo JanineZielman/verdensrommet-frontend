@@ -129,7 +129,7 @@ const Search = ({ pages, homepage, seo, search, faq, visa, news, podcast}) => {
 											<div className="news-item">
 												<a href={item.external_url ? item.external_url : 'news/' + item.slug } target={item.external_url ? '_blank' : '' }>
 													<div className="image">
-														<Image image={item.cover_image} layout='fill' objectFit='cover'/>
+														<Image image={item.cover_image} fill style={{ objectFit: "cover" }}/>
 													</div>
 													<h4>{item.title}</h4>
 													<p>{item.intro_text}</p>
