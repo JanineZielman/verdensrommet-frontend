@@ -5,8 +5,8 @@ $purple: rgb(102,3,137);
 $yellow: rgb(244,242,171);
 
 body.we-are-still-here {
-  background-color: $blue;
-  color: $brown;
+  background-color: $purple;
+  color: $yellow;
   padding: 0;
   h1{
     font-size: 6vw;
@@ -37,7 +37,7 @@ body.we-are-still-here {
   .collapsible-wrapper{
     margin: 24px;
     padding: 14px 14px 14px 0;
-    border-bottom: 3px solid $brown;
+    border-bottom: 3px solid $yellow;
     .Collapsible{
       cursor: pointer;
     }
