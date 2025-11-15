@@ -3,11 +3,18 @@ $pink: rgb(254,117,191);
 $brown: rgb(130,97,44);
 $purple: rgb(102,3,137);
 $yellow: rgb(244,242,171);
+$green: rgb(143,239,111);
 
 body.we-are-still-here {
   background-color: $purple;
-  color: $yellow;
+  color: $green;
   padding: 0;
+  background-image: url('/bg.gif');
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  
   h1{
     font-size: 6vw;
     position: absolute;
@@ -19,6 +26,7 @@ body.we-are-still-here {
   .festival-hero{
     height: auto;
     width: 100vw;
+    background-color: $purple;
     img{
       width: 100%;
       height: 100%;
@@ -26,21 +34,13 @@ body.we-are-still-here {
     }
   }
   .text-section{
-    background-color: $purple;
-    color: $yellow;
-    ul{
-      list-style-type: none;
-      margin-block-start: 0;
-      padding-inline-start: 0;
-    }
-    li{
-      padding: 14px 14px 14px 0;
-      border-bottom: 3px solid $yellow;
-    }
+    // background-color: $purple;
+    color: $green;
   }
   .wrapper{
     max-width: 1100px;
     padding: 24px;
+     background-color: $purple;
   }
   .collapsible-wrapper{
     margin: 24px;
@@ -57,16 +57,17 @@ body.we-are-still-here {
 }
 
 .events{
-    max-width: 1100px;
     padding: 24px;
-    margin-top: 48px;
+    padding-top: 48px;
+    max-width: 900px;
+    background-color: $purple;
     h3{
       margin-top: 48px;
     }
     .event{
       .title{
         padding-bottom: 14px;
-        border-bottom: 3px solid $yellow;
+        border-bottom: 3px solid $green;
       }
     }
   }
