@@ -1,5 +1,7 @@
 import { fetchAPI } from "../../lib/api"
 import Content from "../../components/festival-content"
+import Image from "../../components/image"
+import ReactMarkdown from "react-markdown";
 
 const NewsPage = ({pages, page, menu, homepage}) => {
   const seo = []
@@ -10,11 +12,26 @@ const NewsPage = ({pages, page, menu, homepage}) => {
     description: page.intro_text
     }
   )
+
+  console.log(page)
   return (
     <section className="event-page">
       <a className="back-link" href="/wearestillhere">Back</a>
      {page.section &&
         <Content page={page}/>
+      }
+      {page.People.length > 0 &&
+        <div className="people">
+          {page.People.map((item, i) => {
+            return(
+              <div className="person">
+                {item.Image &&<Image image={item.Image}/>}
+                <h3>{item.Name}</h3>
+                <ReactMarkdown children={item.Bio}/>
+              </div>
+            )
+          })}
+        </div>
       }
     </section>
   )
