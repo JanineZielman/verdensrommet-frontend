@@ -6,6 +6,10 @@ $yellow: rgb(244,242,171);
 $green: rgb(143,239,111);
 
 body.we-are-still-here {
+  .back-link{
+    margin: 14px;
+    background-color: $purple;
+  }
   background-color: $purple;
   color: $green;
   padding: 0;
@@ -34,13 +38,21 @@ body.we-are-still-here {
     }
   }
   .text-section{
-    // background-color: $purple;
-    color: $green;
+    // background-color: $green;
+    // color: $purple;
+    &:nth-child(2n+1){
+      background-color: $pink;
+      color: $purple;
+    }
+    &:nth-child(2n){
+      background-color: $green;
+      color: $purple;
+    }
   }
   .wrapper{
     max-width: 1100px;
     padding: 24px;
-     background-color: $purple;
+    //  background-color: $purple;
   }
   .collapsible-wrapper{
     margin: 24px;
@@ -69,5 +81,22 @@ body.we-are-still-here {
         padding-bottom: 14px;
         border-bottom: 3px solid $green;
       }
+      &:hover{
+        color: $yellow;
+        border-bottom: 3px solid $yellow;
+      }
     }
+  }
+
+  .event-page{
+    .text-section{
+      max-width: 900px;
+    }
+  }
+
+  .home-link{
+    position: absolute;
+    top: 14px;
+    width: 100%;
+    text-align: center;
   }

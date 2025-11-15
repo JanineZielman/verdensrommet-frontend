@@ -12,6 +12,7 @@ const NewsPage = ({pages, page, menu, homepage}) => {
   )
   return (
     <section className="event-page">
+      <a className="back-link" href="/wearestillhere">Back</a>
      {page.section &&
         <Content page={page}/>
       }
