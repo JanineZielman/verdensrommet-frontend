@@ -13,6 +13,22 @@ const WeAreStillHere = ({ page, pages, homepage, seo }) => {
         <h1>{page.title}</h1>
         <img src={`https://cms.verdensrommet.network/${page.Hero.background.url}`}/>
       </div>
+      {page.Events.length > 0 &&
+        <div className="events">
+          <h2>Programme</h2>
+          {page.Events.map((item, i) => {
+            return(
+              <>
+              <h3>{item.Date}</h3>
+              <a href={item.Link} className="event">
+                <p>{item.Category} {item.Time}</p>
+                <p className="title">{item.Title}</p>
+              </a>
+              </>
+            )
+          })}
+        </div>
+      }
       {page.section &&
         <Content page={page}/>
       }

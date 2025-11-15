@@ -16,7 +16,7 @@ const MyApp = ({ Component, pageProps }) => {
 
   useEffect(() => {
     // Check route and toggle body class
-    if (router.pathname === "/wearestillhere") {
+    if (router.pathname.includes("/wearestillhere")) {
       document.body.classList.add("we-are-still-here")
     } else {
       document.body.classList.remove("we-are-still-here")
