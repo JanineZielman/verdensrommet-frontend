@@ -20,8 +20,8 @@ const WeAreStillHere = ({ page, pages, homepage, seo }) => {
           {page.Events.map((item, i) => {
             return(
               <>
-              <h3>{item.Date}</h3>
               <a href={item.Link} className="event">
+                <h3>{item.Date}</h3>
                 <p>{item.Category} {item.Time}</p>
                 <p className="title">{item.Title}</p>
               </a>
